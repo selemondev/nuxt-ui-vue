@@ -1,0 +1,48 @@
+{
+  "name": "nuxtlabs-ui-vue",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build && pnpm run build:theme",
+    "build:watch": "vite build --watch",
+    "build:theme": "esno ./scripts/theme.ts",
+    "dev": "vite",
+    "play": "pnpm --filter playground dev",
+    "prepublishOnly": "pnpm run build",
+    "release": "pnpm build && bumpp --commit --push --tag && pnpm publish",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.7.15",
+    "@vueuse/core": "^10.2.1",
+    "@vueuse/integrations": "^10.2.1",
+    "@vueuse/math": "^10.2.1",
+    "defu": "^6.1.2",
+    "esno": "^0.17.0",
+    "fuse.js": "^6.6.2",
+    "lodash-es": "^4.17.21",
+    "tailwind-merge": "^1.14.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.4",
+    "@tsconfig/node18": "^18.2.0",
+    "@types/node": "^18.17.4",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/tsconfig": "^0.4.0",
+    "autoprefixer": "^10.4.14",
+    "bumpp": "^9.1.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3",
+    "typescript": "~5.1.6",
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.3.1",
+    "vue-tsc": "^1.8.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

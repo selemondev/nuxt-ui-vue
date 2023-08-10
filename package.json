@@ -1,0 +1,47 @@
+{
+  "name": "@nuxtlabsui/vue-monorepo",
+  "version": "0.0.0",
+  "private": false,
+  "scripts": {
+    "build": "rimraf packages/*/{dist,es,lib} && nr -r -F \"./packages/nuxtlabs-ui-vue\" build",
+    "lint": "eslint .",
+    "lint:fix": "nr lint --fix",
+    "clean": "rimraf packages/*/{dist,es,lib}",
+    "test": "vitest",
+    "test:update": "vitest -u",
+    "test:coverage": "vitest --coverage",
+    "nuxtlabs-ui-vue": "pnpm --filter nuxtlabs-ui-vue",
+    "postinstall": "npx simple-git-hooks",
+    "major": "taze minor -wIr"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.39.8",
+    "@types/node": "^20.4.9",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitest/coverage-c8": "^0.33.0",
+    "@vitest/coverage-v8": "^0.33.0",
+    "@vitest/ui": "^0.33.0",
+    "@vue/test-utils": "^2.4.1",
+    "bumpp": "^9.1.1",
+    "eslint": "8.46.0",
+    "jsdom": "^22.1.0",
+    "lint-staged": "^13.2.3",
+    "rimraf": "^5.0.1",
+    "simple-git-hooks": "^2.9.0",
+    "taze": "^0.11.2",
+    "typescript": "^5.1.6",
+    "unbuild": "^1.2.1",
+    "unplugin-vue-components": "^0.25.1",
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.1",
+    "vitest": "^0.33.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,vue,md}": [
+      "pnpm lint:fix"
+    ]
+  }
+}
