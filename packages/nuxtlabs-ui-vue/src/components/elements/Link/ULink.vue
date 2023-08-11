@@ -1,6 +1,8 @@
 <script setup lang='ts'>
 import { RouterLink } from 'vue-router'
 import { isEqual } from 'lodash-es'
+import { defineComponent } from 'vue'
+import { Components } from '@/Types/enums/Components'
 
 const props = defineProps({
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -47,6 +49,12 @@ function resolveLinkClass(route: { query: any; hash: any }, $route: { query: any
 
   return props.inactiveClass
 }
+</script>
+
+<script lang="ts">
+export default defineComponent({
+  name: Components.ULink,
+})
 </script>
 
 <template>

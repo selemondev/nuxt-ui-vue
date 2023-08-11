@@ -6,7 +6,7 @@ import type {
   CSSClassKeyValuePair,
   CSSClasses,
   CSSRawClassesList,
-  WindiUIConfiguration,
+  NuxtLabsUIConfiguration,
 } from '../Types/variant'
 import type { Components } from '../Types/enums/Components'
 import type { VariantJSWithClassesListProps } from '../utils/getVariantProps'
@@ -37,9 +37,9 @@ export function useVariants<T>(name: Components,
   props: VariantJSWithClassesListProps<T> = {}): {
     transitions?: Record<string, Record<string, string>>
   } & CSSRawClassesList<T> {
-  const config = inject<WindiUIConfiguration>(
+  const config = inject<NuxtLabsUIConfiguration>(
     'config',
-    {} as WindiUIConfiguration,
+    {} as NuxtLabsUIConfiguration,
   )
 
   const globalVariant = config && config[name]

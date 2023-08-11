@@ -35,6 +35,8 @@ export const darkMode = 'class'
 export const theme = {
   extend: {
     colors: tailwindColors,
+    backgroundColor: ['disabled'],
+    textColor: ['disabled'],
     fontFamily: {
       Roboto: 'Roboto',
     },
