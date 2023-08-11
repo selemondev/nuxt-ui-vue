@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      classnames:
+        specifier: ^2.3.2
+        version: 2.3.2
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^0.39.8
@@ -2439,6 +2443,10 @@ packages:
     dependencies:
       consola: 3.2.3
     dev: true
+
+  /classnames@2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
 
   /clean-regexp@1.0.0:
     resolution: {integrity: sha512-GfisEZEJvzKrmGWkvfhgzcz/BllN1USeqD2V6tg14OAOgaCD2Z/PUEuxnAZ/nPvmaHRG7a8y77p1T/IRQ4D1Hw==}

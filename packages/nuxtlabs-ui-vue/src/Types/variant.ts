@@ -1,5 +1,5 @@
 import type { Components } from './enums/Components'
-import type { UIconVariants } from './componentsTypes/components'
+import type { UButtonVariants, UIconVariants } from './componentsTypes/components'
 
 export declare interface CSSClassKeyValuePair {
   [key: string]: any
@@ -28,7 +28,8 @@ export interface Variants<P> {
   [key: string]: CSSRawClassesList<P> | undefined
 }
 
-export interface WindiUIConfiguration {
+export interface NuxtLabsUIConfiguration {
   transitions: Record<string, Record<string, string>>
+  [Components.UButton]?: UButtonVariants
   [Components.UIcon]?: UIconVariants
 }
