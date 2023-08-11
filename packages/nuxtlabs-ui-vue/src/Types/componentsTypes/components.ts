@@ -1,9 +1,5 @@
 import type { WithVariantProps } from '../variant'
 
-interface UComponentRoot extends Record<string, unknown> {
-  root?: string
-};
-
 interface IconSize {
   '2xs': string
   'xs': string
@@ -43,6 +39,36 @@ interface ButtonColorStyles {
   variant: VariantStyles
 }
 
+interface size {
+  [key: string]: string
+}
+
+interface chipPosition {
+  [key: string]: string
+}
+
+interface UComponentRoot extends Record<string, unknown> {
+  root?: string
+};
+
+export interface UAvatar extends UComponentRoot {
+  background?: string
+  rounded?: string
+  text?: string
+  placeholder?: string
+  size?: size
+  chip?: {
+    base?: string
+    background?: string
+    position?: chipPosition
+    size?: size
+  }
+  icon?: {
+    base?: string
+    size?: size
+  }
+}
+
 export interface UButton extends UComponentRoot {
   font?: string
   size?: string
@@ -62,6 +88,7 @@ export interface UIcon extends UComponentRoot {
   size?: string
 }
 
+export type UAvatarVariants = WithVariantProps<UAvatar>
 export type UButtonVariants = WithVariantProps<UButton>
 export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
 export type UIconVariants = WithVariantProps<UIcon>
