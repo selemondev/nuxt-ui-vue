@@ -1,5 +1,5 @@
 import type { Components } from './enums/Components'
-import type { UButtonGroupVariants, UButtonVariants, UIconVariants } from './componentsTypes/components'
+import type { UAvatarVariants, UButtonGroupVariants, UButtonVariants, UIconVariants } from './componentsTypes/components'
 
 export declare interface CSSClassKeyValuePair {
   [key: string]: any
@@ -30,6 +30,7 @@ export interface Variants<P> {
 
 export interface NuxtLabsUIConfiguration {
   transitions: Record<string, Record<string, string>>
+  [Components.UAvatar]?: UAvatarVariants
   [Components.UButton]?: UButtonVariants
   [Components.UIcon]?: UIconVariants
   [Components.UButtonGroup]?: UButtonGroupVariants
