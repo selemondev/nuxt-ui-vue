@@ -1,3 +1,6 @@
+import type { Components } from './enums/Components'
+import type { UIconVariants } from './componentsTypes/components'
+
 export declare interface CSSClassKeyValuePair {
   [key: string]: any
 }
@@ -27,4 +30,5 @@ export interface Variants<P> {
 
 export interface WindiUIConfiguration {
   transitions: Record<string, Record<string, string>>
+  [Components.UIcon]?: UIconVariants
 }
