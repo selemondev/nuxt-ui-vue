@@ -53,9 +53,15 @@ export interface UButton extends UComponentRoot {
   color?: ButtonColorStyles
   icon?: IconStyles
 }
+
+export interface UButtonGroup extends UComponentRoot {
+  vertical?: boolean
+}
+
 export interface UIcon extends UComponentRoot {
   size?: string
 }
 
 export type UButtonVariants = WithVariantProps<UButton>
+export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
 export type UIconVariants = WithVariantProps<UIcon>

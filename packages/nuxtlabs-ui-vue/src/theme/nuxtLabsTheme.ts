@@ -87,6 +87,19 @@ export default {
       },
     },
   },
+  UButtonGroup: {
+    base: {
+      root: 'flex [&>:not(:first-child):not(:last-child)]:rounded-none',
+    },
+    variants: {
+      horizontal: {
+        root: '[&>:first-child]:rounded-r-none [&>:last-child]:rounded-l-none [&>*+*]:border-l-0',
+      },
+      vertical: {
+        root: 'flex-col [&>:first-child]:rounded-b-none [&>:last-child]:rounded-t-none [&>*+*]:border-t-0 [&>:not(:last-child):not(:focus-visible)]:!shadow-none',
+      },
+    },
+  },
   UIcon: {
     base: {
       'root': 'block cursor-pointer',
