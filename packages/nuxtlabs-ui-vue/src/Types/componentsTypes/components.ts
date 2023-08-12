@@ -39,17 +39,35 @@ interface ButtonColorStyles {
   variant: VariantStyles
 }
 
-interface size {
-  [key: string]: string
+interface ItemStyle {
+  base: string
+  size: string
+  color: string
+  padding: string
+  icon: string
 }
 
-interface chipPosition {
-  [key: string]: string
+interface TransitionStyle {
+  enterActiveClass: string
+  leaveActiveClass: string
+}
+
+interface DefaultStyle {
+  openIcon: string
+  closeIcon: string
+  class: string
+  variant: string
 }
 
 interface UComponentRoot extends Record<string, unknown> {
   root?: string
 };
+
+export interface UAccordion extends UComponentRoot {
+  item: ItemStyle
+  transition: TransitionStyle
+  default: DefaultStyle
+}
 
 export interface UAvatar extends UComponentRoot {
   avatarWrapper?: string
@@ -88,6 +106,7 @@ export interface UIcon extends UComponentRoot {
   size?: string
 }
 
+export type UAccordionVariants = WithVariantProps<UAccordion>
 export type UAvatarVariants = WithVariantProps<UAvatar>
 export type UAvatarGroupVariants = WithVariantProps<UAvatarGroup>
 export type UButtonVariants = WithVariantProps<UButton>

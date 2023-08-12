@@ -1,4 +1,36 @@
 export default {
+  UAccordion: {
+    base: {
+      root: 'w-full flex flex-col',
+      item: {
+        base: '',
+        size: 'text-sm',
+        color: 'text-gray-500 dark:text-gray-400',
+        padding: 'pt-1.5 pb-3',
+        icon: 'ms-auto transform transition-transform duration-200',
+      },
+      transition: {
+        enterActiveClass: 'overflow-hidden transition-[height] duration-200 ease-out',
+        leaveActiveClass: 'overflow-hidden transition-[height] duration-200 ease-out',
+      },
+      default: {
+        openIcon: 'ic:baseline-keyboard-arrow-down',
+        closeIcon: '',
+        class: 'mb-1.5 w-full',
+        variant: 'soft',
+      },
+
+      variants: {
+        default: {
+          openIcon: 'ic:baseline-keyboard-arrow-down',
+          closeIcon: '',
+          class: 'mb-1.5 w-full',
+          variant: 'soft',
+        },
+
+      },
+    },
+  },
   UAvatar: {
     base: {
       'root': 'relative cursor-pointer inline-flex items-center justify-center bg-gray-100 rounded-full',
