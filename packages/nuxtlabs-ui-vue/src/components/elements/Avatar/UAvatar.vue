@@ -1,143 +1,151 @@
 <script setup lang='ts'>
-import { computed, defineComponent, ref, watch } from 'vue'
+import type { PropType } from 'vue'
+import { computed, defineComponent, ref, watchEffect } from 'vue'
 import classNames from 'classnames'
-import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
-import { Components } from '@/Types/enums/Components'
-import type { UAvatar } from '@/Types/componentsTypes/components'
-import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
-import { useVariants } from '@/composables/useVariants'
+import { Icon } from '@iconify/vue'
+import type { VariantJSWithClassesListProps } from '../../../utils/getVariantProps'
+import { getVariantPropsWithClassesList } from '../../../utils/getVariantProps'
+import type { UAvatar } from '../../../Types/componentsTypes/components'
+import { Components } from '../../../Types/enums/Components'
+import { useVariants } from '../../../composables/useVariants'
+import nuxtLabsTheme from '../../../theme/nuxtLabsTheme'
+import { Positions } from '@/Types/enums/Positions'
 
+export type AvatarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
+export type AvatarChipPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'
 const props = defineProps({
   ...getVariantPropsWithClassesList<UAvatar>(),
-  src: {
-    type: [String, Boolean],
-    default: null,
+  name: {
+    type: String,
+    required: false,
   },
+  src: {
+    type: String,
+    default: '',
+  },
+  size: {
+    type: String as PropType<AvatarSize>,
+    default: 'md',
+  },
+
+  icon: {
+    type: String,
+    default: 'ic:round-star-border',
+  },
+
   alt: {
     type: String,
     default: null,
   },
-  text: {
-    type: String,
-    default: null,
-  },
-  icon: {
-    type: String,
-    default: () => nuxtLabsTheme.UAvatar.base.default.icon,
-  },
-  size: {
-    type: String,
-    default: () => nuxtLabsTheme.UAvatar.base.default.size,
-    validator(value: string) {
-      return Object.keys(nuxtLabsTheme.UAvatar.base.size).includes(value)
-    },
-  },
+
   chipColor: {
     type: String,
-    default: () => nuxtLabsTheme.UAvatar.base.default.chipColor,
+    default: '',
   },
-  chipPosition: {
+
+  chipSize: {
     type: String,
-    default: () => nuxtLabsTheme.UAvatar.base.default.chipPosition,
-    validator(value: string) {
-      return Object.keys(nuxtLabsTheme.UAvatar.base.chip.position).includes(value)
-    },
+    default: 'md',
   },
+
+  chipPosition: {
+    type: String as PropType<AvatarChipPosition>,
+    default: Positions.BR,
+  },
+
   chipText: {
-    type: [String, Number],
-    default: null,
+    type: String,
+    default: '',
   },
+
 })
 
-const error = ref(false)
+const avatarUrl = ref('')
 
-watch(() => props.src, () => {
-  if (error.value)
-    error.value = false
-})
-
-function onError() {
-  error.value = true
-}
-
-const variant = computed(() => {
-  const customProps = {
-    ...props,
-    variant: props.variant,
-  }
-
-  return useVariants<UAvatar>(
-    Components.UAvatar,
-    customProps as VariantJSWithClassesListProps<UAvatar>,
-  )
-})
-
-const url = computed(() => {
-  if (typeof props.src === 'boolean')
-    return null
-
-  return props.src
+watchEffect(() => {
+  const img = new Image()
+  img.src = props.src
+  img.decode().then(() => (avatarUrl.value = props.src)).catch((err: string) => {
+    avatarUrl.value = ''
+    throw err
+  })
 })
 
 const placeholder = computed(() => {
   return (props.alt || '').split(' ').map(word => word.charAt(0)).join('').substring(0, 2)
 })
 
-const wrapperClass = computed(() => {
+const variant = computed(() => {
+  const customProps = {
+    ...props,
+    variant: props.variant,
+  }
+  return useVariants<UAvatar>(
+    Components.UAvatar,
+    customProps as VariantJSWithClassesListProps<UAvatar>,
+  )
+})
+
+const avatarWrapperClasses = computed<string>(() => {
   return classNames(
     variant.value.root,
-    (error.value || !url.value) && variant.value.background,
-    variant.value.rounded,
-    nuxtLabsTheme.UAvatar.base.size[props.size],
+    variant.value.avatarSize && variant.value[props.size],
+  )
+})
+const avatarClasses = computed(() => {
+  let sizeClass = ''
+
+  if (typeof props.size === 'number') {
+    return props.size
+  }
+  else {
+    sizeClass += variant.value[props.size] || ''
+    return classNames(variant.value.avatarRounded, sizeClass, variant.value.root)
+  }
+})
+
+const avatarChipSize = computed(() => {
+  let sizeClass = ''
+
+  if (typeof props.size === 'number') {
+    return props.size
+  }
+  else {
+    sizeClass += nuxtLabsTheme.UAvatar.base.avatarChipSize[props.size] || ''
+    return classNames(sizeClass)
+  }
+})
+
+const avatarChipClass = computed(() => {
+  return classNames(
+    variant.value.avatarChipClass,
+    nuxtLabsTheme.UAvatar.base.avatarChipPosition[props.chipPosition],
   )
 })
 
-const avatarClass = computed(() => {
+const avatarIconSize = computed(() => {
   return classNames(
-    variant.value.rounded,
-    nuxtLabsTheme.UAvatar.base.size[props.size],
-  )
-})
-const iconClass = computed(() => {
-  return classNames(
-    nuxtLabsTheme.UAvatar.base.icon?.base,
-    nuxtLabsTheme.UAvatar.base.size[props.size],
+    nuxtLabsTheme.UAvatar.base.avatarIconSize[props.size],
   )
 })
 
-const chipClass = computed(() => {
-  return classNames(
-    nuxtLabsTheme.UAvatar?.base?.chip?.base,
-    nuxtLabsTheme.UAvatar.base?.chip?.size[props.size],
-    nuxtLabsTheme.UAvatar.base?.chip?.position[props.chipPosition],
-    nuxtLabsTheme.UAvatar.base?.chip?.background.replaceAll('{color}', props.chipColor),
-  )
-})
+const avatarChipColorStyles = computed(() => ({
+  'background-color': props.chipColor || '',
+}))
 </script>
 
 <script lang="ts">
 export default defineComponent({
   name: Components.UAvatar,
-  inheritAttrs: false,
 })
 </script>
 
 <template>
-  <span :class="wrapperClass">
-    <img
-      v-if="url && !error"
-      :class="avatarClass"
-      :alt="alt"
-      :src="url"
-      v-bind="$attrs"
-      @error="onError"
-    >
-    <span v-else-if="text" :class="variant.text">{{ text }}</span>
-    <UIcon v-else-if="icon" :name="icon" :class="iconClass" />
-    <span v-else-if="placeholder" :class="variant.placeholder">{{ placeholder }}</span>
-
-    <span v-if="chipColor" :class="chipClass">
+  <span :class="[avatarWrapperClasses, avatarClasses]" :title="props.name">
+    <img v-if="avatarUrl" :class="avatarClasses" :src="avatarUrl" :alt="props.name">
+    <span v-else-if="!avatarUrl" :class="variant.avatarPlaceholderClass">{{ placeholder }}</span>
+    <Icon v-if="!avatarUrl && !placeholder" :icon="props.icon" :class="[avatarIconSize, variant.avatarIconColor]" />
+    <span v-if="props.chipColor" :style="avatarChipColorStyles" :class="[avatarChipClass, avatarChipSize]">
       {{ chipText }}
     </span>
     <slot />
