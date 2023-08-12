@@ -52,21 +52,21 @@ interface UComponentRoot extends Record<string, unknown> {
 };
 
 export interface UAvatar extends UComponentRoot {
-  background?: string
-  rounded?: string
-  text?: string
-  placeholder?: string
-  size?: size
-  chip?: {
-    base?: string
-    background?: string
-    position?: chipPosition
-    size?: size
-  }
-  icon?: {
-    base?: string
-    size?: size
-  }
+  avatarWrapper?: string
+  avatarChipClass?: string
+  avatarSize?: string
+  avatarIconSize?: string
+  avatarRounded?: string
+  avatarClass?: string
+  avatarChipSize?: string
+  avatarChipPosition?: string
+  avatarPlaceholderClass?: string
+  avatarIconColor?: string
+}
+
+export interface UAvatarGroup extends UComponentRoot {
+  avatarGroupMargin?: string
+  reverse?: string
 }
 
 export interface UButton extends UComponentRoot {
@@ -89,6 +89,7 @@ export interface UIcon extends UComponentRoot {
 }
 
 export type UAvatarVariants = WithVariantProps<UAvatar>
+export type UAvatarGroupVariants = WithVariantProps<UAvatarGroup>
 export type UButtonVariants = WithVariantProps<UButton>
 export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
 export type UIconVariants = WithVariantProps<UIcon>
