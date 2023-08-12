@@ -133,8 +133,34 @@ export interface UBadge extends UComponentRoot {
 
 }
 
+export interface UDropdown extends UComponentRoot {
+  container?: string
+  height?: string
+  width?: string
+  background?: string
+  shadow?: string
+  rounded?: string
+  ring?: string
+  base?: string
+  divide?: string
+  padding?: string
+  item?: objectProp
+  transition?: objectProp
+  popper?: objectProp
+}
+
 export interface UIcon extends UComponentRoot {
   size?: string
+}
+
+export interface UKbd extends UComponentRoot {
+  padding?: string
+  size?: objectProp
+  rounded?: string
+  font?: string
+  background?: string
+  ring?: string
+  default?: objectProp
 }
 
 export type UAccordionVariants = WithVariantProps<UAccordion>
@@ -144,4 +170,6 @@ export type UAvatarGroupVariants = WithVariantProps<UAvatarGroup>
 export type UBadgeVariants = WithVariantProps<UBadge>
 export type UButtonVariants = WithVariantProps<UButton>
 export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
+export type UDropdownVariants = WithVariantProps<UDropdown>
 export type UIconVariants = WithVariantProps<UIcon>
+export type UKbdVariants = WithVariantProps<UKbd>

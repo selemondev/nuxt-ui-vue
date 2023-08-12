@@ -6,5 +6,7 @@ export enum Components {
   UBadge = 'UBadge',
   UButton = 'UButton',
   UButtonGroup = 'UButtonGroup',
+  UDropdown = 'UDropdown',
   UIcon = 'UIcon',
+  UKbd = 'UKbd',
 }
