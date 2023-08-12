@@ -59,6 +59,10 @@ interface DefaultStyle {
   variant: string
 }
 
+interface objectProp {
+  [key: string]: string
+}
+
 interface UComponentRoot extends Record<string, unknown> {
   root?: string
 };
@@ -119,6 +123,16 @@ export interface UButtonGroup extends UComponentRoot {
   vertical?: boolean
 }
 
+export interface UBadge extends UComponentRoot {
+  rounded?: string
+  font?: string
+  size?: objectProp
+  color?: objectProp
+  variant?: objectProp
+  default?: objectProp
+
+}
+
 export interface UIcon extends UComponentRoot {
   size?: string
 }
@@ -127,6 +141,7 @@ export type UAccordionVariants = WithVariantProps<UAccordion>
 export type UAlertVariants = WithVariantProps<UAlert>
 export type UAvatarVariants = WithVariantProps<UAvatar>
 export type UAvatarGroupVariants = WithVariantProps<UAvatarGroup>
+export type UBadgeVariants = WithVariantProps<UBadge>
 export type UButtonVariants = WithVariantProps<UButton>
 export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
 export type UIconVariants = WithVariantProps<UIcon>
