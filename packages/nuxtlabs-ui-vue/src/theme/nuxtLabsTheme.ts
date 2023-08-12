@@ -50,6 +50,12 @@ export default {
           variant: 'link',
         },
       },
+      intent: {
+        solid: 'bg-{color}-500 dark:bg-{color}-400 text-white dark:text-gray-900',
+        outline: 'text-{color}-500 dark:text-{color}-400 ring-1 ring-inset ring-{color}-500 dark:ring-{color}-400',
+        soft: 'bg-{color}-50 dark:bg-{color}-400 dark:bg-opacity-10 text-{color}-500 dark:text-{color}-400',
+        subtle: 'bg-{color}-50 dark:bg-{color}-400 dark:bg-opacity-10 text-{color}-500 dark:text-{color}-400 ring-1 ring-inset ring-{color}-500 dark:ring-{color}-400 ring-opacity-25 dark:ring-opacity-25',
+      },
     },
   },
   UAccordion: {
@@ -187,6 +193,23 @@ export default {
           intent: 'solid',
           color: 'green',
         },
+        color: {
+          white: {
+            solid: 'ring-1 ring-inset ring-gray-300 dark:ring-gray-700 text-gray-900 dark:text-white bg-white dark:bg-gray-900',
+          },
+          gray: {
+            solid: 'ring-1 ring-inset ring-gray-300 dark:ring-gray-700 text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-800',
+          },
+          black: {
+            solid: 'text-white dark:text-gray-900 bg-gray-900 dark:bg-white',
+          },
+        },
+        intent: {
+          solid: 'bg-{color}-500 dark:bg-{color}-400 text-white dark:text-gray-900',
+          outline: 'border border-{color}-400 text-{color}-500 border border-{color}-500 dark:text-{color}-400',
+          soft: 'bg-{color}-50 dark:bg-{color}-400 dark:bg-opacity-10 text-{color}-500 dark:text-{color}-400',
+          subtle: 'bg-{color}-50 dark:bg-{color}-400 dark:bg-opacity-10 text-{color}-500 dark:text-{color}-400 ring-1 ring-inset ring-{color}-500 dark:ring-{color}-400 ring-opacity-25 dark:ring-opacity-25',
+        },
       },
     },
   },
@@ -276,6 +299,13 @@ export default {
         color: 'green',
         loadingIcon: 'svg-spinners:bars-rotate-fade',
       },
+      intent: {
+        solid: 'shadow-sm text-white dark:text-gray-900 bg-{color}-500 hover:enabled:bg-{color}-600 disabled:bg-{color}-500 dark:bg-{color}-400 dark:hover:enabled:bg-{color}-500 dark:disabled:bg-{color}-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-{color}-500 dark:focus-visible:outline-{color}-400',
+        outline: 'ring-1 ring-inset ring-current text-{color}-500 dark:text-{color}-400 hover:enabled:bg-{color}-50 disabled:bg-transparent dark:hover:enabled:bg-{color}-950 dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400',
+        soft: 'text-{color}-500 dark:text-{color}-400 bg-{color}-50 hover:enabled:bg-{color}-100 disabled:bg-{color}-50 dark:bg-{color}-950 dark:hover:enabled:bg-{color}-900 dark:disabled:bg-{color}-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400',
+        ghost: 'text-{color}-500 dark:text-{color}-400 hover:enabled:bg-{color}-50 disabled:bg-transparent dark:hover:enabled:bg-{color}-950 dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400',
+        link: 'text-{color}-500 hover:enabled:text-{color}-600 disabled:text-{color}-500 dark:text-{color}-400 dark:hover:enabled:text-{color}-500 dark:disabled:text-{color}-400 underline-offset-4 hover:enabled:underline focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400',
+      },
     },
   },
   UButtonGroup: {
@@ -288,6 +318,62 @@ export default {
       },
       vertical: {
         root: 'flex-col [&>:first-child]:rounded-b-none [&>:last-child]:rounded-t-none [&>*+*]:border-t-0 [&>:not(:last-child):not(:focus-visible)]:!shadow-none',
+      },
+    },
+  },
+  UDropdown: {
+    base: {
+      root: 'relative inline-flex text-left rtl:text-right',
+      container: 'z-20',
+      width: 'w-48',
+      height: '',
+      background: 'bg-white dark:bg-gray-800',
+      shadow: 'shadow-lg',
+      rounded: 'rounded-md',
+      ring: 'ring-1 ring-gray-200 dark:ring-gray-700',
+      base: 'relative focus:outline-none overflow-y-auto scroll-py-1',
+      divide: 'divide-y divide-gray-200 dark:divide-gray-700',
+      padding: 'p-1',
+      item: {
+        base: 'group flex items-center gap-2 w-full',
+        rounded: 'rounded-md',
+        padding: 'px-2 py-1.5',
+        size: 'text-sm',
+        active: 'bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white',
+        inactive: 'text-gray-700 dark:text-gray-200',
+        disabled: 'cursor-not-allowed opacity-50',
+        icon: {
+          base: 'flex-shrink-0 h-4 w-4',
+          active: 'text-gray-500 dark:text-gray-400',
+          inactive: 'text-gray-400 dark:text-gray-500',
+        },
+        avatar: {
+          base: 'flex-shrink-0',
+          size: 'xs',
+        },
+        shortcuts: 'hidden md:inline-flex flex-shrink-0 gap-0.5 ms-auto',
+      },
+      transition: {
+        enterActiveClass: 'transition duration-100 ease-out',
+        enterFromClass: 'transform scale-95 opacity-0',
+        enterToClass: 'transform scale-100 opacity-100',
+        leaveActiveClass: 'transition duration-75 ease-in',
+        leaveFromClass: 'transform scale-100 opacity-100',
+        leaveToClass: 'transform scale-95 opacity-0',
+      },
+      popper: {
+        placement: 'bottom-end',
+        strategy: 'fixed',
+      },
+    },
+
+    variants: {
+      default: {
+        root: 'relative inline-flex text-left rtl:text-right',
+        container: 'z-20',
+        width: 'w-48',
+        height: '',
+        background: 'bg-white dark:bg-gray-800',
       },
     },
   },
@@ -311,6 +397,34 @@ export default {
       default: {
         root: 'block cursor-pointer',
       },
+    },
+  },
+
+  UKbd: {
+    base: {
+      root: 'inline-flex items-center justify-center text-gray-900 dark:text-white',
+      padding: 'px-1',
+      size: {
+        xs: 'h-4 min-w-[16px] text-[10px]',
+        sm: 'h-5 min-w-[20px] text-[11px]',
+        md: 'h-6 min-w-[24px] text-[12px]',
+      },
+      rounded: 'rounded',
+      font: 'font-medium font-sans',
+      background: 'bg-gray-100 dark:bg-gray-800',
+      ring: 'ring-1 ring-gray-300 dark:ring-gray-700 ring-inset',
+      default: {
+        size: 'sm',
+      },
+    },
+
+    variants: {
+      default: {
+        root: 'inline-flex items-center justify-center text-gray-900 dark:text-white',
+        padding: 'px-1',
+      },
+      background: 'bg-gray-100 dark:bg-gray-800',
+      ring: 'ring-1 ring-gray-300 dark:ring-gray-700 ring-inset',
     },
   },
   transitions: {
