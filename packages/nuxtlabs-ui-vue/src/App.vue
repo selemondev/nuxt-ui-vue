@@ -13,12 +13,16 @@ const items = [{
 
 <template>
   <div class="grid place-items-center w-full min-h-screen">
-    <UAccordion
-      :variants="{
-        'my-variant': {
-          root: 'w-48',
-        },
-      }" :variant="['my-variant']" color="red" :items="items"
-    />
+    <div class="w-96">
+      <UAlert title="Heads <i>up</i>!" icon="heroicons:command-line">
+        <template #title="{ title }">
+          <span v-html="title" />
+        </template>
+
+        <template #description>
+          You can add <b>components</b> to your app using the <u>cli</u>.
+        </template>
+      </UAlert>
+    </div>
   </div>
 </template>

@@ -69,6 +69,23 @@ export interface UAccordion extends UComponentRoot {
   default: DefaultStyle
 }
 
+export interface UAlert extends UComponentRoot {
+  title?: string
+  description?: string
+  shadow?: string
+  rounded?: string
+  padding?: string
+  icon: {
+    base?: string
+  }
+  avatar: {
+    base?: string
+    size?: string
+  }
+  color?: string
+  variant?: string
+}
+
 export interface UAvatar extends UComponentRoot {
   avatarWrapper?: string
   avatarChipClass?: string
@@ -107,6 +124,7 @@ export interface UIcon extends UComponentRoot {
 }
 
 export type UAccordionVariants = WithVariantProps<UAccordion>
+export type UAlertVariants = WithVariantProps<UAlert>
 export type UAvatarVariants = WithVariantProps<UAvatar>
 export type UAvatarGroupVariants = WithVariantProps<UAvatarGroup>
 export type UButtonVariants = WithVariantProps<UButton>
