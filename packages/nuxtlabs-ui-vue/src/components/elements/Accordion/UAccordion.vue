@@ -5,7 +5,7 @@ import { omit } from 'lodash-es'
 import { Disclosure as HDisclosure, DisclosureButton as HDisclosureButton, DisclosurePanel as HDisclosurePanel } from '@headlessui/vue'
 import UButton from '../Button/UButton.vue'
 import UIcon from '../Icon/UIcon.vue'
-import type { AccordionItem } from './Types/accordionItem'
+import type { AccordionItem } from '@/Types/components/accordionItem'
 import type { UAccordion } from '@/Types/componentsTypes/components'
 import { Components } from '@/Types/enums/Components'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
@@ -143,3 +143,4 @@ export default defineComponent({
     </HDisclosure>
   </div>
 </template>
+../../../Types/components/accordionItem

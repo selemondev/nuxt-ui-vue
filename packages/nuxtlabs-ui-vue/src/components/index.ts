@@ -1,4 +1,5 @@
 export { default as UAccordion } from './elements/Accordion/UAccordion.vue'
+export { default as UAlert } from './elements/Alert/UAlert.vue'
 export { default as UAvatar } from './elements/Avatar/UAvatar.vue'
 export { default as UAvatarGroup } from './elements/Avatar/UAvatarGroup.vue'
 export { default as UButton } from './elements/Button/UButton.vue'
