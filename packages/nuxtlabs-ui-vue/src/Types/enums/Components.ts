@@ -3,7 +3,8 @@ export enum Components {
   UAccordion = 'UAccordion',
   UAvatar = 'UAvatar',
   UAvatarGroup = 'UAvatarGroup',
-  UIcon = 'UIcon',
+  UBadge = 'UBadge',
   UButton = 'UButton',
   UButtonGroup = 'UButtonGroup',
+  UIcon = 'UIcon',
 }
