@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { computed, defineComponent, useSlots } from 'vue'
+import { computed, defineComponent, useAttrs, useSlots } from 'vue'
 import type { PropType } from 'vue'
 import classNames from 'classnames'
 import type { RouteLocationRaw } from 'vue-router'
@@ -108,20 +108,7 @@ const variant = computed(() => {
   )
 })
 
-const buttonIs = computed(() => {
-  if (props.to)
-    return 'RouterLink'
-
-  return 'button'
-})
-
-const buttonProps = computed(() => {
-  if (props.to)
-    return { to: props.to, target: props.target }
-
-  else
-    return { disabled: props.disabled || props.loading, type: props.type }
-})
+const bind = Object.assign({}, useAttrs(), props.to ? { href: props.to } : {})
 
 const isLeading = computed(() => {
   return (props.icon && props.leading) || (props.icon && !props.trailing) || (props.loading && !props.trailing) || props.leadingIcon
@@ -186,7 +173,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <component :is="buttonIs" :class="buttonClass" :aria-label="ariaLabel" v-bind="buttonProps">
+  <component :is="props.to ? 'a' : 'button'" :class="buttonClass" :aria-label="ariaLabel" v-bind="bind">
     <slot name="leading" :disabled="disabled" :loading="loading">
       <UIcon v-if="isLeading && leadingIconName" :name="leadingIconName" :class="leadingIconClass" aria-hidden="true" />
     </slot>

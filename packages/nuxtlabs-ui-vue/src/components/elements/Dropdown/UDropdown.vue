@@ -158,6 +158,7 @@ export default defineComponent({
           <div v-for="(subItems, index) of props.items" :key="index" :class="variant.padding">
             <HMenuItem v-for="(item, subIndex) of subItems" :key="subIndex" v-slot="{ active, disabled: itemDisabled }" :disabled="item.disabled">
               <ULink
+                to=""
                 v-bind="omit(item, ['label', 'slot', 'icon', 'iconClass', 'avatar', 'shortcuts', 'disabled', 'click'])"
                 :class="[nuxtLabsTheme.UDropdown.base.item.base, nuxtLabsTheme.UDropdown.base.item.padding, nuxtLabsTheme.UDropdown.base.item.size, nuxtLabsTheme.UDropdown.base.item.rounded, active ? nuxtLabsTheme.UDropdown.base.item.active : nuxtLabsTheme.UDropdown.base.item.inactive, itemDisabled && nuxtLabsTheme.UDropdown.base.item.disabled]"
                 @click="item.click"
