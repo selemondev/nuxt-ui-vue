@@ -215,6 +215,18 @@ export interface UKbd extends UComponentRoot {
   default?: objectProp
 }
 
+export interface URadio extends UComponentRoot {
+  base?: string
+  color?: string
+  background?: string
+  border?: string
+  ring?: string
+  label?: string
+  required?: string
+  help?: string
+  default: objectProp
+}
+
 export interface USelect extends UComponentRoot {
   base?: string
   rounded?: string
@@ -261,5 +273,6 @@ export type UIconVariants = WithVariantProps<UIcon>
 export type UInputVariants = WithVariantProps<UInput>
 export type UTextareaVariants = WithVariantProps<UTextarea>
 export type UKbdVariants = WithVariantProps<UKbd>
+export type URadioVariants = WithVariantProps<URadio>
 export type USelectVariants = WithVariantProps<USelect>
 export type USelectMenuVariants = WithVariantProps<USelectMenu>
