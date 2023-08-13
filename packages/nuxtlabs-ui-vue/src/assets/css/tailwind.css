@@ -8,7 +8,7 @@
         @apply font-Roboto
     }
 
-    select, option {
+    select, option, input {
         @apply appearance-none
     }
 }

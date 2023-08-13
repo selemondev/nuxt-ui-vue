@@ -36,11 +36,11 @@ export const darkMode = 'class'
 export const theme = {
   extend: {
     colors: tailwindColors,
-    backgroundColor: ['disabled', 'ring'],
-    textColor: ['disabled', 'ring'],
+    backgroundColor: ['disabled', 'ring', 'focus', 'border'],
+    textColor: ['disabled', 'ring', 'focus', 'border'],
     fontFamily: {
       Roboto: 'Roboto',
     },
   },
 }
-export const plugins = []
+export const plugins = [require('@tailwindcss/forms')]
