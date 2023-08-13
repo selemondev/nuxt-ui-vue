@@ -205,7 +205,7 @@ const selectClass = computed(() => {
     variant.value.rounded,
     nuxtLabsTheme.USelect.base.size[props.size],
     props.padded ? nuxtLabsTheme.USelect.base.padding[props.size] : 'p-0',
-    variants?.replace('{color}', props.color),
+    variants?.replaceAll('{color}', props.color),
     (isLeading.value || slots.leading) && nuxtLabsTheme.USelect.base.leading.padding[props.size],
     (isTrailing.value || slots.trailing) && nuxtLabsTheme.USelect.base.trailing.padding[props.size],
   )

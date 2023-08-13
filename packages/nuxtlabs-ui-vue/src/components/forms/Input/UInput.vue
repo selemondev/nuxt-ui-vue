@@ -160,7 +160,7 @@ const inputClass = computed(() => {
     variant.value.placeholder,
     nuxtLabsTheme.UInput.base.size[props.size],
     props.padded ? nuxtLabsTheme.UInput.base.padding[props.size] : 'p-0',
-    variants?.replace('{color}', props.color),
+    variants?.replaceAll('{color}', props.color),
     (isLeading.value || slots.leading) && nuxtLabsTheme.UInput.base.leading.padding[props.size],
     (isTrailing.value || slots.trailing) && nuxtLabsTheme.UInput.base.trailing.padding[props.size],
   )
@@ -209,6 +209,7 @@ export default defineComponent({
 </script>
 
 <template>
+  {{ inputClass }}
   <div :class="variant.root">
     <!-- @vue-ignore -->
     <input
