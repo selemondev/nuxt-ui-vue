@@ -11,7 +11,7 @@ import { useVariants } from '../../../composables/useVariants'
 import nuxtLabsTheme from '../../../theme/nuxtLabsTheme'
 import { Positions } from '@/Types/enums/Positions'
 
-export type AvatarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
+export type AvatarSize = '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
 export type AvatarChipPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'
 const props = defineProps({
   ...getVariantPropsWithClassesList<UAvatar>(),
