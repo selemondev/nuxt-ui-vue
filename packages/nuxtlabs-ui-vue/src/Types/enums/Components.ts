@@ -9,5 +9,6 @@ export enum Components {
   UButtonGroup = 'UButtonGroup',
   UDropdown = 'UDropdown',
   UIcon = 'UIcon',
+  UInput = 'UInput',
   UKbd = 'UKbd',
 }

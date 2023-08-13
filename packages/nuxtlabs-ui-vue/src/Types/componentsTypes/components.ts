@@ -63,6 +63,18 @@ interface objectProp {
   [key: string]: string
 }
 
+interface LeadingStyles {
+  leading: {
+    padding: Record<'2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl', string>
+  }
+}
+
+interface PaddingStyles {
+  trailing: {
+    padding: Record<'2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl', string>
+  }
+}
+
 interface UComponentRoot extends Record<string, unknown> {
   root?: string
 };
@@ -153,6 +165,19 @@ export interface UIcon extends UComponentRoot {
   size?: string
 }
 
+export interface UInput extends UComponentRoot {
+  base?: string
+  rounded?: string
+  placeholder?: string
+  size?: objectProp
+  gap?: objectProp
+  padding?: objectProp
+  leading?: LeadingStyles
+  trailing?: PaddingStyles
+  color?: objectProp
+  icon?: objectProp
+  default?: objectProp
+}
 export interface UKbd extends UComponentRoot {
   padding?: string
   size?: objectProp
@@ -172,4 +197,5 @@ export type UButtonVariants = WithVariantProps<UButton>
 export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
 export type UDropdownVariants = WithVariantProps<UDropdown>
 export type UIconVariants = WithVariantProps<UIcon>
+export type UInputVariants = WithVariantProps<UInput>
 export type UKbdVariants = WithVariantProps<UKbd>
