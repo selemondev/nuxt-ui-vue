@@ -227,6 +227,18 @@ export interface URadio extends UComponentRoot {
   default: objectProp
 }
 
+export interface URange extends UComponentRoot {
+  base?: string
+  rounded?: string
+  background?: string
+  ring?: string
+  progress?: objectProp
+  thumb?: objectProp
+  track?: objectProp
+  size?: objectProp
+  default?: objectProp
+}
+
 export interface USelect extends UComponentRoot {
   base?: string
   rounded?: string
@@ -284,6 +296,7 @@ export type UInputVariants = WithVariantProps<UInput>
 export type UTextareaVariants = WithVariantProps<UTextarea>
 export type UKbdVariants = WithVariantProps<UKbd>
 export type URadioVariants = WithVariantProps<URadio>
+export type URangeVariants = WithVariantProps<URange>
 export type USelectVariants = WithVariantProps<USelect>
 export type USelectMenuVariants = WithVariantProps<USelectMenu>
 export type UToggleVariants = WithVariantProps<UToggle>
