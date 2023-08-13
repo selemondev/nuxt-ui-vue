@@ -16,4 +16,5 @@ export enum Components {
   UTextarea = 'UTextarea',
   USelect = 'USelect',
   USelectMenu = 'USelectMenu',
+  UToggle = 'UToggle',
 }

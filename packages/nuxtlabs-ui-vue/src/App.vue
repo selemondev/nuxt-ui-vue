@@ -1,26 +1,12 @@
 <script setup lang='ts'>
 import { ref } from 'vue'
 
-const methods = [{
-  name: 'email',
-  value: 'email',
-  label: 'Email',
-}, {
-  name: 'sms',
-  value: 'sms',
-  label: 'Phone (SMS)',
-}, {
-  name: 'push',
-  value: 'push',
-  label: 'Push notification',
-}]
-
-const selected = ref('sms')
+const selected = ref(false)
 </script>
 
 <template>
   <div class="grid place-items-center w-full min-h-screen">
-    <URadio v-for="method of methods" :key="method.name" v-model="selected" color="cyan" v-bind="method" />
+    <UToggle v-model="selected" color="cyan" on-icon="heroicons:check-20-solid" off-icon="heroicons:x-mark-20-solid" />
     <!-- <USelect v-model="country" color="purple" :options="countries" option-attribute="name" /> -->
     <!-- <UInput v-model="value" color="cyan" icon="ph:sun" /> -->
     <!-- <UCheckbox v-model="selected" name="notifications" label="Notifications" color="blue" help="Please check this box" /> -->
