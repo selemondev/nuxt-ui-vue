@@ -11,4 +11,5 @@ export enum Components {
   UIcon = 'UIcon',
   UInput = 'UInput',
   UKbd = 'UKbd',
+  UTextarea = 'UTextarea',
 }

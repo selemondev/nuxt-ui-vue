@@ -178,6 +178,20 @@ export interface UInput extends UComponentRoot {
   icon?: objectProp
   default?: objectProp
 }
+
+export interface UTextarea extends UComponentRoot {
+  base?: string
+  rounded?: string
+  placeholder?: string
+  size?: objectProp
+  gap?: objectProp
+  padding?: objectProp
+  leading?: LeadingStyles
+  trailing?: PaddingStyles
+  color?: objectProp
+  icon?: objectProp
+  default?: objectProp
+}
 export interface UKbd extends UComponentRoot {
   padding?: string
   size?: objectProp
@@ -198,4 +212,5 @@ export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
 export type UDropdownVariants = WithVariantProps<UDropdown>
 export type UIconVariants = WithVariantProps<UIcon>
 export type UInputVariants = WithVariantProps<UInput>
+export type UTextareaVariants = WithVariantProps<UTextarea>
 export type UKbdVariants = WithVariantProps<UKbd>
