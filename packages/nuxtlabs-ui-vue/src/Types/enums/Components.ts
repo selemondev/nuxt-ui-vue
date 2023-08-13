@@ -13,6 +13,7 @@ export enum Components {
   UInput = 'UInput',
   UKbd = 'UKbd',
   URadio = 'URadio',
+  URange = 'URange',
   UTextarea = 'UTextarea',
   USelect = 'USelect',
   USelectMenu = 'USelectMenu',
