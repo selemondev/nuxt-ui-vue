@@ -22,6 +22,7 @@ for (const colorName in tailwindColors) {
         colorSafeList.push(`bg-${colorName}-${shade}`),
         colorSafeList.push(`hover:bg-${colorName}-${shade}`),
         colorSafeList.push(`focus:bg-${colorName}-${shade}`),
+        colorSafeList.push(`ring-${colorName}-${shade}`),
         colorSafeList.push(`focus:ring-${colorName}-${shade}`),
         colorSafeList.push(`border-${colorName}-${shade}`)
       }
@@ -42,4 +43,4 @@ export const theme = {
     },
   },
 }
-export const plugins = [require('@tailwindcss/forms')]
+export const plugins = []
