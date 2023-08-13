@@ -202,6 +202,21 @@ export interface UKbd extends UComponentRoot {
   default?: objectProp
 }
 
+export interface USelect extends UComponentRoot {
+  base?: string
+  rounded?: string
+  placeholder?: string
+  size?: objectProp
+  gap?: objectProp
+  padding?: objectProp
+  leading?: objectProp
+  trailing?: objectProp
+  color?: objectProp
+  intent?: objectProp
+  icon?: objectProp
+  default?: objectProp
+}
+
 export type UAccordionVariants = WithVariantProps<UAccordion>
 export type UAlertVariants = WithVariantProps<UAlert>
 export type UAvatarVariants = WithVariantProps<UAvatar>
@@ -214,3 +229,4 @@ export type UIconVariants = WithVariantProps<UIcon>
 export type UInputVariants = WithVariantProps<UInput>
 export type UTextareaVariants = WithVariantProps<UTextarea>
 export type UKbdVariants = WithVariantProps<UKbd>
+export type USelectVariants = WithVariantProps<USelect>
