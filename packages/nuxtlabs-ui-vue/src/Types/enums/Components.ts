@@ -13,4 +13,5 @@ export enum Components {
   UKbd = 'UKbd',
   UTextarea = 'UTextarea',
   USelect = 'USelect',
+  USelectMenu = 'USelectMenu',
 }
