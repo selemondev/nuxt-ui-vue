@@ -145,6 +145,19 @@ export interface UBadge extends UComponentRoot {
 
 }
 
+export interface UCheckbox extends UComponentRoot {
+  base?: string
+  rounded?: string
+  color?: string
+  background?: string
+  border?: string
+  ring?: string
+  label?: string
+  required?: string
+  help?: string
+  default?: objectProp
+}
+
 export interface UDropdown extends UComponentRoot {
   container?: string
   height?: string
@@ -242,6 +255,7 @@ export type UAvatarGroupVariants = WithVariantProps<UAvatarGroup>
 export type UBadgeVariants = WithVariantProps<UBadge>
 export type UButtonVariants = WithVariantProps<UButton>
 export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
+export type UCheckboxVariants = WithVariantProps<UCheckbox>
 export type UDropdownVariants = WithVariantProps<UDropdown>
 export type UIconVariants = WithVariantProps<UIcon>
 export type UInputVariants = WithVariantProps<UInput>
