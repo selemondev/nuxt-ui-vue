@@ -260,6 +260,16 @@ export interface USelectMenu extends UComponentRoot {
 
 }
 
+export interface UToggle extends UComponentRoot {
+  rounded?: string
+  ring?: string
+  active?: string
+  inactive?: string
+  container?: objectProp
+  icon?: objectProp
+  default?: objectProp
+}
+
 export type UAccordionVariants = WithVariantProps<UAccordion>
 export type UAlertVariants = WithVariantProps<UAlert>
 export type UAvatarVariants = WithVariantProps<UAvatar>
@@ -276,3 +286,4 @@ export type UKbdVariants = WithVariantProps<UKbd>
 export type URadioVariants = WithVariantProps<URadio>
 export type USelectVariants = WithVariantProps<USelect>
 export type USelectMenuVariants = WithVariantProps<USelectMenu>
+export type UToggleVariants = WithVariantProps<UToggle>
