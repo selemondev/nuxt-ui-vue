@@ -217,6 +217,24 @@ export interface USelect extends UComponentRoot {
   default?: objectProp
 }
 
+export interface USelectMenu extends UComponentRoot {
+  container?: string
+  width?: string
+  height?: string
+  base?: string
+  background?: string
+  shadow?: string
+  rounded?: string
+  padding?: string
+  ring?: string
+  input?: string
+  option?: objectProp
+  transition?: objectProp
+  popper?: objectProp
+  default?: objectProp
+
+}
+
 export type UAccordionVariants = WithVariantProps<UAccordion>
 export type UAlertVariants = WithVariantProps<UAlert>
 export type UAvatarVariants = WithVariantProps<UAvatar>
@@ -230,3 +248,4 @@ export type UInputVariants = WithVariantProps<UInput>
 export type UTextareaVariants = WithVariantProps<UTextarea>
 export type UKbdVariants = WithVariantProps<UKbd>
 export type USelectVariants = WithVariantProps<USelect>
+export type USelectMenuVariants = WithVariantProps<USelectMenu>

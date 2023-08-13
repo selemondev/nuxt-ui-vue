@@ -249,6 +249,7 @@ const trailingIconClass = computed(() => {
 <script lang="ts">
 export default defineComponent({
   name: Components.USelect,
+  inheritAttrs: false,
 })
 </script>
 
