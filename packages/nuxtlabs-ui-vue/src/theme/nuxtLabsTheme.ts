@@ -435,7 +435,7 @@ export default {
   UInput: {
     base: {
       root: 'relative',
-      base: 'appearance-none relative block w-full disabled:cursor-not-allowed disabled:opacity-75 focus:outline-none border-0',
+      base: 'relative block w-full disabled:cursor-not-allowed disabled:opacity-75 border-none',
       rounded: 'rounded-md',
       placeholder: 'placeholder-gray-400 dark:placeholder-gray-500',
       size: {
@@ -491,7 +491,7 @@ export default {
         },
       },
       intent: {
-        outline: 'shadow-sm bg-transparent text-gray-900 dark:text-white ring-1 ring-inset ring-{color}-500 dark:ring-{color}-400 focus:ring-2 focus:ring-{color}-500 dark:focus:ring-{color}-400',
+        outline: 'shadow-sm bg-transparent text-gray-900 dark:text-white ring-1 ring-inset focus:border focus:border-{color}-500 focus:ring-{color}-500 ring-{color}-500 dark:ring-{color}-400 focus:ring-2 focus:ring-{color}-500 dark:focus:ring-{color}-400',
         none: 'bg-transparent focus:ring-0 focus:shadow-none',
       },
       icon: {
@@ -541,7 +541,7 @@ export default {
     variants: {
       default: {
         root: 'relative',
-        base: 'relative block w-full disabled:cursor-not-allowed disabled:opacity-75 focus:outline-none border-0',
+        base: 'relative block w-full disabled:cursor-not-allowed disabled:opacity-75 border-0 ring-1 ring-inset ring-{color}-500 dark:ring-{color}-400 focus:ring-2 focus:ring-{color}-500 dark:focus:ring-{color}-400',
         size: 'sm',
         color: 'white',
         intent: 'outline',
@@ -555,7 +555,7 @@ export default {
         },
       },
       intent: {
-        outline: 'shadow-sm bg-transparent text-gray-900 dark:text-white ring-1 ring-inset ring-{color}-500 dark:ring-{color}-400 focus:ring-2 focus:ring-{color}-500 dark:focus:ring-{color}-400',
+        outline: 'shadow-sm bg-transparent text-gray-900 dark:text-white focus:border ring-1 ring-inset ring-{color}-500 focus:border-{color}-500 focus:ring-{color}-500 dark:ring-{color}-400 focus:ring-2 focus:ring-{color}-500 dark:focus:ring-{color}-400',
         none: 'bg-transparent focus:ring-0 focus:shadow-none',
       },
     },
