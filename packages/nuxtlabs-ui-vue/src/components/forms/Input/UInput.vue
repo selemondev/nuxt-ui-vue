@@ -119,6 +119,8 @@ function onInput(event: InputEvent) {
 
 function onBlur(event: FocusEvent) {
   emitFormBlur()
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   emit('blur', event)
 }
 
@@ -208,6 +210,7 @@ export default defineComponent({
 
 <template>
   <div :class="variant.root">
+    <!-- @vue-ignore -->
     <input
       :id="name"
       ref="input"
