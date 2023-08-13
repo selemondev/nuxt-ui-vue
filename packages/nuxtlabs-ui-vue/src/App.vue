@@ -1,25 +1,27 @@
 <script setup lang='ts'>
 import { ref } from 'vue'
 
-// const value = ref('')
-const countries = [{
-  name: 'United States',
-  value: 'US',
+const methods = [{
+  name: 'email',
+  value: 'email',
+  label: 'Email',
 }, {
-  name: 'Canada',
-  value: 'CA',
-  disabled: true,
+  name: 'sms',
+  value: 'sms',
+  label: 'Phone (SMS)',
 }, {
-  name: 'Mexico',
-  value: 'MX',
+  name: 'push',
+  value: 'push',
+  label: 'Push notification',
 }]
 
-const country = ref('CA')
+const selected = ref('sms')
 </script>
 
 <template>
   <div class="grid place-items-center w-full min-h-screen">
-    <USelect v-model="country" color="purple" :options="countries" option-attribute="name" />
+    <URadio v-for="method of methods" :key="method.name" v-model="selected" color="cyan" v-bind="method" />
+    <!-- <USelect v-model="country" color="purple" :options="countries" option-attribute="name" /> -->
     <!-- <UInput v-model="value" color="cyan" icon="ph:sun" /> -->
     <!-- <UCheckbox v-model="selected" name="notifications" label="Notifications" color="blue" help="Please check this box" /> -->
   </div>
