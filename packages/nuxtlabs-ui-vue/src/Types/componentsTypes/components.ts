@@ -201,20 +201,6 @@ export interface UInput extends UComponentRoot {
   icon?: objectProp
   default?: objectProp
 }
-
-export interface UTextarea extends UComponentRoot {
-  base?: string
-  rounded?: string
-  placeholder?: string
-  size?: objectProp
-  gap?: objectProp
-  padding?: objectProp
-  leading?: LeadingStyles
-  trailing?: PaddingStyles
-  color?: objectProp
-  icon?: objectProp
-  default?: objectProp
-}
 export interface UKbd extends UComponentRoot {
   padding?: string
   size?: objectProp
@@ -282,6 +268,33 @@ export interface USelectMenu extends UComponentRoot {
 
 }
 
+export interface UTable extends UComponentRoot {
+  base?: string
+  divide?: string
+  tHead?: string
+  tBody?: string
+  tr?: objectProp
+  th?: objectProp
+  td?: objectProp
+  loadingState?: objectProp
+  emptyState?: objectProp
+  default?: objectProp
+}
+
+export interface UTextarea extends UComponentRoot {
+  base?: string
+  rounded?: string
+  placeholder?: string
+  size?: objectProp
+  gap?: objectProp
+  padding?: objectProp
+  leading?: LeadingStyles
+  trailing?: PaddingStyles
+  color?: objectProp
+  icon?: objectProp
+  default?: objectProp
+}
+
 export interface UToggle extends UComponentRoot {
   rounded?: string
   ring?: string
@@ -304,6 +317,7 @@ export type UFormGroupVariants = WithVariantProps<UFormGroup>
 export type UDropdownVariants = WithVariantProps<UDropdown>
 export type UIconVariants = WithVariantProps<UIcon>
 export type UInputVariants = WithVariantProps<UInput>
+export type UTableVariants = WithVariantProps<UTable>
 export type UTextareaVariants = WithVariantProps<UTextarea>
 export type UKbdVariants = WithVariantProps<UKbd>
 export type URadioVariants = WithVariantProps<URadio>
