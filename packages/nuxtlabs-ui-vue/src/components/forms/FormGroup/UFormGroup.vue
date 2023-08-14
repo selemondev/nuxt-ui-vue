@@ -66,7 +66,6 @@ export default defineComponent({
 
     const wrapperClass = computed(() => twMerge(variant.value.root, attrs.class as string))
 
-    provide('form-path', props.name)
     const formErrors = inject<Ref<FormError[]> | null>('form-errors', null)
     const error = computed(() => {
       return (props.error && typeof props.error === 'string') || typeof props.error === 'boolean'
