@@ -1203,6 +1203,36 @@ export default {
       active: 'bg-{color}-500 dark:bg-{color}-400',
     },
   },
+
+  UVerticalNavigation: {
+    base: {
+      root: 'relative',
+      base: 'group relative flex items-center gap-2 focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-1 focus-visible:before:ring-green-500 dark:focus-visible:before:ring-green-400 before:absolute before:inset-px before:rounded-md disabled:cursor-not-allowed disabled:opacity-75',
+      ring: 'focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-green-500 dark:focus-visible:ring-green-400',
+      padding: 'px-3 py-1.5',
+      width: 'w-full',
+      rounded: 'rounded-md',
+      font: 'font-medium',
+      size: 'text-sm',
+      active: 'text-gray-900 dark:text-white before:bg-gray-100 dark:before:bg-gray-800',
+      inactive: 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:before:bg-gray-50 dark:hover:before:bg-gray-800/50',
+      label: 'truncate relative',
+      iconBase: 'flex-shrink-0 w-4 h-4',
+      iconActive: 'text-red-700 dark:text-red-200',
+      iconInactive: 'text-red-400 dark:text-red-500 group-hover:text-red-700 dark:group-hover:text-red-200',
+      avatarBase: 'flex-shrink-0',
+      avatarSize: '3xs',
+      badgeBase: 'relative ms-auto inline-block py-0.5 px-2 text-xs rounded-md -me-1 -my-0.5',
+      badgeActive: 'bg-red-500 dark:bg-red-900',
+      badgeInActive: 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white group-hover:bg-white dark:group-hover:bg-gray-900',
+    },
+
+    variants: {
+      default: {
+        root: 'relative',
+      },
+    },
+  },
   transitions: {
     scale: {
       'enter-active-class': 'duration-200 ease-[cubic-bezier(0.175,0.885,0.32,1.475)]',

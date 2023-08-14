@@ -20,4 +20,5 @@ export enum Components {
   UTable = 'UTable',
   UTextarea = 'UTextarea',
   UToggle = 'UToggle',
+  UVerticalNavigation = 'UVerticalNavigation',
 }
