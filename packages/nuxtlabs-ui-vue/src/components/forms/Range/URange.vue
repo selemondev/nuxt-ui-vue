@@ -116,9 +116,9 @@ const trackClass = computed(() => {
 
 const progressClass = computed(() => {
   return classNames(
-    nuxtLabsTheme.URange.base.progress.base,
-    nuxtLabsTheme.URange.base.progress.rounded,
-    nuxtLabsTheme.URange.base.progress.background.replaceAll('{color}', props.color),
+    variant.value.progressBase,
+    variant.value.progressRounded,
+    nuxtLabsTheme.URange.base.progressBackground.replaceAll('{color}', props.color),
     nuxtLabsTheme.URange.base.progress.size[props.size],
   )
 })

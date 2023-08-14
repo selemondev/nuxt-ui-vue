@@ -64,11 +64,11 @@ const badgeClass = computed(() => {
 <script lang="ts">
 export default defineComponent({
   name: Components.UBadge,
+  inheritAttrs: false,
 })
 </script>
 
 <template>
-  {{ badgeClass }}
   <span :class="badgeClass">
     <slot>{{ label }}</slot>
   </span>

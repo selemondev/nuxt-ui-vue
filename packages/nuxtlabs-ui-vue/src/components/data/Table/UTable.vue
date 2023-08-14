@@ -211,12 +211,12 @@ export default defineComponent({
   <div :class="wrapperClass" v-bind="attrs">
     <table :class="[variant.base, variant.divide]">
       <thead :class="variant.thead">
-        <tr :class="nuxtLabsTheme.UTable.base.tr?.base">
+        <tr :class="variant.trBase">
           <th v-if="modelValue" scope="col" class="ps-4">
             <UCheckbox :checked="indeterminate || selected.length === rows.length" :indeterminate="indeterminate" @change="onChange" />
           </th>
 
-          <th v-for="(column, index) in columns" :key="index" scope="col" :class="[nuxtLabsTheme.UTable.base.th?.base, nuxtLabsTheme.UTable.base.th?.padding, nuxtLabsTheme.UTable.base.th?.color, nuxtLabsTheme.UTable.base.th?.font, nuxtLabsTheme.UTable.base.th?.size, column.class]">
+          <th v-for="(column, index) in columns" :key="index" scope="col" :class="[variant.thBase, variant.thPadding, variant.thColor, variant.thFont, variant.thSize, column.class]">
             <slot :name="`${column.key}-header`" :column="column" :sort="sort" :on-sort="onSort">
               <!-- @vue-ignore -->
               <UButton
@@ -235,9 +235,9 @@ export default defineComponent({
         <tr v-if="loadingState && loading">
           <td :colspan="columns.length + (modelValue ? 1 : 0)">
             <slot name="loading-state">
-              <div :class="nuxtLabsTheme.UTable.base.loadingState?.wrapper">
-                <UIcon v-if="loadingState.icon" :name="loadingState.icon" :class="nuxtLabsTheme.UTable.base.loadingState?.icon" aria-hidden="true" />
-                <p :class="nuxtLabsTheme.UTable.base.loadingState?.label">
+              <div :class="variant.loadingStateWrapper">
+                <UIcon v-if="loadingState.icon" :name="loadingState.icon" :class="variant.loadingStateIcon" aria-hidden="true" />
+                <p :class="variant.loadingStateLabel">
                   {{ loadingState.label }}
                 </p>
               </div>
@@ -248,9 +248,9 @@ export default defineComponent({
         <tr v-else-if="emptyState && !rows.length">
           <td :colspan="columns.length + (modelValue ? 1 : 0)">
             <slot name="empty-state">
-              <div :class="nuxtLabsTheme.UTable.base.emptyState?.wrapper">
-                <UIcon v-if="emptyState.icon" :name="emptyState.icon" :class="nuxtLabsTheme.UTable.base.emptyState?.icon" aria-hidden="true" />
-                <p :class="nuxtLabsTheme.UTable.base.emptyState?.label">
+              <div :class="variant.emptyStateWrapper">
+                <UIcon v-if="emptyState.icon" :name="emptyState.icon" :class="variant.emptyStateIcon" aria-hidden="true" />
+                <p :class="variant.emptyStateLabel">
                   {{ emptyState.label }}
                 </p>
               </div>
@@ -259,12 +259,12 @@ export default defineComponent({
         </tr>
 
         <template v-else>
-          <tr v-for="(row, index) in rows" :key="index" :class="[nuxtLabsTheme.UTable.base.tr?.base, isSelected(row) && nuxtLabsTheme.UTable.base.tr?.selected, $attrs.onSelect && nuxtLabsTheme.UTable.base.tr?.active]" @click="() => onSelect(row)">
+          <tr v-for="(row, index) in rows" :key="index" :class="[variant.trBase, isSelected(row) && variant.trSelected, $attrs.onSelect && variant.trActive]" @click="() => onSelect(row)">
             <td v-if="modelValue" class="ps-4">
               <UCheckbox v-model="selected" :value="row" @click.stop />
             </td>
 
-            <td v-for="(column, subIndex) in columns" :key="subIndex" :class="[nuxtLabsTheme.UTable.base.td?.base, nuxtLabsTheme.UTable.base.td?.padding, nuxtLabsTheme.UTable.base.td?.color, nuxtLabsTheme.UTable.base.td?.font, nuxtLabsTheme.UTable.base.td?.size]">
+            <td v-for="(column, subIndex) in columns" :key="subIndex" :class="[variant.tdBase, variant.tdPadding, variant.tdColor, variant.tdFont, variant.tdSize]">
               <slot :name="`${column.key}-data`" :column="column" :row="row" :index="index" :get-row-data="(defaultValue) => getRowData(row, column.key, defaultValue)">
                 {{ getRowData(row, column.key) }}
               </slot>

@@ -221,7 +221,7 @@ const leadingWrapperIconClass = computed(() => {
 
 const leadingIconClass = computed(() => {
   return classNames(
-    nuxtLabsTheme.USelect.base.icon.base,
+    variant.value.iconBase,
     nuxtLabsTheme.USelect.base.icon.color.replaceAll('{color}', props.color),
     nuxtLabsTheme.USelect.base.icon.size[props.size],
     props.loading && 'animate-spin',
@@ -238,7 +238,7 @@ const trailingWrapperIconClass = computed(() => {
 
 const trailingIconClass = computed(() => {
   return classNames(
-    nuxtLabsTheme.USelect.base.icon.base,
+    variant.value.iconBase,
     nuxtLabsTheme.USelect.base.icon.color.replaceAll('{color}', props.color),
     nuxtLabsTheme.USelect.base.icon.size[props.size],
     props.loading && !isLeading.value && 'animate-spin',

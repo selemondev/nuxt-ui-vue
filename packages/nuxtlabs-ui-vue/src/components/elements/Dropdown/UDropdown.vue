@@ -160,16 +160,16 @@ export default defineComponent({
               <ULink
                 to=""
                 v-bind="omit(item, ['label', 'slot', 'icon', 'iconClass', 'avatar', 'shortcuts', 'disabled', 'click'])"
-                :class="[nuxtLabsTheme.UDropdown.base.item.base, nuxtLabsTheme.UDropdown.base.item.padding, nuxtLabsTheme.UDropdown.base.item.size, nuxtLabsTheme.UDropdown.base.item.rounded, active ? nuxtLabsTheme.UDropdown.base.item.active : nuxtLabsTheme.UDropdown.base.item.inactive, itemDisabled && nuxtLabsTheme.UDropdown.base.item.disabled]"
+                :class="[variant.itemBase, variant.itemPadding, variant.itemSize, variant.itemRounded, active ? variant.itemActive : variant.itemInActive, itemDisabled && variant.itemDisabled]"
                 @click="item.click"
               >
                 <slot :name="item.slot || 'item'" :item="item">
-                  <UIcon v-if="item.icon" :name="item.icon" :class="[nuxtLabsTheme.UDropdown.base.item.icon.base, active ? nuxtLabsTheme.UDropdown.base.item.icon.active : nuxtLabsTheme.UDropdown.base.item.icon.inactive, item.iconClass]" />
-                  <UAvatar v-else-if="item.avatar" v-bind="{ size: nuxtLabsTheme.UDropdown.base.item.avatar.size, ...item.avatar }" :class="nuxtLabsTheme.UDropdown.base.item.avatar.base" />
+                  <UIcon v-if="item.icon" :name="item.icon" :class="[variant.itemIconBase, active ? variant.itemIconActive : variant.itemIconInActive, item.iconClass]" />
+                  <UAvatar v-else-if="item.avatar" v-bind="{ size: variant.itemAvatarSize, ...item.avatar, ...$attrs }" :class="variant.itemAvatarBase" />
 
                   <span class="truncate">{{ item.label }}</span>
 
-                  <span v-if="item.shortcuts?.length" :class="nuxtLabsTheme.UDropdown.base.item.shortcuts">
+                  <span v-if="item.shortcuts?.length" :class="variant.itemShortcuts">
                     <UKbd v-for="shortcut of item.shortcuts" :key="shortcut">{{ shortcut }}</UKbd>
                   </span>
                 </slot>

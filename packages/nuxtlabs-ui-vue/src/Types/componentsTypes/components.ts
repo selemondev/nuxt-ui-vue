@@ -80,8 +80,12 @@ interface UComponentRoot extends Record<string, unknown> {
 };
 
 export interface UAccordion extends UComponentRoot {
-  item: ItemStyle
-  transition: TransitionStyle
+  itemBase?: string
+  itemSize?: string
+  itemColor?: string
+  itemPadding?: string
+  itemIcon?: string
+  transition?: objectProp
   default: DefaultStyle
 }
 
@@ -91,13 +95,9 @@ export interface UAlert extends UComponentRoot {
   shadow?: string
   rounded?: string
   padding?: string
-  icon: {
-    base?: string
-  }
-  avatar: {
-    base?: string
-    size?: string
-  }
+  iconBase?: string
+  avatarBase?: string
+  avatarSize?: string
   color?: string
   variant?: string
 }
@@ -165,7 +165,9 @@ export interface UFormGroup extends UComponentRoot {
   help?: string
   error?: string
   size?: objectProp
-  label?: objectProp
+  labelWrapper?: string
+  labelBase?: string
+  labelRequired?: string
 }
 
 export interface UDropdown extends UComponentRoot {
@@ -179,7 +181,19 @@ export interface UDropdown extends UComponentRoot {
   base?: string
   divide?: string
   padding?: string
-  item?: objectProp
+  itemBase: string
+  itemRounded: string
+  itemPadding: string
+  itemSize: string
+  itemActive: string
+  itemInActive: string
+  itemDisabled: string
+  itemIconBase: string
+  itemIconActive: string
+  itemIconInActive: string
+  itemAvatarBase: string
+  itemAvatarSize: string
+  itemShortcuts: string
   transition?: objectProp
   popper?: objectProp
 }
@@ -228,6 +242,9 @@ export interface URange extends UComponentRoot {
   rounded?: string
   background?: string
   ring?: string
+  progressBase?: string
+  progressRounded?: string
+  progressBackground?: string
   progress?: objectProp
   thumb?: objectProp
   track?: objectProp
@@ -246,6 +263,7 @@ export interface USelect extends UComponentRoot {
   trailing?: objectProp
   color?: objectProp
   intent?: objectProp
+  iconBase?: string
   icon?: objectProp
   default?: objectProp
 }
@@ -261,7 +279,26 @@ export interface USelectMenu extends UComponentRoot {
   padding?: string
   ring?: string
   input?: string
-  option?: objectProp
+  optionBase?: string
+  optionRounded?: string
+  optionPadding?: string
+  optionSize?: string
+  optionColor?: string
+  optionContainer?: string
+  optionActive?: string
+  optionInactive?: string
+  optionSelected?: string
+  optionDisabled?: string
+  optionEmpty?: string
+  optionIconBase?: string
+  optionIconActive?: string
+  optionIconInactive?: string
+  optionSelectedIconWrapper?: string
+  optionSelectedIconPadding?: string
+  optionSelectedIconBase?: string
+  optionAvatarBase?: string
+  optionAvatarSize?: string
+  optionChipBase?: string
   transition?: objectProp
   popper?: objectProp
   default?: objectProp
@@ -273,11 +310,25 @@ export interface UTable extends UComponentRoot {
   divide?: string
   tHead?: string
   tBody?: string
-  tr?: objectProp
-  th?: objectProp
-  td?: objectProp
-  loadingState?: objectProp
-  emptyState?: objectProp
+  trBase?: string
+  trSelected?: string
+  trActive?: string
+  thBase?: string
+  thPadding?: string
+  thColor?: string
+  thFont?: string
+  thSize?: string
+  tdBase?: string
+  tdPadding?: string
+  tdColor?: string
+  tdFont?: string
+  tdSize?: string
+  loadingStateWrapper?: string
+  loadingStateLabel?: string
+  loadingStateIcon?: string
+  emptyStateWrapper?: string
+  emptyStateLabel?: string
+  emptyStateIcon?: string
   default?: objectProp
 }
 
@@ -291,6 +342,11 @@ export interface UTextarea extends UComponentRoot {
   leading?: LeadingStyles
   trailing?: PaddingStyles
   color?: objectProp
+  iconBase?: string
+  leadingWrapper?: string
+  leadingPointer?: string
+  trailingWrapper?: string
+  trailingPointer?: string
   icon?: objectProp
   default?: objectProp
 }
@@ -300,8 +356,14 @@ export interface UToggle extends UComponentRoot {
   ring?: string
   active?: string
   inactive?: string
-  container?: objectProp
-  icon?: objectProp
+  containerBase?: string
+  containerActive?: string
+  containerInactive?: string
+  iconBase?: string
+  iconActive?: string
+  iconInactive?: string
+  iconOn?: string
+  iconOff?: string
   default?: objectProp
 }
 

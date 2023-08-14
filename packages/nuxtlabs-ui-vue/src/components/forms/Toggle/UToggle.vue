@@ -45,7 +45,6 @@ const emits = defineEmits<{
 const variant = computed(() => {
   const customProps = {
     ...props,
-    variant: props.variant,
   }
   return useVariants<UToggle>(
     Components.UToggle,
@@ -70,19 +69,15 @@ const switchClass = computed(() => {
     variant.value.root,
     variant.value.rounded,
     nuxtLabsTheme.UToggle.base.ring.replaceAll('{color}', props.color),
-    (active.value ? nuxtLabsTheme.UToggle.base.active : nuxtLabsTheme.UToggle.base.inactive).replaceAll('{color}', props.color),
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    (active.value ? variant.value.active : variant.value.inactive)?.replaceAll('{color}', props.color),
   )
 })
 
 const onIconClass = computed(() => {
   return classNames(
-    nuxtLabsTheme.UToggle.base.icon.on.replaceAll('{color}', props.color),
-  )
-})
-
-const offIconClass = computed(() => {
-  return classNames(
-    nuxtLabsTheme.UToggle.base.icon.off.replaceAll('{color}', props.color),
+    nuxtLabsTheme.UToggle.base.iconOn.replaceAll('{color}', props.color),
   )
 })
 </script>
@@ -90,6 +85,7 @@ const offIconClass = computed(() => {
 <script lang="ts">
 export default defineComponent({
   name: Components.UToggle,
+  inheritAttrs: false,
 })
 </script>
 
@@ -100,12 +96,12 @@ export default defineComponent({
     :disabled="disabled"
     :class="switchClass"
   >
-    <span :class="[active ? nuxtLabsTheme.UToggle.base.container.active : nuxtLabsTheme.UToggle.base.container.inactive, nuxtLabsTheme.UToggle.base.container.base]">
-      <span v-if="onIcon" :class="[active ? nuxtLabsTheme.UToggle.base.icon.active : nuxtLabsTheme.UToggle.base.icon.inactive, nuxtLabsTheme.UToggle.base.icon.base]" aria-hidden="true">
+    <span :class="[active ? variant.containerActive : variant.containerInactive, variant.containerBase]">
+      <span v-if="onIcon" :class="[active ? variant.iconActive : variant.iconInactive, variant.iconBase]" aria-hidden="true">
         <UIcon :name="onIcon" :class="onIconClass" />
       </span>
-      <span v-if="offIcon" :class="[active ? nuxtLabsTheme.UToggle.base.icon.inactive : nuxtLabsTheme.UToggle.base.icon.active, nuxtLabsTheme.UToggle.base.icon.base]" aria-hidden="true">
-        <UIcon :name="offIcon" :class="offIconClass" />
+      <span v-if="offIcon" :class="[active ? variant.iconInactive : variant.iconActive, variant.iconBase]" aria-hidden="true">
+        <UIcon :name="offIcon" :class="variant.iconOff" />
       </span>
     </span>
   </HSwitch>

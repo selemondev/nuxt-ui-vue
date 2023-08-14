@@ -3,6 +3,7 @@ import { computed, defineComponent, ref } from 'vue'
 import type { PropType } from 'vue'
 import { omit } from 'lodash-es'
 import { Disclosure as HDisclosure, DisclosureButton as HDisclosureButton, DisclosurePanel as HDisclosurePanel } from '@headlessui/vue'
+import classNames from 'classnames'
 import UButton from '../Button/UButton.vue'
 import UIcon from '../Icon/UIcon.vue'
 import type { AccordionItem } from '@/Types/components/accordionItem'
@@ -90,9 +91,10 @@ function onLeave(el: HTMLElement, done) {
 }
 
 const transitions = computed(() => {
-  return {
-    ...nuxtLabsTheme.UAccordion.base.transition,
-  }
+  return classNames(
+    variant.value.transitionEnterActiveClass,
+    variant.value.transitionLeaveActiveClass,
+  )
 })
 </script>
 
@@ -114,7 +116,7 @@ export default defineComponent({
                 :class="[
                   open && !closeIcon ? '-rotate-180' : '',
                   nuxtLabsTheme.UButton.base.icon.size[item.size || nuxtLabsTheme.UButton.base.default.size],
-                  nuxtLabsTheme.UAccordion.base?.item?.icon,
+                  variant.itemIcon,
                 ]"
               />
             </template>
@@ -126,14 +128,14 @@ export default defineComponent({
 
       <!-- @vue-ignore -->
       <Transition
-        v-bind="transitions"
+        :name="transitions"
         @enter="onEnter"
         @after-enter="onAfterEnter"
         @before-leave="onBeforeLeave"
         @leave="onLeave"
       >
         <div v-show="open">
-          <HDisclosurePanel :class="[nuxtLabsTheme.UAccordion.base.item.base, nuxtLabsTheme.UAccordion.base.item.size, nuxtLabsTheme.UAccordion.base.item.color, nuxtLabsTheme.UAccordion.base.item.padding]" static>
+          <HDisclosurePanel :class="[variant.itemBase, variant.itemSize, variant.itemColor, variant.itemPadding]" static>
             <slot :name="item.slot || 'item'" :item="item" :index="index" :open="open" :close="close">
               {{ item.content }}
             </slot>
@@ -143,4 +145,3 @@ export default defineComponent({
     </HDisclosure>
   </div>
 </template>
-../../../Types/components/accordionItem
