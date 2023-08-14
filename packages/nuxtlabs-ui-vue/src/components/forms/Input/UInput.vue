@@ -209,7 +209,6 @@ export default defineComponent({
 </script>
 
 <template>
-  {{ inputClass }}
   <div :class="variant.root">
     <!-- @vue-ignore -->
     <input
