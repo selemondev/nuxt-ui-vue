@@ -145,6 +145,45 @@ export interface UBadge extends UComponentRoot {
 
 }
 
+export interface UCommandPalette extends UComponentRoot {
+  container?: string
+  inputWrapper?: string
+  inputBase?: string
+  inputPadding?: string
+  inputHeight?: string
+  inputSize?: string
+  inputIconBase?: string
+  inputIconSize?: string
+  inputIconPadding?: string
+  inputCloseButton?: string
+  emptyStateWrapper?: string
+  emptyStateLabel?: string
+  emptyStateQueryLabel?: string
+  emptyStateIcon?: string
+  groupWrapper?: string
+  groupLabel?: string
+  groupContainer?: string
+  groupCommandBase?: string
+  groupCommandActive?: string
+  groupCommandInactive?: string
+  groupCommandLabel?: string
+  groupCommandPrefix?: string
+  groupCommandSuffix?: string
+  groupCommandContainer?: string
+  groupCommandIconBase?: string
+  groupCommandIconActive?: string
+  groupCommandIconInactive?: string
+  groupCommandSelectedIconBase?: string
+  groupCommandAvatarBase?: string
+  groupCommandAvatarSize?: string
+  groupCommandChipBase?: string
+  groupCommandDisabled?: string
+  groupCommandShortcuts?: string
+  groupActive?: string
+  groupInactive?: string
+
+}
+
 export interface UCheckbox extends UComponentRoot {
   base?: string
   rounded?: string
@@ -395,6 +434,7 @@ export type UAvatarGroupVariants = WithVariantProps<UAvatarGroup>
 export type UBadgeVariants = WithVariantProps<UBadge>
 export type UButtonVariants = WithVariantProps<UButton>
 export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
+export type UCommandPaletteVariants = WithVariantProps<UCommandPalette>
 export type UCheckboxVariants = WithVariantProps<UCheckbox>
 export type UFormGroupVariants = WithVariantProps<UFormGroup>
 export type UDropdownVariants = WithVariantProps<UDropdown>

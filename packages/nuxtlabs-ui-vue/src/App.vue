@@ -1,13 +1,56 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
-const selected = ref(false)
+const router = useRouter()
+
+const commandPaletteRef = ref()
+
+const users = [
+  { id: 'benjamincanac', label: 'benjamincanac', href: 'https://github.com/benjamincanac', target: '_blank', avatar: { src: 'https://avatars.githubusercontent.com/u/739984?v=4' } },
+  { id: 'Atinux', label: 'Atinux', href: 'https://github.com/Atinux', target: '_blank', avatar: { src: 'https://avatars.githubusercontent.com/u/904724?v=4' } },
+  { id: 'smarroufin', label: 'smarroufin', href: 'https://github.com/smarroufin', target: '_blank', avatar: { src: 'https://avatars.githubusercontent.com/u/7547335?v=4' } },
+]
+
+const actions = [
+  { id: 'new-file', label: 'Add new file', icon: 'heroicons:document-plus', click: () => alert('New file'), shortcuts: ['⌘', 'N'] },
+  { id: 'new-folder', label: 'Add new folder', icon: 'heroicons:folder-plus', click: () => alert('New folder'), shortcuts: ['⌘', 'F'] },
+  { id: 'hashtag', label: 'Add hashtag', icon: 'heroicons:hashtag', click: () => alert('Add hashtag'), shortcuts: ['⌘', 'H'] },
+  { id: 'label', label: 'Add label', icon: 'heroicons:tag', click: () => alert('Add label'), shortcuts: ['⌘', 'L'] },
+]
+
+const groups = computed(() => commandPaletteRef.value?.query
+  ? [{
+      key: 'users',
+      commands: users,
+    }]
+  : [{
+      key: 'recent',
+      label: 'Recent searches',
+      commands: users.slice(0, 1),
+    }, {
+      key: 'actions',
+      commands: actions,
+    }])
+
+function onSelect(option) {
+  if (option.click)
+    option.click()
+
+  else if (option.to)
+    router.push(option.to)
+
+  else if (option.href)
+    window.open(option.href, '_blank')
+}
 </script>
 
 <template>
   <div class="grid place-items-center w-full min-h-screen">
-    <UToggle
-      v-model="selected" on-icon="heroicons:check-20-solid" off-icon="heroicons:x-mark-20-solid"
-    />
+    <div class="w-96">
+      <UCommandPalette
+        ref="commandPaletteRef" :groups="groups" @update:model-value="onSelect"
+      />
+    </div>
   </div>
 </template>
