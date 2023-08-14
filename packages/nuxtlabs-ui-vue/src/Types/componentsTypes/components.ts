@@ -305,6 +305,27 @@ export interface UToggle extends UComponentRoot {
   default?: objectProp
 }
 
+export interface UVerticalNavigation extends UComponentRoot {
+  base?: string
+  ring?: string
+  padding?: string
+  width?: string
+  rounded?: string
+  font?: string
+  size?: string
+  active?: string
+  inactive?: string
+  label?: string
+  iconBase?: string
+  iconActive?: string
+  iconInActive?: string
+  avatarBase?: string
+  avatarSize?: string
+  badgeBase?: string
+  badgeActive?: string
+  badgeInActive?: string
+}
+
 export type UAccordionVariants = WithVariantProps<UAccordion>
 export type UAlertVariants = WithVariantProps<UAlert>
 export type UAvatarVariants = WithVariantProps<UAvatar>
@@ -325,3 +346,4 @@ export type URangeVariants = WithVariantProps<URange>
 export type USelectVariants = WithVariantProps<USelect>
 export type USelectMenuVariants = WithVariantProps<USelectMenu>
 export type UToggleVariants = WithVariantProps<UToggle>
+export type UVerticalNavigationVariants = WithVariantProps<UVerticalNavigation>
