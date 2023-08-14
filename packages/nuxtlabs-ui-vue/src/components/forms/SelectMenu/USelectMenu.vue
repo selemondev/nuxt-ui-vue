@@ -22,7 +22,7 @@ import type { PopperOptions } from '@/Types/components/popper'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 import { Components } from '@/Types/enums/Components'
-import type { USelect } from '@/Types/componentsTypes/components'
+import type { USelectMenu } from '@/Types/componentsTypes/components'
 import { usePopper } from '@/composables/usePopper'
 import { useFormEvents } from '@/composables/useFormEvents'
 
@@ -45,8 +45,8 @@ export default defineComponent({
     UAvatar,
   },
   inheritAttrs: false,
-  ...getVariantPropsWithClassesList<USelect>(),
   props: {
+    ...getVariantPropsWithClassesList<USelectMenu>(),
     modelValue: {
       type: [String, Number, Object, Array],
       default: '',
@@ -165,14 +165,12 @@ export default defineComponent({
     const variant = computed(() => {
       const customProps = {
         ...props,
-        variant: props.intent,
       }
-      return useVariants<USelect>(
-        Components.USelect,
-        customProps as unknown as VariantJSWithClassesListProps<USelect>,
+      return useVariants<USelectMenu>(
+        Components.USelectMenu,
+        customProps as unknown as VariantJSWithClassesListProps<USelectMenu>,
       )
     })
-
     const popper = computed<PopperOptions>(() => defu({}, props.popper, variant.value.popper as PopperOptions))
 
     const [trigger, container] = usePopper(popper.value)
@@ -206,8 +204,8 @@ export default defineComponent({
       const variants = nuxtLabsTheme.USelect.base.color[props.color as string]?.[props.intent as string] || nuxtLabsTheme.USelect.base.intent[props.intent]
 
       return classNames(
-        variant.value.base,
-        variant.value.rounded,
+        nuxtLabsTheme.USelect.base.base,
+        nuxtLabsTheme.USelect.base.rounded,
         'text-left cursor-default',
         nuxtLabsTheme.USelect.base.size[props.size],
         nuxtLabsTheme.USelect.base.gap[props.size],
@@ -229,7 +227,7 @@ export default defineComponent({
 
     const leadingIconClass = computed(() => {
       return classNames(
-        nuxtLabsTheme.USelect.base.icon.base,
+        nuxtLabsTheme.USelect.base.iconBase,
         nuxtLabsTheme.USelect.base.icon.color.replaceAll('{color}', props.color),
         nuxtLabsTheme.USelect.base.icon.size[props.size],
         props.loading && 'animate-spin',
@@ -246,7 +244,7 @@ export default defineComponent({
 
     const trailingIconClass = computed(() => {
       return classNames(
-        nuxtLabsTheme.USelect.base.icon.base,
+        nuxtLabsTheme.USelect.base.iconBase,
         nuxtLabsTheme.USelect.base.icon.color.replaceAll('{color}', props.color),
         nuxtLabsTheme.USelect.base.icon.size[props.size],
         props.loading && !isLeading.value && 'animate-spin',
@@ -295,7 +293,7 @@ export default defineComponent({
     }
 
     return {
-      variant,
+      variant: variant.value,
       trigger,
       container,
       searchInput,
@@ -371,9 +369,10 @@ export default defineComponent({
       </slot>
     </component>
 
-    <div v-if="open" ref="container" :class="[nuxtLabsTheme.USelectMenu.base.container, nuxtLabsTheme.USelectMenu.base.width]">
+    <div v-if="open" ref="container" :class="[variant.container, variant.width]">
       <Transition appear v-bind="nuxtLabsTheme.USelectMenu.base.transition">
-        <component :is="searchable ? 'HComboboxOptions' : 'HListboxOptions'" static :class="[nuxtLabsTheme.USelectMenu.base.base, nuxtLabsTheme.USelect.base.divide, nuxtLabsTheme.USelectMenu.base.ring, nuxtLabsTheme.USelectMenu.base.rounded, nuxtLabsTheme.USelectMenu.base.shadow, nuxtLabsTheme.USelectMenu.base.background, nuxtLabsTheme.USelectMenu.base.padding, nuxtLabsTheme.USelectMenu.base.height]">
+        <!-- @vue-ignore -->
+        <component :is="searchable ? 'HComboboxOptions' : 'HListboxOptions'" static :class="[variant.base, nuxtLabsTheme.USelect.base.divide, variant.ring, variant.rounded, variant.shadow, variant.background, variant.padding, variant.height]">
           <HComboboxInput
             v-if="searchable"
             ref="searchInput"
@@ -394,38 +393,38 @@ export default defineComponent({
             :value="valueAttribute ? option[valueAttribute] : option"
             :disabled="option.disabled"
           >
-            <li :class="[nuxtLabsTheme.USelectMenu.base.option.base, nuxtLabsTheme.USelectMenu.base.option.rounded, nuxtLabsTheme.USelectMenu.base.option.padding, nuxtLabsTheme.USelectMenu.base.option.size, nuxtLabsTheme.USelectMenu.base.option.color, active ? nuxtLabsTheme.USelectMenu.base.option.active : nuxtLabsTheme.USelectMenu.base.option.inactive, selected && nuxtLabsTheme.USelectMenu.base.option.selected, optionDisabled && nuxtLabsTheme.USelectMenu.base.option.disabled]">
-              <div :class="nuxtLabsTheme.USelectMenu.base.option.container">
+            <li :class="[variant.optionBase, variant.optionRounded, variant.optionPadding, variant.optionSize, variant.optionColor, active ? variant.optionActive : variant.optionInactive, selected && variant.optionSelected, optionDisabled && variant.optionDisabled]">
+              <div :class="variant.optionContainer">
                 <slot name="option" :option="option" :active="active" :selected="selected">
-                  <UIcon v-if="option.icon" :name="option.icon" :class="[nuxtLabsTheme.USelectMenu.base.option.icon.base, active ? nuxtLabsTheme.USelectMenu.base.option.icon.active : nuxtLabsTheme.USelectMenu.base.option.icon.inactive, option.iconClass]" aria-hidden="true" />
+                  <UIcon v-if="option.icon" :name="option.icon" :class="[variant.optionIconBase, active ? variant.optionIconactive : variant.optionIconInActive, option.iconClass]" aria-hidden="true" />
                   <UAvatar
                     v-else-if="option.avatar"
-                    v-bind="{ size: nuxtLabsTheme.USelectMenu.base.option.avatar.size, ...option.avatar }"
-                    :class="nuxtLabsTheme.USelectMenu.base.option.avatar.base"
+                    v-bind="{ size: variant.optionAvatarSize, ...option.avatar }"
+                    :class="variant.optionAvatarBase"
                     aria-hidden="true"
                   />
-                  <span v-else-if="option.chip" :class="nuxtLabsTheme.USelectMenu.base.option.chip.base" :style="{ background: `#${option.chip}` }" />
+                  <span v-else-if="option.chip" :class="variant.optionChipBase" :style="{ background: `#${option.chip}` }" />
 
                   <span class="truncate">{{ typeof option === 'string' ? option : option[optionAttribute] }}</span>
                 </slot>
               </div>
 
-              <span v-if="selected" :class="[nuxtLabsTheme.USelectMenu.base.option.selectedIcon.wrapper, nuxtLabsTheme.USelectMenu.base.option.selectedIcon.padding]">
-                <UIcon :name="selectedIcon" :class="nuxtLabsTheme.USelectMenu.base.option.selectedIcon.base" aria-hidden="true" />
+              <span v-if="selected" :class="[variant.optionSelectedIconWrapper, variant.optionSelectedIconPadding]">
+                <UIcon :name="selectedIcon" :class="variant.optionSelectedIconBase" aria-hidden="true" />
               </span>
             </li>
           </component>
 
           <component :is="searchable ? 'HComboboxOption' : 'HListboxOption'" v-if="creatable && queryOption && !filteredOptions.length" v-slot="{ active, selected }" :value="queryOption" as="template">
-            <li :class="[nuxtLabsTheme.USelectMenu.base.option.base, nuxtLabsTheme.USelectMenu.base.option.rounded, nuxtLabsTheme.USelectMenu.base.option.padding, nuxtLabsTheme.USelectMenu.base.option.size, nuxtLabsTheme.USelectMenu.base.option.color, active ? nuxtLabsTheme.USelectMenu.base.option.active : nuxtLabsTheme.USelectMenu.base.option.inactive]">
-              <div :class="nuxtLabsTheme.USelectMenu.base.option.container">
+            <li :class="[variant.optionBase, variant.optionRounded, variant.optionPadding, variant.optionSize, variant.optionColor, active ? variant.optionActive : variant.optionInactive]">
+              <div :class="variant.optionContainer">
                 <slot name="option-create" :option="queryOption" :active="active" :selected="selected">
                   <span class="block truncate">Create "{{ queryOption[optionAttribute] }}"</span>
                 </slot>
               </div>
             </li>
           </component>
-          <p v-else-if="searchable && query && !filteredOptions.length" :class="nuxtLabsTheme.USelectMenu.base.option.empty">
+          <p v-else-if="searchable && query && !filteredOptions.length" :class="variant.optionEmpty">
             <slot name="option-empty" :query="query">
               No results for "{{ query }}".
             </slot>

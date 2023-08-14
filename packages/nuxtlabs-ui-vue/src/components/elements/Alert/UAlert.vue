@@ -66,7 +66,7 @@ const variant = computed(() => {
     ...props,
     variant: props.variant,
   }
-  return useVariants(
+  return useVariants<UAlert>(
     Components.UAlert,
     customProps as VariantJSWithClassesListProps<UAlert>,
   )
@@ -102,11 +102,12 @@ export default defineComponent({
 </script>
 
 <template>
+  {{ variant }}
   <div :class="alertClass">
     <div class="flex gap-3" :class="{ 'items-start': (description || $slots.description), 'items-center': !description && !$slots.description }">
-      <UIcon v-if="icon" :name="icon" :class="nuxtLabsTheme.UAlert.base.icon.base" />
+      <UIcon v-if="icon" :name="icon" :class="variant.iconBase" />
 
-      <UAvatar v-if="avatar" v-bind="{ size: nuxtLabsTheme.UAlert.base.avatar.size, ...avatar }" :class="nuxtLabsTheme.UAlert.base.avatar.base" />
+      <UAvatar v-if="avatar" v-bind="{ size: variant.avatarSize, ...avatar }" :class="variant.avatarBase" />
 
       <div class="w-0 flex-1">
         <p :class="nuxtLabsTheme.UAlert.base.title">

@@ -13,6 +13,7 @@ import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 
 export default defineComponent({
   name: Components.UFormGroup,
+  inheritAttrs: false,
   props: {
     ...getVariantPropsWithClassesList<UFormGroup>(),
     name: {
@@ -102,8 +103,8 @@ export default defineComponent({
 <template>
   <div :class="wrapperClass" v-bind="attrs">
     <label>
-      <div v-if="label" :class="[nuxtLabsTheme.UFormGroup.base.label?.wrapper, size]">
-        <p :class="[nuxtLabsTheme.UFormGroup.base.label?.base, required ? nuxtLabsTheme.UFormGroup.base.label?.required : '']">{{ label }}</p>
+      <div v-if="label" :class="[variant.labelWrapper, size]">
+        <p :class="[variant.labelBase, required ? variant.labelRequired : '']">{{ label }}</p>
         <span v-if="hint" :class="[variant.hint]">{{ hint }}</span>
       </div>
 

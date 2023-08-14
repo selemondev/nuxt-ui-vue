@@ -48,7 +48,7 @@ const props = defineProps({
   },
   intent: {
     type: String,
-    default: () => nuxtLabsTheme.UButton.base.default.variant,
+    default: () => nuxtLabsTheme.UButton.base.default.intent,
   },
   icon: {
     type: String,
@@ -168,7 +168,7 @@ const buttonClass = computed(() => {
 <script lang="ts">
 export default defineComponent({
   name: Components.UButton,
-  inheritAttrs: true,
+  inheritAttrs: false,
 })
 </script>
 
