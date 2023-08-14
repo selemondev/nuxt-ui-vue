@@ -354,7 +354,6 @@ export default {
       help: 'text-gray-500 dark:text-gray-400',
     },
   },
-
   UFormGroup: {
     base: {
       root: '',
@@ -625,7 +624,6 @@ export default {
       help: 'text-gray-500 dark:text-gray-400',
     },
   },
-
   UKbd: {
     base: {
       root: 'inline-flex items-center justify-center text-gray-900 dark:text-white',
@@ -709,6 +707,122 @@ export default {
       },
       background: 'bg-transparent',
       ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900',
+    },
+  },
+
+  UTable: {
+    base: {
+      root: 'relative',
+      base: 'min-w-full table-fixed',
+      divide: 'divide-y divide-gray-300 dark:divide-gray-700',
+      thead: '',
+      tbody: 'divide-y divide-gray-200 dark:divide-gray-800',
+      tr: {
+        base: '',
+        selected: 'bg-gray-50 dark:bg-gray-800/50',
+        active: 'hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer',
+      },
+      th: {
+        base: 'text-left rtl:text-right',
+        padding: 'px-3 py-3.5',
+        color: 'text-gray-900 dark:text-white',
+        font: 'font-semibold',
+        size: 'text-sm',
+      },
+      td: {
+        base: 'whitespace-nowrap',
+        padding: 'px-3 py-4',
+        color: 'text-gray-500 dark:text-gray-400',
+        font: '',
+        size: 'text-sm',
+      },
+      loadingState: {
+        wrapper: 'flex flex-col items-center justify-center flex-1 px-6 py-14 sm:px-14',
+        label: 'text-sm text-center text-gray-900 dark:text-white',
+        icon: 'w-6 h-6 mx-auto text-gray-400 dark:text-gray-500 mb-4 animate-spin',
+      },
+      emptyState: {
+        wrapper: 'flex flex-col items-center justify-center flex-1 px-6 py-14 sm:px-14',
+        label: 'text-sm text-center text-gray-900 dark:text-white',
+        icon: 'w-6 h-6 mx-auto text-gray-400 dark:text-gray-500 mb-4',
+      },
+      default: {
+        sortAscIcon: 'heroicons:bars-arrow-up-20-solid',
+        sortDescIcon: 'heroicons:bars-arrow-down-20-solid',
+        sortButton: {
+          icon: 'heroicons:arrows-up-down-20-solid',
+          trailing: true,
+          square: true,
+          color: 'gray',
+          intent: 'ghost',
+          class: '-m-1.5',
+        },
+        loadingState: {
+          icon: 'heroicons:arrow-path-20-solid',
+          label: 'Loading...',
+        },
+        emptyState: {
+          icon: 'heroicons:circle-stack-20-solid',
+          label: 'No items.',
+        },
+      },
+    },
+
+    variants: {
+      default: {
+        sortAscIcon: 'heroicons:bars-arrow-up-20-solid',
+        sortDescIcon: 'heroicons:bars-arrow-down-20-solid',
+        sortButton: {
+          icon: 'heroicons:arrows-up-down-20-solid',
+          trailing: true,
+          square: true,
+          color: 'gray',
+          intent: 'ghost',
+          class: '-m-1.5',
+        },
+        loadingState: {
+          icon: 'heroicons:arrow-path-20-solid',
+          label: 'Loading...',
+        },
+        emptyState: {
+          icon: 'heroicons:circle-stack-20-solid',
+          label: 'No items.',
+        },
+      },
+
+      divide: 'divide-y divide-gray-300 dark:divide-gray-700',
+      thead: '',
+      tbody: 'divide-y divide-gray-200 dark:divide-gray-800',
+      tr: {
+        base: '',
+        selected: 'bg-gray-50 dark:bg-gray-800/50',
+        active: 'hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer',
+      },
+      th: {
+        base: 'text-left rtl:text-right',
+        padding: 'px-3 py-3.5',
+        color: 'text-gray-900 dark:text-white',
+        font: 'font-semibold',
+        size: 'text-sm',
+      },
+      td: {
+        base: 'whitespace-nowrap',
+        padding: 'px-3 py-4',
+        color: 'text-gray-500 dark:text-gray-400',
+        font: '',
+        size: 'text-sm',
+      },
+      loadingState: {
+        wrapper: 'flex flex-col items-center justify-center flex-1 px-6 py-14 sm:px-14',
+        label: 'text-sm text-center text-gray-900 dark:text-white',
+        icon: 'w-6 h-6 mx-auto text-gray-400 dark:text-gray-500 mb-4 animate-spin',
+      },
+      emptyState: {
+        wrapper: 'flex flex-col items-center justify-center flex-1 px-6 py-14 sm:px-14',
+        label: 'text-sm text-center text-gray-900 dark:text-white',
+        icon: 'w-6 h-6 mx-auto text-gray-400 dark:text-gray-500 mb-4',
+      },
+
     },
   },
 
