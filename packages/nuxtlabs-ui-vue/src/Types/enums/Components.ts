@@ -7,6 +7,7 @@ export enum Components {
   UButton = 'UButton',
   UCommandPalette = 'UCommandPalette',
   UCommandPaletteGroup = 'UCommandPaletteGroup',
+  UContextMenu = 'UContextMenu',
   UCheckbox = 'UCheckbox',
   ULink = 'ULink',
   UButtonGroup = 'UButtonGroup',

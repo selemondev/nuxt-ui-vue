@@ -171,6 +171,26 @@ export interface UCommandPalette extends UComponentRoot {
 
 }
 
+export interface UContextMenu extends UComponentRoot {
+  container?: string
+  width?: string
+  background?: string
+  shadow?: string
+  rounded?: string
+  ring?: string
+  base?: string
+  enterActiveClass?: string
+  enterFromClass?: string
+  enterToClass?: string
+  leaveActiveClass?: string
+  leaveFromClass?: string
+  leaveToClass?: string
+  popper?: {
+    placement?: string
+    scroll?: boolean
+  }
+}
+
 export interface UCheckbox extends UComponentRoot {
   base?: string
   rounded?: string
@@ -549,6 +569,7 @@ export type UBadgeVariants = WithVariantProps<UBadge>
 export type UButtonVariants = WithVariantProps<UButton>
 export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
 export type UCommandPaletteVariants = WithVariantProps<UCommandPalette>
+export type UContextMenuVariants = WithVariantProps<UContextMenu>
 export type UCheckboxVariants = WithVariantProps<UCheckbox>
 export type UFormGroupVariants = WithVariantProps<UFormGroup>
 export type UDropdownVariants = WithVariantProps<UDropdown>
