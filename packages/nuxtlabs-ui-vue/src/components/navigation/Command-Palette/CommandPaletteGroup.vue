@@ -155,3 +155,9 @@ export default defineComponent({
     </div>
   </div>
 </template>
+
+<style scoped>
+mark {
+  @apply bg-green-400;
+}
+</style>

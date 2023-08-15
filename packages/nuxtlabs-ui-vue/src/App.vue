@@ -1,56 +1,14 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref } from 'vue'
 
-const router = useRouter()
-
-const commandPaletteRef = ref()
-
-const users = [
-  { id: 'benjamincanac', label: 'benjamincanac', href: 'https://github.com/benjamincanac', target: '_blank', avatar: { src: 'https://avatars.githubusercontent.com/u/739984?v=4' } },
-  { id: 'Atinux', label: 'Atinux', href: 'https://github.com/Atinux', target: '_blank', avatar: { src: 'https://avatars.githubusercontent.com/u/904724?v=4' } },
-  { id: 'smarroufin', label: 'smarroufin', href: 'https://github.com/smarroufin', target: '_blank', avatar: { src: 'https://avatars.githubusercontent.com/u/7547335?v=4' } },
-]
-
-const actions = [
-  { id: 'new-file', label: 'Add new file', icon: 'heroicons:document-plus', click: () => alert('New file'), shortcuts: ['⌘', 'N'] },
-  { id: 'new-folder', label: 'Add new folder', icon: 'heroicons:folder-plus', click: () => alert('New folder'), shortcuts: ['⌘', 'F'] },
-  { id: 'hashtag', label: 'Add hashtag', icon: 'heroicons:hashtag', click: () => alert('Add hashtag'), shortcuts: ['⌘', 'H'] },
-  { id: 'label', label: 'Add label', icon: 'heroicons:tag', click: () => alert('Add label'), shortcuts: ['⌘', 'L'] },
-]
-
-const groups = computed(() => commandPaletteRef.value?.query
-  ? [{
-      key: 'users',
-      commands: users,
-    }]
-  : [{
-      key: 'recent',
-      label: 'Recent searches',
-      commands: users.slice(0, 1),
-    }, {
-      key: 'actions',
-      commands: actions,
-    }])
-
-function onSelect(option) {
-  if (option.click)
-    option.click()
-
-  else if (option.to)
-    router.push(option.to)
-
-  else if (option.href)
-    window.open(option.href, '_blank')
-}
+const page = ref(1)
+const items = ref(Array(55))
 </script>
 
 <template>
   <div class="grid place-items-center w-full min-h-screen">
     <div class="w-96">
-      <UCommandPalette
-        ref="commandPaletteRef" :groups="groups" @update:model-value="onSelect"
-      />
+      <UPagination v-model="page" :max="5" :page-count="5" :total="100" :prev-button="{ icon: 'heroicons:arrow-small-left-20-solid', label: 'Prev', color: 'gray' }" :next-button="{ icon: 'heroicons:arrow-small-right-20-solid', trailing: true, label: 'Next', color: 'gray' }" />
     </div>
   </div>
 </template>
