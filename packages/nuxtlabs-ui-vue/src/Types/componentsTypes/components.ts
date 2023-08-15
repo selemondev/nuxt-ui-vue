@@ -385,6 +385,33 @@ export interface UTable extends UComponentRoot {
   default?: objectProp
 }
 
+export interface UTabs extends UComponentRoot {
+  container?: string
+  base?: string
+  listBase?: string
+  listBackground?: string
+  listRounded?: string
+  listShadow?: string
+  listPadding?: string
+  listHeight?: string
+  listWidth?: string
+  listMarkerWrapper?: string
+  listMarkerBase?: string
+  listMarkerBackground?: string
+  listMarkerRounded?: string
+  listMarkerShadow?: string
+  listTabBase?: string
+  listTabBackground?: string
+  listTabActive?: string
+  listTabInactive?: string
+  listTabHeight?: string
+  listTabPadding?: string
+  listTabSize?: string
+  listTabFont?: string
+  listTabRounded?: string
+  listTabShadow?: string
+}
+
 export interface UTextarea extends UComponentRoot {
   base?: string
   rounded?: string
@@ -455,6 +482,7 @@ export type UDropdownVariants = WithVariantProps<UDropdown>
 export type UIconVariants = WithVariantProps<UIcon>
 export type UInputVariants = WithVariantProps<UInput>
 export type UTableVariants = WithVariantProps<UTable>
+export type UTabsVariants = WithVariantProps<UTabs>
 export type UTextareaVariants = WithVariantProps<UTextarea>
 export type UKbdVariants = WithVariantProps<UKbd>
 export type UPaginationVariants = WithVariantProps<UPagination>
