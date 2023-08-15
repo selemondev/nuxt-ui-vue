@@ -5,6 +5,7 @@ export enum Components {
   UAvatarGroup = 'UAvatarGroup',
   UBadge = 'UBadge',
   UButton = 'UButton',
+  UCard = 'UCard',
   UCommandPalette = 'UCommandPalette',
   UCommandPaletteGroup = 'UCommandPaletteGroup',
   UContextMenu = 'UContextMenu',

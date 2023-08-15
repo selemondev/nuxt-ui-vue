@@ -1,5 +1,5 @@
 import type { Components } from './enums/Components'
-import type { UAccordionVariants, UAlertVariants, UAvatarVariants, UBadgeVariants, UButtonGroupVariants, UButtonVariants, UCheckboxVariants, UCommandPaletteVariants, UContextMenuVariants, UDropdownVariants, UFormGroupVariants, UIconVariants, UInputVariants, UKbdVariants, UModalVariants, UNotificationVariants, UPaginationVariants, URadioVariants, URangeVariants, USelectMenuVariants, USelectVariants, USlideoverVariants, UTabsVariants, UTextareaVariants, UToggleVariants, UTooltipVariants, UVerticalNavigationVariants } from './componentsTypes/components'
+import type { UAccordionVariants, UAlertVariants, UAvatarVariants, UBadgeVariants, UButtonGroupVariants, UButtonVariants, UCardVariants, UCheckboxVariants, UCommandPaletteVariants, UContextMenuVariants, UDropdownVariants, UFormGroupVariants, UIconVariants, UInputVariants, UKbdVariants, UModalVariants, UNotificationVariants, UPaginationVariants, URadioVariants, URangeVariants, USelectMenuVariants, USelectVariants, USlideoverVariants, UTabsVariants, UTextareaVariants, UToggleVariants, UTooltipVariants, UVerticalNavigationVariants } from './componentsTypes/components'
 
 export declare interface CSSClassKeyValuePair {
   [key: string]: any
@@ -36,6 +36,7 @@ export interface NuxtLabsUIConfiguration {
   [Components.UBadge]?: UBadgeVariants
   [Components.UButton]?: UButtonVariants
   [Components.UButtonGroup]?: UButtonGroupVariants
+  [Components.UCard]?: UCardVariants
   [Components.UCommandPalette]?: UCommandPaletteVariants
   [Components.UContextMenu]?: UContextMenuVariants
   [Components.UCheckbox]?: UCheckboxVariants
