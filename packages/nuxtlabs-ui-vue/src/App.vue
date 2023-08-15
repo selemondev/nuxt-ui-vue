@@ -7,13 +7,13 @@ const isOpen = ref(false)
 <template>
   <div class="grid place-items-center w-full min-h-screen">
     <div>
-      <UButton label="Open" @click="isOpen = true" />
+      <UPopover mode="hover">
+        <UButton color="white" label="Open" trailing-icon="heroicons:chevron-down-20-solid" />
 
-      <USlideover
-        v-model="isOpen"
-      >
-      <!-- Content -->
-      </USlideover>
+        <template #panel>
+          <!-- Content -->
+        </template>
+      </UPopover>
     </div>
   </div>
 </template>
