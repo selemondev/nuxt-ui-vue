@@ -2,6 +2,7 @@
 import { computed, defineComponent, useAttrs } from 'vue'
 import type { PropType } from 'vue'
 import { twMerge } from 'tailwind-merge'
+import { omit } from 'lodash-es'
 import UButton from '../../elements/Button/UButton.vue'
 import UButtonGroup from '@/components/elements/Button/UButtonGroup.vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
@@ -163,6 +164,8 @@ function onClickNext() {
 
   currentPage.value++
 }
+
+const attrsOmitted = omit(attrs, ['class'])
 </script>
 
 <script lang="ts">
@@ -173,7 +176,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div :class="wrapperClass" v-bind="attrs">
+  <div :class="wrapperClass" v-bind="attrsOmitted">
     <UButtonGroup>
       <slot name="prev" :on-click="onClickPrev">
         <UButton

@@ -21,6 +21,7 @@ export enum Components {
   USelect = 'USelect',
   USelectMenu = 'USelectMenu',
   UTable = 'UTable',
+  UTabs = 'UTabs',
   UTextarea = 'UTextarea',
   UToggle = 'UToggle',
   UVerticalNavigation = 'UVerticalNavigation',

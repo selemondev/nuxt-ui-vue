@@ -893,6 +893,46 @@ export default {
     },
   },
 
+  UTabs: {
+    base: {
+      root: 'relative space-y-2',
+      container: 'relative w-full',
+      base: 'focus:outline-none',
+      listBase: 'relative',
+      listBackground: 'bg-gray-100 dark:bg-gray-800',
+      listRounded: 'rounded-lg',
+      listShadow: '',
+      listPadding: 'p-1',
+      listHeight: 'h-10',
+      listWidth: 'w-full',
+      listMarkerWrapper: 'absolute top-[4px] left-[4px] duration-200 ease-out focus:outline-none',
+      listMarkerBase: 'w-full h-full',
+      listMarkerBackground: 'bg-white dark:bg-gray-900',
+      listMarkerRounded: 'rounded-md',
+      listMarkerShadow: 'shadow-sm',
+      listTabBase: 'relative inline-flex items-center justify-center flex-shrink-0 w-full whitespace-nowrap focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors duration-200 ease-out',
+      listTabBackground: '',
+      listTabActive: 'text-gray-900 dark:text-white',
+      listTabInactive: 'text-gray-500 dark:text-gray-400',
+      listTabHeight: 'h-8',
+      listTabPadding: 'px-3',
+      listTabSize: 'text-sm',
+      listTabFont: 'font-medium',
+      listTabRounded: 'rounded-md',
+      listTabShadow: '',
+    },
+
+    variants: {
+      default: {
+        root: 'relative space-y-2',
+        container: 'relative w-full',
+      },
+      listTabActive: 'text-gray-900 dark:text-white',
+      listTabInactive: 'text-gray-500 dark:text-gray-400',
+    },
+
+  },
+
   UTextarea: {
     base: {
       root: 'relative',
