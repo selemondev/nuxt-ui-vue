@@ -209,6 +209,7 @@ export default {
       },
     },
   },
+
   UButton: {
     base: {
       root: 'focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0',
@@ -316,6 +317,34 @@ export default {
       vertical: {
         root: 'flex-col [&>:first-child]:rounded-b-none [&>:last-child]:rounded-t-none [&>*+*]:border-t-0 [&>:not(:last-child):not(:focus-visible)]:!shadow-none',
       },
+    },
+  },
+  UCard: {
+    base: {
+      root: 'overflow-hidden',
+      background: 'bg-white dark:bg-gray-900',
+      divide: 'divide-y divide-gray-200 dark:divide-gray-800',
+      ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
+      rounded: 'rounded-lg',
+      shadow: 'shadow',
+      bodyBase: '',
+      bodyBackground: '',
+      bodyPadding: 'px-4 py-5 sm:p-6',
+      headerBase: '',
+      headerBackground: '',
+      headerPadding: 'px-4 py-5 sm:px-6',
+      footerBase: '',
+      footerBackground: '',
+      footerPadding: 'px-4 py-4 sm:px-6',
+    },
+
+    variants: {
+      default: {
+        root: 'overflow-hidden',
+      },
+      background: 'bg-white dark:bg-gray-900',
+      divide: 'divide-y divide-gray-200 dark:divide-gray-800',
+      ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
     },
   },
   UCommandPalette: {

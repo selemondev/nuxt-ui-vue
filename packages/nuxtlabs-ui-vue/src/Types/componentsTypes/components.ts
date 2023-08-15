@@ -132,6 +132,23 @@ export interface UBadge extends UComponentRoot {
 
 }
 
+export interface UCard extends UComponentRoot {
+  background?: string
+  divide?: string
+  ring?: string
+  rounded?: string
+  shadow?: string
+  bodyBase?: string
+  bodyBackground?: string
+  bodyPadding?: string
+  headerBase?: string
+  headerBackground?: string
+  headerPadding?: string
+  footerBase?: string
+  footerBackground?: string
+  footerPadding?: string
+}
+
 export interface UCommandPalette extends UComponentRoot {
   container?: string
   inputWrapper?: string
@@ -592,6 +609,7 @@ export type UAvatarGroupVariants = WithVariantProps<UAvatarGroup>
 export type UBadgeVariants = WithVariantProps<UBadge>
 export type UButtonVariants = WithVariantProps<UButton>
 export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
+export type UCardVariants = WithVariantProps<UCard>
 export type UCommandPaletteVariants = WithVariantProps<UCommandPalette>
 export type UContextMenuVariants = WithVariantProps<UContextMenu>
 export type UCheckboxVariants = WithVariantProps<UCheckbox>

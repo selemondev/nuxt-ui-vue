@@ -12,7 +12,15 @@ function handleClose() {
 </script>
 
 <template>
-  <div>
-    <UNotification v-if="show" id="id" title="Toast" description="This is the title description" :close-button="{ icon: 'heroicons:archive-box-x-mark', color: 'green', intent: 'outline', padded: true, size: 'xs', ui: { rounded: 'rounded-full' } }" @close="handleClose()" />
+  <div class="grid place-items-center w-full min-h-screen">
+    <div class="w-96">
+      <UCard>
+        <template #header />
+
+        Body
+
+        <template #footer />
+      </UCard>
+    </div>
   </div>
 </template>
