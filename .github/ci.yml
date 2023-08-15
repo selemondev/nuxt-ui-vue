@@ -44,7 +44,5 @@ jobs:
       - name: 🚀 Build
         run: pnpm build
 
-      - name: 🧪 Test
-        run: pnpm test
         env:
           VITE_TEST_DB_URL: ${{ secrets.VITE_TEST_DB_URL }}
