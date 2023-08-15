@@ -3,6 +3,7 @@ import { computed, defineComponent, useAttrs } from 'vue'
 import type { PropType, WritableComputedRef } from 'vue'
 import { Dialog as HDialog, DialogPanel as HDialogPanel, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { twMerge } from 'tailwind-merge'
+import classNames from 'classnames'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { USlideover } from '@/Types/componentsTypes/components'
@@ -21,7 +22,7 @@ const props = defineProps({
   },
   side: {
     type: String,
-    default: 'right',
+    default: 'left',
     validator: (value: string) => ['left', 'right'].includes(value),
   },
   overlay: {
@@ -95,6 +96,15 @@ function close(value: boolean) {
   isOpen.value = value
   emit('close')
 }
+
+const dialogWrapperClass = computed(() => {
+  return classNames(
+    wrapperClass.value,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    { [variant.value?.justifyEnd]: props.side === 'right' },
+  )
+})
 </script>
 
 <script lang="ts">
@@ -106,7 +116,11 @@ export default defineComponent({
 
 <template>
   <TransitionRoot as="template" :appear="appear" :show="isOpen">
-    <HDialog :class="[wrapperClass, { 'justify-end': side === 'right' }]" v-bind="attrs" @close="(e) => !preventClose && close(e)">
+    <HDialog
+      :class="[
+        dialogWrapperClass,
+      ]" v-bind="attrs" @close="(e) => !preventClose && close(e)"
+    >
       <TransitionChild v-if="overlay" as="template" :appear="appear" v-bind="overlayTransitions">
         <div :class="[variant.overlayBase, variant.overlayBackground]" />
       </TransitionChild>

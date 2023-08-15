@@ -1479,6 +1479,7 @@ export default {
       overlayEnterTransition: 'ease-in-out duration-500',
       overlayEnterFrom: 'opacity-0',
       overlayEnterTo: 'opacity-100',
+      justifyEnd: 'justify-end',
       overlayLeaveTransition: 'ease-in-out duration-500',
       overlayLeaveFrom: 'opacity-100',
       enterFromLeft: '-translate-x-full',
