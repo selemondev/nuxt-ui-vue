@@ -1,32 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useMouse, useWindowScroll } from '@vueuse/core'
+import { useToast } from '@/composables/useToast'
 
-const { x, y } = useMouse()
-const { y: windowY } = useWindowScroll()
+const toast = useToast()
 
-const isOpen = ref(false)
-const virtualElement = ref({ getBoundingClientRect: () => ({}) })
+const show = ref(true)
 
-function onContextMenu() {
-  const top = unref(y) - unref(windowY)
-  const left = unref(x)
-
-  virtualElement.value.getBoundingClientRect = () => ({
-    width: 0,
-    height: 0,
-    top,
-    left,
-  })
-
-  isOpen.value = true
+function handleClose() {
+  return show.value = false
 }
 </script>
 
 <template>
-  <div class="grid place-items-center w-full min-h-screen">
-    <div @contextmenu.prevent="onContextMenu">
-      <UContextMenu v-model="isOpen" :virtual-element="virtualElement" />
-    </div>
+  <div>
+    <UNotification v-if="show" id="id" title="Toast" description="This is the title description" :close-button="{ icon: 'heroicons:archive-box-x-mark', color: 'green', intent: 'outline', padded: true, size: 'xs', ui: { rounded: 'rounded-full' } }" @close="handleClose()" />
   </div>
 </template>

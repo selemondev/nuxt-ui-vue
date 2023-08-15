@@ -1,5 +1,5 @@
 import type { Components } from './enums/Components'
-import type { UAccordionVariants, UAlertVariants, UAvatarVariants, UBadgeVariants, UButtonGroupVariants, UButtonVariants, UCheckboxVariants, UCommandPaletteVariants, UContextMenuVariants, UDropdownVariants, UFormGroupVariants, UIconVariants, UInputVariants, UKbdVariants, UModalVariants, UPaginationVariants, URadioVariants, URangeVariants, USelectMenuVariants, USelectVariants, USlideoverVariants, UTabsVariants, UTextareaVariants, UToggleVariants, UTooltipVariants, UVerticalNavigationVariants } from './componentsTypes/components'
+import type { UAccordionVariants, UAlertVariants, UAvatarVariants, UBadgeVariants, UButtonGroupVariants, UButtonVariants, UCheckboxVariants, UCommandPaletteVariants, UContextMenuVariants, UDropdownVariants, UFormGroupVariants, UIconVariants, UInputVariants, UKbdVariants, UModalVariants, UNotificationVariants, UPaginationVariants, URadioVariants, URangeVariants, USelectMenuVariants, USelectVariants, USlideoverVariants, UTabsVariants, UTextareaVariants, UToggleVariants, UTooltipVariants, UVerticalNavigationVariants } from './componentsTypes/components'
 
 export declare interface CSSClassKeyValuePair {
   [key: string]: any
@@ -45,6 +45,7 @@ export interface NuxtLabsUIConfiguration {
   [Components.UInput]?: UInputVariants
   [Components.UKbd]?: UKbdVariants
   [Components.UModal]?: UModalVariants
+  [Components.UNotification]?: UNotificationVariants
   [Components.UTextarea]?: UTextareaVariants
   [Components.UPagination]?: UPaginationVariants
   [Components.URadio]?: URadioVariants
