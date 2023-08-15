@@ -299,6 +299,30 @@ export interface UModal extends UComponentRoot {
   transitionLeaveTo?: string
 }
 
+export interface UNotification extends UComponentRoot {
+  container?: string
+  title?: string
+  description?: string
+  background?: string
+  shadow?: string
+  rounded?: string
+  padding?: string
+  ring?: string
+  iconBase?: string
+  iconColor?: string
+  avatarBase?: string
+  avatarSize?: string
+  progressBase?: string
+  progressBackground?: string
+  transitionEnterActiveClass?: string
+  transitionEnterFromClass?: string
+  transitionEnterToClass?: string
+  transitionLeaveActiveClass?: string
+  transitionLeaveFromClass?: string
+  transitionLeaveToClass?: string
+  default?: objectProp
+}
+
 export interface UPagination extends UComponentRoot {
   base?: string
   rounded?: string
@@ -579,6 +603,7 @@ export type UTableVariants = WithVariantProps<UTable>
 export type UTabsVariants = WithVariantProps<UTabs>
 export type UTextareaVariants = WithVariantProps<UTextarea>
 export type UModalVariants = WithVariantProps<UModal>
+export type UNotificationVariants = WithVariantProps<UNotification>
 export type UKbdVariants = WithVariantProps<UKbd>
 export type UPaginationVariants = WithVariantProps<UPagination>
 export type UPopoverVariants = WithVariantProps<UPopover>

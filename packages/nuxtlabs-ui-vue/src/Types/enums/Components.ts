@@ -17,6 +17,7 @@ export enum Components {
   UInput = 'UInput',
   UKbd = 'UKbd',
   UModal = 'UModal',
+  UNotification = 'UNotification',
   UPagination = 'UPagination',
   UPopover = 'UPopover',
   URadio = 'URadio',

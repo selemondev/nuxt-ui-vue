@@ -776,6 +776,56 @@ export default {
     },
   },
 
+  UNotification: {
+    base: {
+      root: 'w-full pointer-events-auto',
+      container: 'relative overflow-hidden',
+      title: 'text-sm font-medium text-gray-900 dark:text-white',
+      description: 'mt-1 text-sm leading-4 text-gray-500 dark:text-gray-400',
+      background: 'bg-white dark:bg-gray-900',
+      shadow: 'shadow-lg',
+      rounded: 'rounded-lg',
+      padding: 'p-4',
+      ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
+      iconBase: 'flex-shrink-0 w-5 h-5',
+      iconColor: 'text-{color}-500 dark:text-{color}-400',
+      avatarBase: 'flex-shrink-0 self-center',
+      avatarSize: 'md',
+      progressBase: 'absolute bottom-0 end-0 start-0 h-1',
+      progressBackground: 'bg-{color}-500 dark:bg-{color}-400',
+      transitionEnterActiveClass: 'transform ease-out duration-300 transition',
+      transitionEnterFromClass: 'translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2',
+      transitionEnterToClass: 'translate-y-0 opacity-100 sm:translate-x-0',
+      transitionLeaveActiveClass: 'transition ease-in duration-100',
+      transitionLeaveFromClass: 'opacity-100',
+      transitionLeaveToClass: 'opacity-0',
+      default: {
+        color: 'green',
+        icon: null,
+        closeButton: {
+          icon: 'heroicons:x-mark-20-solid',
+          color: 'gray',
+          variant: 'link',
+          padded: false,
+        },
+        actionButton: {
+          size: 'xs',
+          color: 'white',
+        },
+      },
+    },
+
+    variants: {
+      default: {
+        root: 'w-full pointer-events-auto',
+      },
+      title: 'text-sm font-medium text-gray-900 dark:text-white',
+      description: 'mt-1 text-sm leading-4 text-gray-500 dark:text-gray-400',
+      background: 'bg-white dark:bg-gray-900',
+      progressBackground: 'bg-{color}-500 dark:bg-{color}-400',
+    },
+  },
+
   UPagination: {
     base: {
       root: 'flex items-center -space-x-px',
