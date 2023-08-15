@@ -188,6 +188,12 @@ export interface UCommandPalette extends UComponentRoot {
 
 }
 
+export interface UContainer extends UComponentRoot {
+  root?: string
+  padding?: string
+  constrained?: string
+}
+
 export interface UContextMenu extends UComponentRoot {
   container?: string
   width?: string
@@ -611,6 +617,7 @@ export type UButtonVariants = WithVariantProps<UButton>
 export type UButtonGroupVariants = WithVariantProps<UButtonGroup>
 export type UCardVariants = WithVariantProps<UCard>
 export type UCommandPaletteVariants = WithVariantProps<UCommandPalette>
+export type UContainerVariants = WithVariantProps<UContainer>
 export type UContextMenuVariants = WithVariantProps<UContextMenu>
 export type UCheckboxVariants = WithVariantProps<UCheckbox>
 export type UFormGroupVariants = WithVariantProps<UFormGroup>

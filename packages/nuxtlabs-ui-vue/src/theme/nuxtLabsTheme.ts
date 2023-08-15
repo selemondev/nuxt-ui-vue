@@ -415,6 +415,20 @@ export default {
     },
   },
 
+  UContainer: {
+    base: {
+      root: 'mx-auto',
+      padding: 'px-4 sm:px-6 lg:px-8',
+      constrained: 'max-w-7xl',
+    },
+
+    variants: {
+      default: {
+        root: 'mx-auto',
+      },
+    },
+  },
+
   UContextMenu: {
     base: {
       root: 'relative',

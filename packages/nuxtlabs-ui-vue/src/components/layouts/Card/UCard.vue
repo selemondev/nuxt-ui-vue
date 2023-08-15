@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { computed, defineComponent, useAttrs } from 'vue'
 import { twJoin, twMerge } from 'tailwind-merge'
+import { omit } from 'lodash-es'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UCard } from '@/Types/componentsTypes/components'
@@ -38,6 +39,8 @@ const cardClass = computed(() => {
     variant.value.background,
   ), attrs.class as string)
 })
+
+const attrsOmitted = omit(attrs, ['class'])
 </script>
 
 <script lang="ts">
@@ -51,7 +54,7 @@ export default defineComponent({
   <component
     :is="$attrs.onSubmit ? 'form' : as"
     :class="cardClass"
-    v-bind="attrs"
+    v-bind="attrsOmitted"
   >
     <div v-if="$slots.header" :class="[variant.headerBase, variant.headerPadding, variant.headerBackground]">
       <slot name="header" />
