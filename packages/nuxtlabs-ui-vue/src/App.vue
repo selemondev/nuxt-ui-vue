@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 
 const page = ref(1)
-const items = ref(Array(55))
 </script>
 
 <template>
