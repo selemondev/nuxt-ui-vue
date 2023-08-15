@@ -1,50 +1,26 @@
-<script setup lang="ts">
+<script setup lang='ts'>
 import { ref } from 'vue'
 
-const people = [{
-  id: 'benjamincanac',
-  label: 'benjamincanac',
-  href: 'https://github.com/benjamincanac',
-  target: '_blank',
-  avatar: { src: 'https://avatars.githubusercontent.com/u/739984?v=4' },
-},
-{
-  id: 'Atinux',
-  label: 'Atinux',
-  href: 'https://github.com/Atinux',
-  target: '_blank',
-  avatar: { src: 'https://avatars.githubusercontent.com/u/904724?v=4' },
-},
-{
-  id: 'smarroufin',
-  label: 'smarroufin',
-  href: 'https://github.com/smarroufin',
-  target: '_blank',
-  avatar: { src: 'https://avatars.githubusercontent.com/u/7547335?v=4' },
-},
-{
-  id: 'nobody',
-  label: 'Nobody',
-  icon: 'heroicons:user-circle',
-}]
-
-const selected = ref(people[0])
+const isOpen = ref(false)
 </script>
 
 <template>
-  {{ selected }}
   <div class="grid place-items-center w-full min-h-screen">
-    <div class="">
-      <USelectMenu
-        v-model="selected" :options="people"
+    <UButton label="Open" @click="isOpen = true" />
+    <USlideover v-model="isOpen" prevent-close>
+      <UCard
+        class="flex flex-col flex-1"
+        :ui="{ body: { base: 'flex-1' }, ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }"
       >
-        <template #label>
-          <UIcon v-if="selected.icon" :name="selected.icon" class="w-4 h-4" />
-          <UAvatar v-else-if="selected.avatar" v-bind="selected.avatar" size="3xs" />
-
-          {{ selected.label }}
+        <template #header>
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
+              Slideover
+            </h3>
+            <UButton intent="ghost" icon="heroicons:x-mark-20-solid" class="-my-1" @click="isOpen = false" />
+          </div>
         </template>
-      </USelectMenu>
-    </div>
+      </UCard>
+    </USlideover>
   </div>
 </template>

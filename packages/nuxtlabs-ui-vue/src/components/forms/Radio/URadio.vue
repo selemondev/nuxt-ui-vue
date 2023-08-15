@@ -76,7 +76,7 @@ const pick = computed({
 
 const inputClass = computed(() => {
   return classNames(
-    variant.value.base,
+    variant.value.radioBase,
     variant.value.background,
     variant.value.border,
     nuxtLabsTheme.URadio.base.ring.replaceAll('{color}', props.color),

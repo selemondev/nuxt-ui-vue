@@ -147,7 +147,7 @@ const textareaClass = computed(() => {
   const variants = nuxtLabsTheme.UTextarea.base.color[props.color as string]?.[props.intent as string] || nuxtLabsTheme.UTextarea.base.intent[props.intent]
 
   return classNames(
-    variant.value.base,
+    variant.value.textAreaBase,
     variant.value.rounded,
     variant.value.placeholder,
     nuxtLabsTheme.UTextarea.base.size[props.size],

@@ -201,7 +201,7 @@ const selectClass = computed(() => {
   const variants = nuxtLabsTheme.USelect.base.color[props.color as string]?.[props.intent as string] || nuxtLabsTheme.USelect.base.intent[props.intent]
 
   return classNames(
-    variant.value.base,
+    variant.value.selectBase,
     variant.value.rounded,
     nuxtLabsTheme.USelect.base.size[props.size],
     props.padded ? nuxtLabsTheme.USelect.base.padding[props.size] : 'p-0',

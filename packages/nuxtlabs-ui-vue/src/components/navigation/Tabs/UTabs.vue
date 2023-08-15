@@ -5,12 +5,14 @@ import { Tab as HTab, TabGroup as HTabGroup, TabList as HTabList, TabPanel as HT
 import { useResizeObserver } from '@vueuse/core'
 import { omit } from 'lodash-es'
 import { twMerge } from 'tailwind-merge'
+import classNames from 'classnames'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UTabs } from '@/Types/componentsTypes/components'
 import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
 import type { TabItem } from '@/Types/components/tabs'
+import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UTabs>(),
@@ -102,6 +104,14 @@ watch(() => props.modelValue, (value: any) => {
 })
 
 onMounted(() => calcMarkerSize(selectedIndex.value))
+
+const tabGridClass = computed(() => {
+  return classNames(
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    nuxtLabsTheme.UTabs.base.tabGrid.replaceAll('{items}', props.items?.length),
+  )
+})
 </script>
 
 <script lang="ts">
@@ -113,31 +123,27 @@ export default defineComponent({
 
 <template>
   <HTabGroup
-    :vertical="orientation === 'vertical'"
-    :selected-index="selectedIndex"
-    as="div"
-    :class="wrapperClass"
-    v-bind="attrsOmitted"
-    @change="onChange"
+    :vertical="orientation === 'vertical'" :selected-index="selectedIndex" as="div" :class="wrapperClass"
+    v-bind="attrsOmitted" @change="onChange"
   >
     <HTabList
-      ref="listRef"
-      :class="[variant.listBase, variant.listBackground, variant.listRounded, variant.listShadow, variant.listPadding, variant.listWidth, orientation === 'horizontal' && variant.listHeight, orientation === 'horizontal' && 'inline-grid items-center']"
-      :style="[orientation === 'horizontal' && `grid-template-columns: repeat(${items.length}, minmax(0, 1fr))`]"
+      ref="listRef" :class="[
+        variant.listBase, variant.listBackground, variant.listRounded, variant.listShadow, variant.listPadding, variant.listWidth, orientation === 'horizontal' && variant.listHeight, orientation === 'horizontal' && variant.horizontalGrid,
+      ]" :style="[orientation === 'horizontal' && tabGridClass]"
     >
       <div ref="markerRef" :class="variant.listMarkerWrapper">
-        <div :class="[variant.listMarkerBase, variant.listMarkerBackground, variant.listMarkerRounded, variant.listMarkerShadow]" />
+        <div
+          :class="[variant.listMarkerBase, variant.listMarkerBackground, variant.listMarkerRounded, variant.listMarkerShadow]"
+        />
       </div>
 
       <HTab
-        v-for="(item, index) of items"
-        :key="index"
-        ref="itemRefs"
-        v-slot="{ selected, disabled }"
-        :disabled="item.disabled"
-        as="template"
+        v-for="(item, index) of items" :key="index" ref="itemRefs" v-slot="{ selected, disabled }"
+        :disabled="item.disabled" as="template"
       >
-        <button :class="[variant.listTabBase, variant.listTabBackground, variant.listTabHeight, variant.listTabPadding, variant.listTabSize, variant.listTabFont, variant.listTabRounded, variant.listTabShadow, selected ? variant.listTabActive : variant.listTabInactive]">
+        <button
+          :class="[variant.listTabBase, variant.listTabBackground, variant.listTabHeight, variant.listTabPadding, variant.listTabSize, variant.listTabFont, variant.listTabRounded, variant.listTabShadow, selected ? variant.listTabActive : variant.listTabInactive]"
+        >
           <slot :item="item" :index="index" :selected="selected" :disabled="disabled">
             {{ item.label }}
           </slot>
@@ -146,12 +152,7 @@ export default defineComponent({
     </HTabList>
 
     <HTabPanels :class="variant.container">
-      <HTabPanel
-        v-for="(item, index) of items"
-        :key="index"
-        v-slot="{ selected }"
-        :class="variant.base"
-      >
+      <HTabPanel v-for="(item, index) of items" :key="index" v-slot="{ selected }" :class="variant.tabsBase">
         <slot :name="item.slot || 'item'" :item="item" :index="index" :selected="selected">
           {{ item.content }}
         </slot>

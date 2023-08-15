@@ -73,7 +73,7 @@ export interface UAccordion extends UComponentRoot {
   itemPadding?: string
   itemIcon?: string
   transition?: objectProp
-  default: DefaultStyle
+  default?: DefaultStyle
 }
 
 export interface UAlert extends UComponentRoot {
@@ -86,7 +86,8 @@ export interface UAlert extends UComponentRoot {
   avatarBase?: string
   avatarSize?: string
   color?: string
-  variant?: string
+  intent?: string
+  default?: objectProp
 }
 
 export interface UAvatar extends UComponentRoot {
@@ -201,7 +202,7 @@ export interface UContextMenu extends UComponentRoot {
   shadow?: string
   rounded?: string
   ring?: string
-  base?: string
+  contextMenuBase?: string
   enterActiveClass?: string
   enterFromClass?: string
   enterToClass?: string
@@ -215,7 +216,7 @@ export interface UContextMenu extends UComponentRoot {
 }
 
 export interface UCheckbox extends UComponentRoot {
-  base?: string
+  checkboxBase?: string
   rounded?: string
   color?: string
   background?: string
@@ -247,22 +248,22 @@ export interface UDropdown extends UComponentRoot {
   shadow?: string
   rounded?: string
   ring?: string
-  base?: string
+  dropdownBase?: string
   divide?: string
   padding?: string
-  itemBase: string
-  itemRounded: string
-  itemPadding: string
-  itemSize: string
-  itemActive: string
-  itemInActive: string
-  itemDisabled: string
-  itemIconBase: string
-  itemIconActive: string
-  itemIconInActive: string
-  itemAvatarBase: string
-  itemAvatarSize: string
-  itemShortcuts: string
+  itemBase?: string
+  itemRounded?: string
+  itemPadding?: string
+  itemSize?: string
+  itemActive?: string
+  itemInActive?: string
+  itemDisabled?: string
+  itemIconBase?: string
+  itemIconActive?: string
+  itemIconInActive?: string
+  itemAvatarBase?: string
+  itemAvatarSize?: string
+  itemShortcuts?: string
   transition?: objectProp
   popper?: objectProp
 }
@@ -272,7 +273,7 @@ export interface UIcon extends UComponentRoot {
 }
 
 export interface UInput extends UComponentRoot {
-  base?: string
+  inputBase?: string
   rounded?: string
   placeholder?: string
   size?: objectProp
@@ -299,7 +300,7 @@ export interface UModal extends UComponentRoot {
   container?: string
   padding?: string
   margin?: string
-  base?: string
+  modalBase?: string
   overlayBase?: string
   overlayBackground?: string
   overlayEnterTransition?: string
@@ -347,7 +348,7 @@ export interface UNotification extends UComponentRoot {
 }
 
 export interface UPagination extends UComponentRoot {
-  base?: string
+  paginationBase?: string
   rounded?: string
   defaultSize?: string
   defaultActiveButtonColor?: string
@@ -378,7 +379,7 @@ export interface UPopover extends UComponentRoot {
 }
 
 export interface URadio extends UComponentRoot {
-  base?: string
+  radioBase?: string
   color?: string
   background?: string
   border?: string
@@ -386,11 +387,11 @@ export interface URadio extends UComponentRoot {
   label?: string
   required?: string
   help?: string
-  default: objectProp
+  default?: objectProp
 }
 
 export interface URange extends UComponentRoot {
-  base?: string
+  rangeBase?: string
   rounded?: string
   background?: string
   ring?: string
@@ -405,7 +406,7 @@ export interface URange extends UComponentRoot {
 }
 
 export interface USelect extends UComponentRoot {
-  base?: string
+  selectBase?: string
   rounded?: string
   placeholder?: string
   size?: objectProp
@@ -424,7 +425,7 @@ export interface USelectMenu extends UComponentRoot {
   container?: string
   width?: string
   height?: string
-  base?: string
+  selectMenuBase?: string
   background?: string
   shadow?: string
   rounded?: string
@@ -471,7 +472,7 @@ export interface USlideover extends UComponentRoot {
   overlayLeaveTransition?: string
   overlayLeaveFrom?: string
   overlayLeaveTo?: string
-  base?: string
+  slideOverBase?: string
   background?: string
   ring?: string
   rounded?: string
@@ -511,7 +512,7 @@ export interface UTable extends UComponentRoot {
 
 export interface UTabs extends UComponentRoot {
   container?: string
-  base?: string
+  tabsBase?: string
   listBase?: string
   listBackground?: string
   listRounded?: string
@@ -537,7 +538,7 @@ export interface UTabs extends UComponentRoot {
 }
 
 export interface UTextarea extends UComponentRoot {
-  base?: string
+  textAreaBase?: string
   rounded?: string
   placeholder?: string
   size?: objectProp
@@ -579,7 +580,7 @@ export interface UTooltip extends UComponentRoot {
   shadow?: string
   rounded?: string
   ring?: string
-  base?: string
+  toolTipBase?: string
   shortcuts?: string
   transitionEnterActiveClass?: string
   transitionEnterFromClass?: string
@@ -593,7 +594,7 @@ export interface UTooltip extends UComponentRoot {
 }
 
 export interface UVerticalNavigation extends UComponentRoot {
-  base?: string
+  verticalNavigationBase?: string
   ring?: string
   padding?: string
   width?: string

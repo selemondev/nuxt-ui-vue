@@ -49,7 +49,7 @@ export default defineComponent({
       :key="index"
       v-bind="omit(link, ['label', 'icon', 'iconClass', 'avatar', 'badge', 'click'])"
       :to="link.to"
-      :class="[variant.base, variant.padding, variant.width, variant.ring, variant.rounded, variant.font, variant.size]"
+      :class="[variant.verticalNavigationBase, variant.padding, variant.width, variant.ring, variant.rounded, variant.font, variant.size]"
       :active-class="variant.active"
       :inactive-class="variant.inactive"
       @click="link.click"

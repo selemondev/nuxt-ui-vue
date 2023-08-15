@@ -5,11 +5,11 @@ import { defineConfig } from 'vite'
 // https://github.com/qmhc/vite-plugin-dts
 import dtsPlugin from 'vite-plugin-dts'
 
-// import * as pkg from './package.json'
+import * as pkg from './package.json'
 
-// const externals = [
-//   ...Object.keys(pkg.peerDependencies || {}),
-// ]
+const externals = [
+  ...Object.keys(pkg.peerDependencies || {}),
+]
 export default defineConfig({
   plugins: [
     Vue(),
@@ -30,7 +30,7 @@ export default defineConfig({
       fileName: format => format === 'cjs' ? 'nuxtlabs-ui-vue.cjs' : 'nuxtlabs-ui-vue.mjs',
     },
     rollupOptions: {
-      external: 'Vue',
+      external: externals,
       output: {
         format: 'esm',
         globals: {

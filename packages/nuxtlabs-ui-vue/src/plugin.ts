@@ -2,19 +2,19 @@ import type { App } from 'vue'
 import './assets/css/tailwind.css'
 import type { NuxtLabsUIConfiguration } from './Types/variant'
 
-const defaultOptions: WindiUIOptions = {
+const defaultOptions: NuxtLabsUIOptions = {
   prefix: 'U',
   registerComponents: true,
 }
 
-export interface WindiUIOptions {
+export interface NuxtLabsUIOptions {
   prefix?: string
   components?: any
   theme?: any
   registerComponents?: boolean
 }
 
-function create(createOptions: WindiUIOptions = {}) {
+function create(createOptions: NuxtLabsUIOptions = {}) {
   const install = (app: App, installOptions: NuxtLabsUIConfiguration) => {
     const options = {
       ...defaultOptions,

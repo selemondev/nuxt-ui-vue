@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { computed, defineComponent, toRef, useAttrs } from 'vue'
-import type { PropType } from 'vue'
+import type { PropType, Ref } from 'vue'
 import { twJoin, twMerge } from 'tailwind-merge'
 import defu from 'defu'
 import { onClickOutside } from '@vueuse/core'
@@ -13,6 +13,7 @@ import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
 import { usePopper } from '@/composables/usePopper'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
+import type { PopperOptions } from '@/Types/components/popper'
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UContextMenu>(),
@@ -93,7 +94,7 @@ export default defineComponent({
 <template>
   <div v-if="isOpen" ref="container" :class="wrapperClass" v-bind="attrsOmitted">
     <Transition appear v-bind="contextMenuTransitions">
-      <div :class="[variant.base, variant.ring, variant.rounded, variant.shadow, variant.background]">
+      <div :class="[variant.contextMenuBase, variant.ring, variant.rounded, variant.shadow, variant.background]">
         <slot />
       </div>
     </Transition>

@@ -205,7 +205,7 @@ export default defineComponent({
       const variants = nuxtLabsTheme.USelect.base.color[props.color as string]?.[props.intent as string] || nuxtLabsTheme.USelect.base.intent[props.intent]
 
       return classNames(
-        nuxtLabsTheme.USelect.base.base,
+        nuxtLabsTheme.USelect.base.selectBase,
         nuxtLabsTheme.USelect.base.rounded,
         'text-left cursor-default',
         nuxtLabsTheme.USelect.base.size[props.size],
@@ -373,7 +373,7 @@ export default defineComponent({
     <div v-if="open" ref="container" :class="[variant.container, variant.width]">
       <Transition appear v-bind="nuxtLabsTheme.USelectMenu.base.transition">
         <!-- @vue-ignore -->
-        <component :is="searchable ? 'HComboboxOptions' : 'HListboxOptions'" static :class="[variant.base, nuxtLabsTheme.USelect.base.divide, variant.ring, variant.rounded, variant.shadow, variant.background, variant.padding, variant.height]">
+        <component :is="searchable ? 'HComboboxOptions' : 'HListboxOptions'" static :class="[variant.selectMenuBase, nuxtLabsTheme.USelect.base.divide, variant.ring, variant.rounded, variant.shadow, variant.background, variant.padding, variant.height]">
           <HComboboxInput
             v-if="searchable"
             ref="searchInput"
