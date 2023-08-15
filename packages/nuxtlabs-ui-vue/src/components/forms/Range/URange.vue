@@ -86,7 +86,7 @@ const wrapperClass = computed(() => {
 
 const inputClass = computed(() => {
   return classNames(
-    variant.value.base,
+    variant.value.rangeBase,
     variant.value.background,
     variant.value.rounded,
     nuxtLabsTheme.URange.base.ring.replaceAll('{color}', props.color),

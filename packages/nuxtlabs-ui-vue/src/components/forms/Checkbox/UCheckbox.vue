@@ -85,7 +85,7 @@ function onChange(event: Event) {
 
 const inputClass = computed(() => {
   return classNames(
-    variant.value.base,
+    variant.value.checkboxBase,
     variant.value.rounded,
     variant.value.background,
     variant.value.border,
@@ -121,7 +121,7 @@ export default defineComponent({
         @change="onChange"
       >
     </div>
-    <div v-if="label || $slots.label" class="ms-3 text-sm">
+    <div v-if="label || $slots.label" :class="variant.checkBoxSpace">
       <label :for="name" :class="variant.label">
         <slot name="label">{{ label }}</slot>
         <span v-if="required" :class="variant.required">*</span>

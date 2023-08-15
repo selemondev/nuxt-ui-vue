@@ -84,10 +84,10 @@ const transitionClass = computed(() => {
 
   return {
     ...slideOverTransitions,
-    enterFrom: props.side === 'left' ? '-translate-x-full' : 'translate-x-full',
-    enterTo: 'translate-x-0',
-    leaveFrom: 'translate-x-0',
-    leaveTo: props.side === 'left' ? '-translate-x-full' : 'translate-x-full',
+    enterFrom: props.side === 'left' ? variant.value.enterFromLeft : variant.value.enterFromRight,
+    enterTo: variant.value.enterToAndFrom,
+    leaveFrom: variant.value.enterToAndFrom,
+    leaveTo: props.side === 'left' ? variant.value.enterFromLeft : variant.value.enterFromRight,
   }
 })
 
@@ -112,7 +112,7 @@ export default defineComponent({
       </TransitionChild>
 
       <TransitionChild as="template" :appear="appear" v-bind="transitionClass">
-        <HDialogPanel :class="[variant.base, variant.width, variant.background, variant.ring, variant.padding]">
+        <HDialogPanel :class="[variant.slideOverBase, variant.width, variant.background, variant.ring, variant.padding]">
           <slot />
         </HDialogPanel>
       </TransitionChild>

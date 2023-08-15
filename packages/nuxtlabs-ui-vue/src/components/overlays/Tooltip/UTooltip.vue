@@ -126,7 +126,7 @@ export default defineComponent({
 
     <div v-if="open && !prevent" ref="container" :class="[variant.container, variant.width]">
       <Transition appear v-bind="toolTipTransitions">
-        <div :class="[variant.base, variant.background, variant.color, variant.rounded, variant.shadow, variant.ring]">
+        <div :class="[variant.toolTipBase, variant.background, variant.color, variant.rounded, variant.shadow, variant.ring]">
           <slot name="text">
             {{ text }}
           </slot>

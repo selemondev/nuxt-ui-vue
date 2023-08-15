@@ -36,21 +36,7 @@ export default {
     },
     variants: {
       default: {
-        color: 'white',
-        variant: 'solid',
-        icon: null,
-        closeButton: null,
-        actionButton: {
-          size: 'xs',
-          color: 'green',
-          variant: 'link',
-        },
-      },
-      intent: {
-        solid: 'bg-{color}-500 dark:bg-{color}-400 text-white dark:text-gray-900',
-        outline: 'text-{color}-500 dark:text-{color}-400 ring-1 ring-inset ring-{color}-500 dark:ring-{color}-400',
-        soft: 'bg-{color}-50 dark:bg-{color}-400 dark:bg-opacity-10 text-{color}-500 dark:text-{color}-400',
-        subtle: 'bg-{color}-50 dark:bg-{color}-400 dark:bg-opacity-10 text-{color}-500 dark:text-{color}-400 ring-1 ring-inset ring-{color}-500 dark:ring-{color}-400 ring-opacity-25 dark:ring-opacity-25',
+        root: 'w-full relative overflow-hidden',
       },
     },
   },
@@ -70,16 +56,14 @@ export default {
         class: 'mb-1.5 w-full',
         intent: 'soft',
       },
+    },
 
-      variants: {
-        defaults: {
-          default: {
-            openIcon: 'heroicons:chevron-down-20-solid',
-            closeIcon: '',
-            class: 'mb-1.5 w-full',
-            intent: 'soft',
-          },
-        },
+    variants: {
+      default: {
+        openIcon: 'heroicons:chevron-down-20-solid',
+        closeIcon: '',
+        class: 'mb-1.5 w-full',
+        intent: 'soft',
       },
     },
   },
@@ -345,9 +329,6 @@ export default {
       default: {
         root: 'overflow-hidden',
       },
-      background: 'bg-white dark:bg-gray-900',
-      divide: 'divide-y divide-gray-200 dark:divide-gray-800',
-      ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
     },
   },
   UCommandPalette: {
@@ -441,7 +422,7 @@ export default {
       shadow: 'shadow-lg',
       rounded: 'rounded-md',
       ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
-      base: 'overflow-hidden focus:outline-none',
+      contextMenuBase: 'overflow-hidden focus:outline-none',
       enterActiveClass: 'transition ease-out duration-200',
       enterFromClass: 'opacity-0 translate-y-1',
       enterToClass: 'opacity-100 translate-y-0',
@@ -458,16 +439,17 @@ export default {
       default: {
         root: 'relative',
         container: 'z-20',
+        background: 'bg-white dark:bg-gray-900',
+        ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
       },
-      background: 'bg-white dark:bg-gray-900',
-      ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
     },
   },
   UCheckbox: {
     base: {
       root: 'relative flex items-start',
-      base: 'h-4 w-4 dark:checked:bg-current dark:checked:border-transparent dark:indeterminate:bg-current dark:indeterminate:border-transparent disabled:opacity-50 disabled:cursor-not-allowed focus:ring-0 focus:ring-transparent focus:ring-offset-transparent',
+      checkboxBase: 'h-4 w-4 dark:checked:bg-current dark:checked:border-transparent dark:indeterminate:bg-current dark:indeterminate:border-transparent disabled:opacity-50 disabled:cursor-not-allowed focus:ring-0 focus:ring-transparent focus:ring-offset-transparent',
       rounded: 'rounded',
+      checkBoxSpace: 'ms-3 text-sm',
       color: 'text-{color}-500 dark:text-{color}-400',
       background: 'bg-white dark:bg-gray-900',
       border: 'border border-gray-300 dark:border-gray-700',
@@ -482,15 +464,14 @@ export default {
 
     variants: {
       default: {
-        color: 'green',
+        color: 'text-{color}-500 dark:text-{color}-400',
+        background: 'bg-white dark:bg-gray-900',
+        border: 'border border-gray-300 dark:border-gray-700',
+        ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900',
+        label: 'font-medium text-gray-700 dark:text-gray-200',
+        required: 'text-red-500 dark:text-red-400',
+        help: 'text-gray-500 dark:text-gray-400',
       },
-      color: 'text-{color}-500 dark:text-{color}-400',
-      background: 'bg-white dark:bg-gray-900',
-      border: 'border border-gray-300 dark:border-gray-700',
-      ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900',
-      label: 'font-medium text-gray-700 dark:text-gray-200',
-      required: 'text-red-500 dark:text-red-400',
-      help: 'text-gray-500 dark:text-gray-400',
     },
   },
   UFormGroup: {
@@ -515,14 +496,16 @@ export default {
     },
 
     variants: {
-      root: '',
-      labelWrapper: 'flex content-center items-center justify-between',
-      labelBase: 'block font-medium text-gray-700 dark:text-gray-200',
-      labelRequired: 'after:content-[\'*\'] after:ms-0.5 after:text-red-500 dark:after:text-red-400',
-      description: 'text-gray-500 dark:text-gray-400',
-      hint: 'text-gray-500 dark:text-gray-400',
-      help: 'mt-2 text-gray-500 dark:text-gray-400',
-      error: 'mt-2 text-red-500 dark:text-red-400',
+      default: {
+        root: '',
+        labelWrapper: 'flex content-center items-center justify-between',
+        labelBase: 'block font-medium text-gray-700 dark:text-gray-200',
+        labelRequired: 'after:content-[\'*\'] after:ms-0.5 after:text-red-500 dark:after:text-red-400',
+        description: 'text-gray-500 dark:text-gray-400',
+        hint: 'text-gray-500 dark:text-gray-400',
+        help: 'mt-2 text-gray-500 dark:text-gray-400',
+        error: 'mt-2 text-red-500 dark:text-red-400',
+      },
     },
   },
   UDropdown: {
@@ -536,7 +519,7 @@ export default {
       shadow: 'shadow-lg',
       rounded: 'rounded-md',
       ring: 'ring-1 ring-gray-200 dark:ring-gray-700',
-      base: 'relative focus:outline-none overflow-y-auto scroll-py-1',
+      dropdownBase: 'relative focus:outline-none overflow-y-auto scroll-py-1',
       divide: 'divide-y divide-gray-200 dark:divide-gray-700',
       padding: 'p-1',
       itemBase: 'group flex items-center gap-2 w-full',
@@ -601,7 +584,7 @@ export default {
   UInput: {
     base: {
       root: 'relative',
-      base: 'relative block w-full disabled:cursor-not-allowed disabled:opacity-75 border-none',
+      inputBase: 'relative block w-full disabled:cursor-not-allowed disabled:opacity-75 border-none',
       rounded: 'rounded-md',
       placeholder: 'placeholder-gray-400 dark:placeholder-gray-500',
       size: {
@@ -729,7 +712,7 @@ export default {
   URadio: {
     base: {
       root: 'relative flex items-start',
-      base: 'h-4 w-4 dark:checked:bg-current dark:checked:border-transparent disabled:opacity-50 disabled:cursor-not-allowed focus:ring-0 focus:ring-transparent focus:ring-offset-transparent',
+      radioBase: 'h-4 w-4 dark:checked:bg-current dark:checked:border-transparent disabled:opacity-50 disabled:cursor-not-allowed focus:ring-0 focus:ring-transparent focus:ring-offset-transparent',
       color: 'text-{color}-500 dark:text-{color}-400',
       background: 'bg-white dark:bg-gray-900',
       border: 'border border-gray-300 dark:border-gray-700',
@@ -743,16 +726,15 @@ export default {
     },
     variants: {
       default: {
-        color: 'green',
+        radioBase: 'h-4 w-4 dark:checked:bg-current dark:checked:border-transparent disabled:opacity-50 disabled:cursor-not-allowed focus:ring-0 focus:ring-transparent focus:ring-offset-transparent',
+        color: 'text-{color}-500 dark:text-{color}-400',
+        background: 'bg-white dark:bg-gray-900',
+        border: 'border border-gray-300 dark:border-gray-700',
+        ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900',
+        label: 'font-medium text-gray-700 dark:text-gray-200',
+        required: 'text-red-500 dark:text-red-400',
+        help: 'text-gray-500 dark:text-gray-400',
       },
-      base: 'h-4 w-4 dark:checked:bg-current dark:checked:border-transparent disabled:opacity-50 disabled:cursor-not-allowed focus:ring-0 focus:ring-transparent focus:ring-offset-transparent',
-      color: 'text-{color}-500 dark:text-{color}-400',
-      background: 'bg-white dark:bg-gray-900',
-      border: 'border border-gray-300 dark:border-gray-700',
-      ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900',
-      label: 'font-medium text-gray-700 dark:text-gray-200',
-      required: 'text-red-500 dark:text-red-400',
-      help: 'text-gray-500 dark:text-gray-400',
     },
   },
   UKbd: {
@@ -777,9 +759,9 @@ export default {
       default: {
         root: 'inline-flex items-center justify-center text-gray-900 dark:text-white',
         padding: 'px-1',
+        background: 'bg-gray-100 dark:bg-gray-800',
+        ring: 'ring-1 ring-gray-300 dark:ring-gray-700 ring-inset',
       },
-      background: 'bg-gray-100 dark:bg-gray-800',
-      ring: 'ring-1 ring-gray-300 dark:ring-gray-700 ring-inset',
     },
   },
 
@@ -794,7 +776,7 @@ export default {
       heightScreen: 'h-screen',
       roundedNone: 'rounded-none',
       marginNone: 'm-0',
-      base: 'relative text-left rtl:text-right overflow-hidden w-full flex flex-col',
+      modalBase: 'relative text-left rtl:text-right overflow-hidden w-full flex flex-col',
       overlayBase: 'fixed inset-0 transition-opacity',
       overlayBackground: 'bg-gray-200/75 dark:bg-gray-800/75',
       overlayEnterTransition: 'ease-out duration-300',
@@ -821,9 +803,9 @@ export default {
       default: {
         root: 'relative z-50',
         inner: 'fixed inset-0 overflow-y-auto',
+        overlayBackground: 'bg-gray-200/75 dark:bg-gray-800/75',
+        background: 'bg-white dark:bg-gray-900',
       },
-      overlayBackground: 'bg-gray-200/75 dark:bg-gray-800/75',
-      background: 'bg-white dark:bg-gray-900',
     },
   },
 
@@ -874,18 +856,18 @@ export default {
     variants: {
       default: {
         root: 'w-full pointer-events-auto',
+        title: 'text-sm font-medium text-gray-900 dark:text-white',
+        description: 'mt-1 text-sm leading-4 text-gray-500 dark:text-gray-400',
+        background: 'bg-white dark:bg-gray-900',
+        progressBackground: 'bg-{color}-500 dark:bg-{color}-400',
       },
-      title: 'text-sm font-medium text-gray-900 dark:text-white',
-      description: 'mt-1 text-sm leading-4 text-gray-500 dark:text-gray-400',
-      background: 'bg-white dark:bg-gray-900',
-      progressBackground: 'bg-{color}-500 dark:bg-{color}-400',
     },
   },
 
   UPagination: {
     base: {
       root: 'flex items-center -space-x-px',
-      base: '',
+      paginationBase: '',
       rounded: 'first:rounded-s-md last:rounded-e-md',
       default: {
         size: 'sm',
@@ -911,7 +893,7 @@ export default {
     variants: {
       default: {
         root: 'flex items-center -space-x-px',
-        base: '',
+        paginationBase: '',
         rounded: 'first:rounded-s-md last:rounded-e-md',
       },
     },
@@ -952,7 +934,7 @@ export default {
   URange: {
     base: {
       root: 'relative w-full flex items-center',
-      base: 'w-full absolute appearance-none cursor-pointer disabled:cursor-not-allowed disabled:bg-opacity-50 focus:outline-none peer group',
+      rangeBase: 'w-full absolute appearance-none cursor-pointer disabled:cursor-not-allowed disabled:bg-opacity-50 focus:outline-none peer group',
       rounded: 'rounded-lg',
       background: 'bg-transparent',
       ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900',
@@ -1001,9 +983,9 @@ export default {
       default: {
         size: 'md',
         color: 'green',
+        background: 'bg-transparent',
+        ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900',
       },
-      background: 'bg-transparent',
-      ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900',
     },
   },
 
@@ -1016,8 +998,8 @@ export default {
     variants: {
       default: {
         root: 'animate-pulse',
+        background: 'bg-gray-100 dark:bg-gray-800',
       },
-      background: 'bg-gray-100 dark:bg-gray-800',
     },
   },
 
@@ -1121,7 +1103,9 @@ export default {
     base: {
       root: 'relative space-y-2',
       container: 'relative w-full',
-      base: 'focus:outline-none',
+      tabsBase: 'focus:outline-none',
+      tabGrid: 'grid-template-columns: repeat({items}, minmax(0, 1fr))',
+      horizontalGrid: 'inline-grid items-center',
       listBase: 'relative',
       listBackground: 'bg-gray-100 dark:bg-gray-800',
       listRounded: 'rounded-lg',
@@ -1150,9 +1134,9 @@ export default {
       default: {
         root: 'relative space-y-2',
         container: 'relative w-full',
+        listTabActive: 'text-gray-900 dark:text-white',
+        listTabInactive: 'text-gray-500 dark:text-gray-400',
       },
-      listTabActive: 'text-gray-900 dark:text-white',
-      listTabInactive: 'text-gray-500 dark:text-gray-400',
     },
 
   },
@@ -1160,7 +1144,7 @@ export default {
   UTextarea: {
     base: {
       root: 'relative',
-      base: 'relative block w-full disabled:cursor-not-allowed disabled:opacity-75 focus:outline-none border-0',
+      textAreaBase: 'relative block w-full disabled:cursor-not-allowed disabled:opacity-75 focus:outline-none border-0',
       rounded: 'rounded-md',
       placeholder: 'placeholder-gray-400 dark:placeholder-gray-500',
       size: {
@@ -1282,7 +1266,7 @@ export default {
       shadow: 'shadow',
       rounded: 'rounded',
       ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
-      base: 'invisible lg:visible h-6 px-2 py-1 text-xs font-normal truncate',
+      toolTipBase: 'invisible lg:visible h-6 px-2 py-1 text-xs font-normal truncate',
       shortcuts: 'hidden md:inline-flex flex-shrink-0 gap-0.5',
       transitionEnterActiveClass: 'transition ease-out duration-200',
       transitionEnterFromClass: 'opacity-0 translate-y-1',
@@ -1299,16 +1283,16 @@ export default {
       default: {
         root: 'relative inline-flex',
         container: 'z-20',
+        background: 'bg-white dark:bg-gray-900',
+        color: 'text-gray-900 dark:text-white',
+        ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
       },
-      background: 'bg-white dark:bg-gray-900',
-      color: 'text-gray-900 dark:text-white',
-      ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
     },
   },
   USelect: {
     base: {
       root: 'relative',
-      base: 'relative block w-full disabled:cursor-not-allowed disabled:opacity-75 focus:outline-none border-0',
+      selectBase: 'relative block w-full disabled:cursor-not-allowed disabled:opacity-75 focus:outline-none border-0',
       rounded: 'rounded-md',
       placeholder: 'text-gray-900 dark:text-white',
       size: {
@@ -1419,19 +1403,7 @@ export default {
         intent: 'outline',
         loadingIcon: 'heroicons:arrow-path-20-solid',
         trailingIcon: 'heroicons:chevron-down-20-solid',
-      },
-      iconBase: 'flex-shrink-0 text-gray-400 dark:text-gray-500',
-      color: {
-        white: {
-          outline: 'shadow-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400',
-        },
-        gray: {
-          outline: 'shadow-sm bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400',
-        },
-      },
-      intent: {
-        outline: 'shadow-sm bg-transparent text-gray-900 dark:text-white ring-1 ring-inset ring-{color}-500 dark:ring-{color}-400 focus:ring-2 focus:ring-{color}-500 dark:focus:ring-{color}-400',
-        none: 'bg-transparent focus:ring-0 focus:shadow-none',
+        iconBase: 'flex-shrink-0 text-gray-400 dark:text-gray-500',
       },
     },
   },
@@ -1445,8 +1417,8 @@ export default {
       truncate: 'truncate',
       blockTruncate: 'block truncate',
       height: 'max-h-60',
-      base: 'relative focus:outline-none overflow-y-auto scroll-py-1',
-      background: 'dark:bg-gray-800',
+      selectMenuBase: 'relative focus:outline-none overflow-y-auto scroll-py-1',
+      background: 'bg-white dark:bg-gray-800',
       shadow: 'shadow-lg',
       rounded: 'rounded-md',
       padding: 'p-1',
@@ -1487,14 +1459,14 @@ export default {
     variants: {
       default: {
         selectedIcon: 'heroicons:check-20-solid',
+        optionColor: 'text-gray-900 dark:text-white',
+        optionActive: 'bg-gray-100 dark:bg-gray-900',
+        optionDisabled: 'cursor-not-allowed opacity-50',
+        optionEmpty: 'text-sm text-gray-400 dark:text-gray-500 px-2 py-1.5',
+        optionIconActive: 'text-gray-900 dark:text-white',
+        optionIconInactive: 'text-gray-400 dark:text-gray-500',
+        optionSelectedIconBase: 'h-4 w-4 text-gray-900 dark:text-white flex-shrink-0',
       },
-      optionColor: 'text-gray-900 dark:text-white',
-      optionActive: 'bg-gray-100 dark:bg-gray-900',
-      optionDisabled: 'cursor-not-allowed opacity-50',
-      optionEmpty: 'text-sm text-gray-400 dark:text-gray-500 px-2 py-1.5',
-      optionIconActive: 'text-gray-900 dark:text-white',
-      optionIconInactive: 'text-gray-400 dark:text-gray-500',
-      optionSelectedIconBase: 'h-4 w-4 text-gray-900 dark:text-white flex-shrink-0',
 
     },
   },
@@ -1509,8 +1481,11 @@ export default {
       overlayEnterTo: 'opacity-100',
       overlayLeaveTransition: 'ease-in-out duration-500',
       overlayLeaveFrom: 'opacity-100',
+      enterFromLeft: '-translate-x-full',
+      enterFromRight: 'translate-x-full',
+      enterToAndFrom: 'translate-x-0',
       overlayLeaveTo: 'opacity-0',
-      base: 'relative flex-1 flex flex-col w-full focus:outline-none',
+      slideOverBase: 'relative flex-1 flex flex-col w-full focus:outline-none',
       background: 'bg-white dark:bg-gray-900',
       ring: '',
       rounded: '',
@@ -1525,9 +1500,9 @@ export default {
       default: {
         root: 'fixed inset-0 flex z-50',
         overlayBase: 'fixed inset-0 transition-opacity',
+        overlayBackground: 'bg-gray-200/75 dark:bg-gray-800/75',
+        background: 'bg-white dark:bg-gray-900',
       },
-      overlayBackground: 'bg-gray-200/75 dark:bg-gray-800/75',
-      background: 'bg-white dark:bg-gray-900',
     },
   },
 
@@ -1555,22 +1530,19 @@ export default {
 
     variants: {
       default: {
-        onIcon: null,
-        offIcon: null,
-        color: 'green',
+        iconBase: 'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity',
+        iconActive: 'opacity-100 ease-in duration-200',
+        iconInactive: 'opacity-0 ease-out duration-100',
+        iconOn: 'h-3 w-3 text-{color}-500 dark:text-{color}-400',
+        ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900',
+        active: 'bg-{color}-500 dark:bg-{color}-400',
       },
-      iconBase: 'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity',
-      iconActive: 'opacity-100 ease-in duration-200',
-      iconInactive: 'opacity-0 ease-out duration-100',
-      iconOn: 'h-3 w-3 text-{color}-500 dark:text-{color}-400',
-      ring: 'focus-visible:ring-2 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900',
-      active: 'bg-{color}-500 dark:bg-{color}-400',
     },
   },
   UVerticalNavigation: {
     base: {
       root: 'relative',
-      base: 'group relative flex items-center gap-2 focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-1 focus-visible:before:ring-green-500 dark:focus-visible:before:ring-green-400 before:absolute before:inset-px before:rounded-md disabled:cursor-not-allowed disabled:opacity-75',
+      verticalNavigationBase: 'group relative flex items-center gap-2 focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-1 focus-visible:before:ring-green-500 dark:focus-visible:before:ring-green-400 before:absolute before:inset-px before:rounded-md disabled:cursor-not-allowed disabled:opacity-75',
       ring: 'focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-green-500 dark:focus-visible:ring-green-400',
       padding: 'px-3 py-1.5',
       width: 'w-full',

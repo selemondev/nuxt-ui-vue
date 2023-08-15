@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import type { Notification } from '@/Types/components/notification'
 
-export function useToast() {
+function useToast() {
   const notifications = ref([])
 
   function add(notification: Partial<Notification>) {
@@ -28,3 +28,5 @@ export function useToast() {
     remove,
   }
 }
+
+export default useToast

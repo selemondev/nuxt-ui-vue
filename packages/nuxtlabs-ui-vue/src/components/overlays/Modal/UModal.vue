@@ -118,7 +118,7 @@ export default defineComponent({
           <TransitionChild as="template" :appear="appear" v-bind="transitionClass">
             <HDialogPanel
               :class="[
-                variant.base,
+                variant.modalBase,
                 variant.background,
                 variant.ring,
                 variant.shadow,

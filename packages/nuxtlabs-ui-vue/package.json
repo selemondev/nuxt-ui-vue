@@ -2,6 +2,21 @@
   "name": "nuxtlabs-ui-vue",
   "version": "0.0.0",
   "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "require": "./dist/nuxtlabs-ui-vue.cjs",
+      "import": "./dist/nuxtlabs-ui-vue.mjs"
+    },
+    "./dist/theme/nuxtlabsTheme": "./dist/theme/nuxtlabsTheme"
+  },
+  "main": "./dist/nuxtlabs-ui-vue.cjs",
+  "module": "./dist/nuxtlabs-ui-vue.mjs",
+  "types": "./dist/src/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "vite build && pnpm run build:theme",
     "build:watch": "vite build --watch",
@@ -12,6 +27,9 @@
     "release": "pnpm build && bumpp --commit --push --tag && pnpm publish",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.4"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.15",

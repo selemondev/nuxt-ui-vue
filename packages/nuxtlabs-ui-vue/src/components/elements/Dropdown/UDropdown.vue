@@ -154,7 +154,7 @@ export default defineComponent({
 
     <div v-if="open && props.items" ref="container" :class="[variant.container, variant.width]" :style="containerStyle" @mouseover="onMouseOver">
       <Transition appear v-bind="nuxtLabsTheme.UDropdown.base.transition">
-        <HMenuItems :class="[variant.base, variant.divide, variant.ring, variant.rounded, variant.shadow, variant.background, variant.height]" static>
+        <HMenuItems :class="[variant.dropdownBase, variant.divide, variant.ring, variant.rounded, variant.shadow, variant.background, variant.height]" static>
           <div v-for="(subItems, index) of props.items" :key="index" :class="variant.padding">
             <HMenuItem v-for="(item, subIndex) of subItems" :key="subIndex" v-slot="{ active, disabled: itemDisabled }" :disabled="item.disabled">
               <ULink

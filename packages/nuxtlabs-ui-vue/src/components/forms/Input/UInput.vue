@@ -155,7 +155,7 @@ const trailingIconName = computed(() => {
 const inputClass = computed(() => {
   const variants = nuxtLabsTheme.UInput.base.color[props.color as string]?.[props.intent as string] || nuxtLabsTheme.UInput.base.intent[props.intent]
   return classNames(
-    variant.value.base,
+    variant.value.inputBase,
     variant.value.rounded,
     variant.value.placeholder,
     nuxtLabsTheme.UInput.base.size[props.size],
