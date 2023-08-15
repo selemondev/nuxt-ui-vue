@@ -1276,6 +1276,38 @@ export default {
     },
   },
 
+  USlideover: {
+    base: {
+      root: 'fixed inset-0 flex z-50',
+      overlayBase: 'fixed inset-0 transition-opacity',
+      overlayBackground: 'bg-gray-200/75 dark:bg-gray-800/75',
+      overlayEnterTransition: 'ease-in-out duration-500',
+      overlayEnterFrom: 'opacity-0',
+      overlayEnterTo: 'opacity-100',
+      overlayLeaveTransition: 'ease-in-out duration-500',
+      overlayLeaveFrom: 'opacity-100',
+      overlayLeaveTo: 'opacity-0',
+      base: 'relative flex-1 flex flex-col w-full focus:outline-none',
+      background: 'bg-white dark:bg-gray-900',
+      ring: '',
+      rounded: '',
+      padding: '',
+      shadow: 'shadow-xl',
+      width: 'w-screen max-w-md',
+      transitionEnter: 'transform transition ease-in-out duration-300',
+      transitionLeave: 'transform transition ease-in-out duration-200',
+    },
+
+    variants: {
+      default: {
+        root: 'fixed inset-0 flex z-50',
+        overlayBase: 'fixed inset-0 transition-opacity',
+      },
+      overlayBackground: 'bg-gray-200/75 dark:bg-gray-800/75',
+      background: 'bg-white dark:bg-gray-900',
+    },
+  },
+
   UToggle: {
     base: {
       root: 'relative inline-flex h-5 w-9 flex-shrink-0 border-2 border-transparent disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none',

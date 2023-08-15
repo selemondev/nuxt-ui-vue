@@ -373,6 +373,26 @@ export interface USelectMenu extends UComponentRoot {
 
 }
 
+export interface USlideover extends UComponentRoot {
+  overlayBase?: string
+  overlayBackground?: string
+  overlayEnterTransition?: string
+  overlayEnterFrom?: string
+  overlayEnterTo?: string
+  overlayLeaveTransition?: string
+  overlayLeaveFrom?: string
+  overlayLeaveTo?: string
+  base?: string
+  background?: string
+  ring?: string
+  rounded?: string
+  padding?: string
+  shadow?: string
+  width?: string
+  transitionEnter?: string
+  transitionLeave?: string
+}
+
 export interface UTable extends UComponentRoot {
   base?: string
   divide?: string
@@ -506,5 +526,6 @@ export type URadioVariants = WithVariantProps<URadio>
 export type URangeVariants = WithVariantProps<URange>
 export type USelectVariants = WithVariantProps<USelect>
 export type USelectMenuVariants = WithVariantProps<USelectMenu>
+export type USlideoverVariants = WithVariantProps<USlideover>
 export type UToggleVariants = WithVariantProps<UToggle>
 export type UVerticalNavigationVariants = WithVariantProps<UVerticalNavigation>
