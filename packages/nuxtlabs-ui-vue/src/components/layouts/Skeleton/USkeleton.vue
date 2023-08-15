@@ -4,16 +4,12 @@ import { omit } from 'lodash-es'
 import { twJoin, twMerge } from 'tailwind-merge'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
-import type { UContainer } from '@/Types/componentsTypes/components'
+import type { USkeleton } from '@/Types/componentsTypes/components'
 import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
 
 const props = defineProps({
-  ...getVariantPropsWithClassesList<UCard>(),
-  as: {
-    type: String,
-    default: 'div',
-  },
+  ...getVariantPropsWithClassesList<USkeleton>(),
 })
 
 const attrs = useAttrs()
@@ -25,30 +21,28 @@ const variant = computed(() => {
     ...props,
     variant: props.variant,
   }
-  return useVariants<UContainer>(
-    Components.UContainer,
-    customProps as VariantJSWithClassesListProps<UContainer>,
+  return useVariants<USkeleton>(
+    Components.USkeleton,
+    customProps as VariantJSWithClassesListProps<USkeleton>,
   )
 })
 
-const containerClass = computed(() => {
+const skeletonClass = computed(() => {
   return twMerge(twJoin(
     variant.value.root,
-    variant.value.padding,
-    variant.value.constrained,
+    variant.value.background,
+    variant.value.rounded,
   ), attrs.class as string)
 })
 </script>
 
 <script lang="ts">
 export default defineComponent({
-  name: Components.UContainer,
+  name: Components.USkeleton,
   inheritAttrs: false,
 })
 </script>
 
 <template>
-  <component :is="as" :class="containerClass" v-bind="attrsOmitted">
-    <slot />
-  </component>
+  <div :class="skeletonClass" v-bind="attrsOmitted" />
 </template>

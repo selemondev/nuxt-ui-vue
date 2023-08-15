@@ -26,6 +26,7 @@ export enum Components {
   URange = 'URange',
   USelect = 'USelect',
   USelectMenu = 'USelectMenu',
+  USkeleton = 'USkeleton',
   USlideover = 'USlideover',
   UTable = 'UTable',
   UTabs = 'UTabs',

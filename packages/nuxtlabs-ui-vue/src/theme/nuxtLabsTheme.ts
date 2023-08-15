@@ -993,6 +993,20 @@ export default {
     },
   },
 
+  USkeleton: {
+    base: {
+      root: 'animate-pulse',
+      background: 'bg-gray-100 dark:bg-gray-800',
+      rounded: 'rounded-md',
+    },
+    variants: {
+      default: {
+        root: 'animate-pulse',
+      },
+      background: 'bg-gray-100 dark:bg-gray-800',
+    },
+  },
+
   UTable: {
     base: {
       root: 'relative',

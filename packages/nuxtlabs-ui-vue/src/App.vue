@@ -12,9 +12,19 @@ function handleClose() {
 </script>
 
 <template>
-  <div class="grid place-items-center w-full min-h-screen">
-    <div class="w-96">
-      <UContainer>Content</UContainer>
+  <div class="grid place-items-center w-full min-h-screen bg-gray-400">
+    <div class="flex items-center space-x-4">
+      <USkeleton
+        class="h-12 w-12" :variants="{
+          'my-variant': {
+            rounded: 'rounded-full',
+          },
+        }" :variant="['my-variant']"
+      />
+      <div class="space-y-2">
+        <USkeleton class="h-4 w-[250px]" />
+        <USkeleton class="h-4 w-[200px]" />
+      </div>
     </div>
   </div>
 </template>

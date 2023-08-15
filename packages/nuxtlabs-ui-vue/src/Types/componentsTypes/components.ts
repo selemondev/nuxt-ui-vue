@@ -457,6 +457,11 @@ export interface USelectMenu extends UComponentRoot {
 
 }
 
+export interface USkeleton extends UComponentRoot {
+  background?: string
+  rounded?: string
+}
+
 export interface USlideover extends UComponentRoot {
   overlayBase?: string
   overlayBackground?: string
@@ -636,6 +641,7 @@ export type URadioVariants = WithVariantProps<URadio>
 export type URangeVariants = WithVariantProps<URange>
 export type USelectVariants = WithVariantProps<USelect>
 export type USelectMenuVariants = WithVariantProps<USelectMenu>
+export type USkeletonVariants = WithVariantProps<USkeleton>
 export type USlideoverVariants = WithVariantProps<USlideover>
 export type UToggleVariants = WithVariantProps<UToggle>
 export type UTooltipVariants = WithVariantProps<UTooltip>

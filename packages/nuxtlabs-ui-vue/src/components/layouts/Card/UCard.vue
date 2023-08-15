@@ -31,7 +31,7 @@ const attrs = useAttrs()
 
 const cardClass = computed(() => {
   return twMerge(twJoin(
-    variant.value.base,
+    variant.value.root,
     variant.value.rounded,
     variant.value.divide,
     variant.value.ring,
