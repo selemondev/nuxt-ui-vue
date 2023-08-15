@@ -14,13 +14,7 @@ function handleClose() {
 <template>
   <div class="grid place-items-center w-full min-h-screen">
     <div class="w-96">
-      <UCard>
-        <template #header />
-
-        Body
-
-        <template #footer />
-      </UCard>
+      <UContainer>Content</UContainer>
     </div>
   </div>
 </template>
