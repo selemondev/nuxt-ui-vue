@@ -27,5 +27,6 @@ export enum Components {
   UTabs = 'UTabs',
   UTextarea = 'UTextarea',
   UToggle = 'UToggle',
+  UTooltip = 'UTooltip',
   UVerticalNavigation = 'UVerticalNavigation',
 }

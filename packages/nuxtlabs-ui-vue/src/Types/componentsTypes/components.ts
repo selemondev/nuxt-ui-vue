@@ -499,6 +499,27 @@ export interface UToggle extends UComponentRoot {
   default?: objectProp
 }
 
+export interface UTooltip extends UComponentRoot {
+  container?: string
+  width?: string
+  background?: string
+  color?: string
+  shadow?: string
+  rounded?: string
+  ring?: string
+  base?: string
+  shortcuts?: string
+  transitionEnterActiveClass?: string
+  transitionEnterFromClass?: string
+  transitionEnterToClass?: string
+  transitionLeaveActiveClass?: string
+  transitionLeaveFromClass?: string
+  transitionLeaveToClass?: string
+  popper?: {
+    strategy?: string
+  }
+}
+
 export interface UVerticalNavigation extends UComponentRoot {
   base?: string
   ring?: string
@@ -546,4 +567,5 @@ export type USelectVariants = WithVariantProps<USelect>
 export type USelectMenuVariants = WithVariantProps<USelectMenu>
 export type USlideoverVariants = WithVariantProps<USlideover>
 export type UToggleVariants = WithVariantProps<UToggle>
+export type UTooltipVariants = WithVariantProps<UTooltip>
 export type UVerticalNavigationVariants = WithVariantProps<UVerticalNavigation>
