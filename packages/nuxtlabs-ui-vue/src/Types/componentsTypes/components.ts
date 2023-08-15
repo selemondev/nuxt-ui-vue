@@ -293,6 +293,23 @@ export interface UPagination extends UComponentRoot {
   defaultNextButtonIcon?: string
 }
 
+export interface UPopover extends UComponentRoot {
+  root?: string
+  container?: string
+  width?: string
+  background?: string
+  shadow?: string
+  rounded?: string
+  ring?: string
+  base?: string
+  transitionEnterActiveClass?: string
+  transitionEnterFromClass?: string
+  transitionEnterToClass?: string
+  transitionLeaveActiveClass?: string
+  transitionLeaveFromClass?: string
+  transitionLeaveToClass?: string
+}
+
 export interface URadio extends UComponentRoot {
   base?: string
   color?: string
@@ -522,6 +539,7 @@ export type UTextareaVariants = WithVariantProps<UTextarea>
 export type UModalVariants = WithVariantProps<UModal>
 export type UKbdVariants = WithVariantProps<UKbd>
 export type UPaginationVariants = WithVariantProps<UPagination>
+export type UPopoverVariants = WithVariantProps<UPopover>
 export type URadioVariants = WithVariantProps<URadio>
 export type URangeVariants = WithVariantProps<URange>
 export type USelectVariants = WithVariantProps<USelect>
