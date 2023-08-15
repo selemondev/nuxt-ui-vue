@@ -704,6 +704,41 @@ export default {
     },
   },
 
+  UPagination: {
+    base: {
+      root: 'flex items-center -space-x-px',
+      base: '',
+      rounded: 'first:rounded-s-md last:rounded-e-md',
+      default: {
+        size: 'sm',
+        activeButton: {
+          color: 'green',
+        },
+        inactiveButton: {
+          color: 'white',
+        },
+        prevButton: {
+          color: 'white',
+          class: 'rtl:[&_span:first-child]:rotate-180',
+          icon: 'heroicons:chevron-left-20-solid',
+        },
+        nextButton: {
+          color: 'white',
+          class: 'rtl:[&_span:last-child]:rotate-180',
+          icon: 'heroicons:chevron-right-20-solid',
+        },
+      },
+    },
+
+    variants: {
+      default: {
+        root: 'flex items-center -space-x-px',
+        base: '',
+        rounded: 'first:rounded-s-md last:rounded-e-md',
+      },
+    },
+  },
+
   URange: {
     base: {
       root: 'relative w-full flex items-center',

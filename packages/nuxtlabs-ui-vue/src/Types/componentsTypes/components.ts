@@ -264,6 +264,20 @@ export interface UKbd extends UComponentRoot {
   default?: objectProp
 }
 
+export interface UPagination extends UComponentRoot {
+  base?: string
+  rounded?: string
+  defaultSize?: string
+  defaultActiveButtonColor?: string
+  defaultInactiveButtonColor?: string
+  defaultPrevButtonColor?: string
+  defaultPrevButtonClass?: string
+  defaultPrevButtonIcon?: string
+  defaultNextButtonColor?: string
+  defaultNextButtonClass?: string
+  defaultNextButtonIcon?: string
+}
+
 export interface URadio extends UComponentRoot {
   base?: string
   color?: string
@@ -443,6 +457,7 @@ export type UInputVariants = WithVariantProps<UInput>
 export type UTableVariants = WithVariantProps<UTable>
 export type UTextareaVariants = WithVariantProps<UTextarea>
 export type UKbdVariants = WithVariantProps<UKbd>
+export type UPaginationVariants = WithVariantProps<UPagination>
 export type URadioVariants = WithVariantProps<URadio>
 export type URangeVariants = WithVariantProps<URange>
 export type USelectVariants = WithVariantProps<USelect>
