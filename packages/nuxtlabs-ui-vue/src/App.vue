@@ -9,11 +9,11 @@ const isOpen = ref(false)
     <div>
       <UButton label="Open" @click="isOpen = true" />
 
-      <UModal
+      <USlideover
         v-model="isOpen"
       >
       <!-- Content -->
-      </UModal>
+      </USlideover>
     </div>
   </div>
 </template>
