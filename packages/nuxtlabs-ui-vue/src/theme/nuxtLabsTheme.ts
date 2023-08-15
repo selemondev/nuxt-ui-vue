@@ -704,6 +704,46 @@ export default {
     },
   },
 
+  UModal: {
+    base: {
+      root: 'relative z-50',
+      inner: 'fixed inset-0 overflow-y-auto',
+      container: 'flex min-h-full items-end sm:items-center justify-center text-center',
+      padding: 'p-4 sm:p-0',
+      margin: 'sm:my-8',
+      base: 'relative text-left rtl:text-right overflow-hidden w-full flex flex-col',
+      overlayBase: 'fixed inset-0 transition-opacity',
+      overlayBackground: 'bg-gray-200/75 dark:bg-gray-800/75',
+      overlayEnterTransition: 'ease-out duration-300',
+      overlayEnterFrom: 'opacity-0',
+      overlayEnterTo: 'opacity-100',
+      overlayLeaveTransition: 'ease-in duration-200',
+      overlayLeaveFrom: 'opacity-100',
+      overlayLeaveTo: 'opacity-0',
+      background: 'bg-white dark:bg-gray-900',
+      ring: '',
+      rounded: 'rounded-lg',
+      shadow: 'shadow-xl',
+      width: 'sm:max-w-lg',
+      height: 'h-96',
+      transitionEnter: 'ease-out duration-300',
+      transitionEnterFrom: 'opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95',
+      transitionEnterTo: 'opacity-100 translate-y-0 sm:scale-100',
+      transitionLeave: 'ease-in duration-200',
+      transitionLeaveFrom: 'opacity-100 translate-y-0 sm:scale-100',
+      transitionLeaveTo: 'opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95',
+    },
+
+    variants: {
+      default: {
+        root: 'relative z-50',
+        inner: 'fixed inset-0 overflow-y-auto',
+      },
+      overlayBackground: 'bg-gray-200/75 dark:bg-gray-800/75',
+      background: 'bg-white dark:bg-gray-900',
+    },
+  },
+
   UPagination: {
     base: {
       root: 'flex items-center -space-x-px',
