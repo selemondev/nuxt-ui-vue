@@ -102,7 +102,6 @@ export default defineComponent({
 </script>
 
 <template>
-  {{ variant }}
   <div :class="alertClass">
     <div class="flex gap-3" :class="{ 'items-start': (description || $slots.description), 'items-center': !description && !$slots.description }">
       <UIcon v-if="icon" :name="icon" :class="variant.iconBase" />

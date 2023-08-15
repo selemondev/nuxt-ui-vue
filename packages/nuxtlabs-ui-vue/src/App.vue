@@ -1,30 +1,50 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useToast } from '@/composables/useToast'
 
-const toast = useToast()
+const people = [{
+  id: 'benjamincanac',
+  label: 'benjamincanac',
+  href: 'https://github.com/benjamincanac',
+  target: '_blank',
+  avatar: { src: 'https://avatars.githubusercontent.com/u/739984?v=4' },
+},
+{
+  id: 'Atinux',
+  label: 'Atinux',
+  href: 'https://github.com/Atinux',
+  target: '_blank',
+  avatar: { src: 'https://avatars.githubusercontent.com/u/904724?v=4' },
+},
+{
+  id: 'smarroufin',
+  label: 'smarroufin',
+  href: 'https://github.com/smarroufin',
+  target: '_blank',
+  avatar: { src: 'https://avatars.githubusercontent.com/u/7547335?v=4' },
+},
+{
+  id: 'nobody',
+  label: 'Nobody',
+  icon: 'heroicons:user-circle',
+}]
 
-const show = ref(true)
-
-function handleClose() {
-  return show.value = false
-}
+const selected = ref(people[0])
 </script>
 
 <template>
-  <div class="grid place-items-center w-full min-h-screen bg-gray-400">
-    <div class="flex items-center space-x-4">
-      <USkeleton
-        class="h-12 w-12" :variants="{
-          'my-variant': {
-            rounded: 'rounded-full',
-          },
-        }" :variant="['my-variant']"
-      />
-      <div class="space-y-2">
-        <USkeleton class="h-4 w-[250px]" />
-        <USkeleton class="h-4 w-[200px]" />
-      </div>
+  {{ selected }}
+  <div class="grid place-items-center w-full min-h-screen">
+    <div class="">
+      <USelectMenu
+        v-model="selected" :options="people"
+      >
+        <template #label>
+          <UIcon v-if="selected.icon" :name="selected.icon" class="w-4 h-4" />
+          <UAvatar v-else-if="selected.avatar" v-bind="selected.avatar" size="3xs" />
+
+          {{ selected.label }}
+        </template>
+      </USelectMenu>
     </div>
   </div>
 </template>

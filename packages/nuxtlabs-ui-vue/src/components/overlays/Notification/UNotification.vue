@@ -180,11 +180,16 @@ export default defineComponent({
     <div :class="wrapperClass" v-bind="attrsOmitted" @mouseover="onMouseover" @mouseleave="onMouseleave">
       <div :class="[variant.container, variant.rounded, variant.ring]">
         <div :class="variant.padding">
-          <div class="flex gap-3" :class="{ 'items-start': description || $slots.description, 'items-center': !description && !$slots.description }">
+          <div
+            :class="[
+              { 'items-start': description || $slots.description, 'items-center': !description && !$slots.description },
+              variant.flexGap,
+            ]"
+          >
             <UIcon v-if="icon" :name="icon" :class="iconClass" />
             <UAvatar v-if="avatar" v-bind="{ size: variant.avatarSize, ...avatar }" :class="variant.avatarBase" />
 
-            <div class="w-0 flex-1">
+            <div :class="variant.flexTitle">
               <p :class="variant.title">
                 <slot name="title" :title="title">
                   {{ title }}
@@ -196,12 +201,12 @@ export default defineComponent({
                 </slot>
               </p>
 
-              <div v-if="(description || $slots.description) && actions.length" class="mt-3 flex items-center gap-2">
+              <div v-if="(description || $slots.description) && actions.length" :class="variant.notificationButtonDescription">
                 <UButton v-for="(action, index) of actions" :key="index" v-bind="{ ...nuxtLabsTheme.UNotification.base.default.actionButton, ...action }" @click.stop="onAction(action)" />
               </div>
             </div>
-            <div class="flex-shrink-0 flex items-center gap-3">
-              <div v-if="!description && !$slots.description && actions.length" class="flex items-center gap-2">
+            <div :class="variant.flexDescription">
+              <div v-if="!description && !$slots.description && actions.length" :class="variant.flexDescriptionLength">
                 <UButton v-for="(action, index) of actions" :key="index" v-bind="{ ...nuxtLabsTheme.UNotification.base.default.actionButton, ...action }" @click.stop="onAction(action)" />
               </div>
 

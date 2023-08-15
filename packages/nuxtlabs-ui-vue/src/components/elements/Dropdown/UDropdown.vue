@@ -141,7 +141,7 @@ export default defineComponent({
       ref="trigger"
       as="div"
       :disabled="props.disabled"
-      class="inline-flex w-full"
+      :class="variant.inline"
       role="button"
       @mouseover="onMouseOver"
     >

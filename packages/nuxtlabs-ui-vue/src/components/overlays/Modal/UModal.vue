@@ -122,10 +122,10 @@ export default defineComponent({
                 variant.background,
                 variant.ring,
                 variant.shadow,
-                fullscreen ? 'w-screen' : variant.width,
-                fullscreen ? 'h-screen' : variant.height,
-                fullscreen ? 'rounded-none' : variant.rounded,
-                fullscreen ? 'm-0' : variant.margin,
+                fullscreen ? variant.widthScreen : variant.width,
+                fullscreen ? variant.heightScreen : variant.height,
+                fullscreen ? variant.roundedNone : variant.rounded,
+                fullscreen ? variant.marginNone : variant.margin,
               ]"
             >
               <slot />

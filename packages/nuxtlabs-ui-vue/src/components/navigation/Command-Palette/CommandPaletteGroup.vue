@@ -35,6 +35,7 @@ const props = defineProps({
 const variant = computed(() => {
   const customProps = {
     ...props,
+    variant: props.variant,
   }
   return useVariants<UCommandPalette>(
     Components.UCommandPalette,

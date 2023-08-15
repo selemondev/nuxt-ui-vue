@@ -108,7 +108,7 @@ const variant = computed(() => {
   )
 })
 
-const bind = Object.assign({}, useAttrs(), props.to ? { href: props.to } : {})
+const bind = Object.assign({}, useAttrs(), props.to ? { href: props.to, target: props.target } : {})
 
 const isLeading = computed(() => {
   return (props.icon && props.leading) || (props.icon && !props.trailing) || (props.loading && !props.trailing) || props.leadingIcon
@@ -160,7 +160,7 @@ const buttonClass = computed(() => {
     nuxtLabsTheme.UButton.base.gap[props.size],
     props.padded && nuxtLabsTheme.UButton.base[isSquare.value ? 'square' : 'padding'][props.size],
     variants.replaceAll('{color}', props.color),
-    props.block ? 'w-full flex justify-center items-center' : 'inline-flex items-center',
+    props.block ? variant.value.block : variant.value.normal,
   )
 })
 </script>
@@ -179,7 +179,7 @@ export default defineComponent({
     </slot>
 
     <slot>
-      <span v-if="label" :class="[props.truncate ? 'text-left break-all line-clamp-1' : '']">
+      <span v-if="label" :class="[props.truncate ? variant.truncate : '']">
         {{ label }}
       </span>
     </slot>

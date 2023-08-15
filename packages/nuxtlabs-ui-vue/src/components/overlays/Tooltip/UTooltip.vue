@@ -132,7 +132,7 @@ export default defineComponent({
           </slot>
 
           <span v-if="shortcuts?.length" :class="variant.shortcuts">
-            <span class="mx-1 text-gray-700 dark:text-gray-200">&middot;</span>
+            <span :class="variant.toolTip">&middot;</span>
             <UKbd v-for="shortcut of shortcuts" :key="shortcut" size="xs">
               {{ shortcut }}
             </Ukbd>

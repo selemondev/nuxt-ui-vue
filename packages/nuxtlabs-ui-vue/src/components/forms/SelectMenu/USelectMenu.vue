@@ -165,10 +165,11 @@ export default defineComponent({
     const variant = computed(() => {
       const customProps = {
         ...props,
+        variant: props.variant,
       }
       return useVariants<USelectMenu>(
         Components.USelectMenu,
-        customProps as unknown as VariantJSWithClassesListProps<USelectMenu>,
+        customProps as VariantJSWithClassesListProps<USelectMenu>,
       )
     })
     const popper = computed<PopperOptions>(() => defu({}, props.popper, variant.value.popper as PopperOptions))
@@ -334,7 +335,7 @@ export default defineComponent({
       v-if="required"
       :value="modelValue"
       :required="required"
-      class="absolute inset-0 w-px opacity-0 cursor-default"
+      :class="variant.selectInput"
       tabindex="-1"
       aria-hidden="true"
     >
@@ -344,7 +345,7 @@ export default defineComponent({
       ref="trigger"
       as="div"
       role="button"
-      class="inline-flex w-full"
+      :class="variant.component"
     >
       <slot :open="open" :disabled="disabled" :loading="loading">
         <button :class="selectClass" :disabled="disabled || loading" type="button" v-bind="$attrs">
@@ -355,9 +356,9 @@ export default defineComponent({
           </span>
 
           <slot name="label">
-            <span v-if="multiple && Array.isArray(modelValue) && modelValue.length" class="block truncate">{{ modelValue.length }} selected</span>
-            <span v-else-if="!multiple && modelValue" class="block truncate">{{ typeof modelValue === 'string' ? modelValue : modelValue[optionAttribute] }}</span>
-            <span v-else class="block truncate" :class="nuxtLabsTheme.USelect.base.placeholder">{{ placeholder || '&nbsp;' }}</span>
+            <span v-if="multiple && Array.isArray(modelValue) && modelValue.length" :class="variant.blockTruncate">{{ modelValue.length }} selected</span>
+            <span v-else-if="!multiple && modelValue" :class="variant.blockTruncate">{{ typeof modelValue === 'string' ? modelValue : modelValue[optionAttribute] }}</span>
+            <span v-else :class="[nuxtLabsTheme.USelect.base.placeholder, variant.blockTruncate]">{{ placeholder || '&nbsp;' }}</span>
           </slot>
 
           <span v-if="(isTrailing && trailingIconName) || $slots.trailing" :class="trailingWrapperIconClass">
@@ -405,7 +406,7 @@ export default defineComponent({
                   />
                   <span v-else-if="option.chip" :class="variant.optionChipBase" :style="{ background: `#${option.chip}` }" />
 
-                  <span class="truncate">{{ typeof option === 'string' ? option : option[optionAttribute] }}</span>
+                  <span :class="variant.truncate">{{ typeof option === 'string' ? option : option[optionAttribute] }}</span>
                 </slot>
               </div>
 
@@ -419,7 +420,7 @@ export default defineComponent({
             <li :class="[variant.optionBase, variant.optionRounded, variant.optionPadding, variant.optionSize, variant.optionColor, active ? variant.optionActive : variant.optionInactive]">
               <div :class="variant.optionContainer">
                 <slot name="option-create" :option="queryOption" :active="active" :selected="selected">
-                  <span class="block truncate">Create "{{ queryOption[optionAttribute] }}"</span>
+                  <span :class="variant.blockTruncate">Create "{{ queryOption[optionAttribute] }}"</span>
                 </slot>
               </div>
             </li>
