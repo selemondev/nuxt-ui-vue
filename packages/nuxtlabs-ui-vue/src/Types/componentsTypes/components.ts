@@ -39,19 +39,6 @@ interface ButtonColorStyles {
   variant: VariantStyles
 }
 
-interface ItemStyle {
-  base: string
-  size: string
-  color: string
-  padding: string
-  icon: string
-}
-
-interface TransitionStyle {
-  enterActiveClass: string
-  leaveActiveClass: string
-}
-
 interface DefaultStyle {
   openIcon: string
   closeIcon: string
@@ -262,6 +249,34 @@ export interface UKbd extends UComponentRoot {
   background?: string
   ring?: string
   default?: objectProp
+}
+
+export interface UModal extends UComponentRoot {
+  inner?: string
+  container?: string
+  padding?: string
+  margin?: string
+  base?: string
+  overlayBase?: string
+  overlayBackground?: string
+  overlayEnterTransition?: string
+  overlayEnterFrom?: string
+  overlayEnterTo?: string
+  overlayLeaveTransition?: string
+  overlayLeaveFrom?: string
+  overlayLeaveTo?: string
+  background?: string
+  ring?: string
+  rounded?: string
+  shadow?: string
+  width?: string
+  height?: string
+  transitionEnter?: string
+  transitionEnterFrom?: string
+  transitionEnterTo?: string
+  transitionLeave?: string
+  transitionLeaveFrom?: string
+  transitionLeaveTo?: string
 }
 
 export interface UPagination extends UComponentRoot {
@@ -484,6 +499,7 @@ export type UInputVariants = WithVariantProps<UInput>
 export type UTableVariants = WithVariantProps<UTable>
 export type UTabsVariants = WithVariantProps<UTabs>
 export type UTextareaVariants = WithVariantProps<UTextarea>
+export type UModalVariants = WithVariantProps<UModal>
 export type UKbdVariants = WithVariantProps<UKbd>
 export type UPaginationVariants = WithVariantProps<UPagination>
 export type URadioVariants = WithVariantProps<URadio>

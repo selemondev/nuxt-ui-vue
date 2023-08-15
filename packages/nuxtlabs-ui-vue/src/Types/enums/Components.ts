@@ -15,6 +15,7 @@ export enum Components {
   UIcon = 'UIcon',
   UInput = 'UInput',
   UKbd = 'UKbd',
+  UModal = 'UModal',
   UPagination = 'UPagination',
   URadio = 'URadio',
   URange = 'URange',
