@@ -52,6 +52,7 @@ export default defineComponent({
           size: props.size,
           text: `${children.value.length - max.value}`,
           name: `${children.value.length - max.value}`,
+          alt: `${children.value.length - max.value}`,
         })
       }
 
