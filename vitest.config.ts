@@ -17,7 +17,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      'windi-ui': r('./packages/windi'),
+      'nuxtlabs-ui-vue': r('./packages/nuxtlabs-ui-vue'),
     },
   },
 })
