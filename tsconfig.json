@@ -21,6 +21,7 @@
     "**/dist/**",
     "**/node_modules/**",
     "**/test/dts/**",
+    "**/example/**",
     "**/packages/nuxtlabs-ui-vue/**"
   ]
 }

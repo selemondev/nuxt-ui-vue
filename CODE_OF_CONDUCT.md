@@ -3,7 +3,7 @@
 
 ## Our Pledge
 
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, race, body size, disability, ethnicity, sex characteristics, and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, race, body size, disability, ethnicity, sex characteristics, and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, status, or sexual identity and orientation.
 
 ## Our Standards
 
