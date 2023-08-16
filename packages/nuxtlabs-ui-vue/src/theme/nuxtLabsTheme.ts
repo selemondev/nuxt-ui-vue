@@ -196,11 +196,13 @@ export default {
 
   UButton: {
     base: {
-      root: 'focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0',
+      root: 'focus:outline-none text-white dark:text-white block font-medium focus-visible:outline-0 rounded-md disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 transition-all duration-200 ease-in',
       font: 'font-medium',
       rounded: 'rounded-md',
       block: 'w-full flex justify-center items-center',
       normal: 'inline-flex items-center',
+      buttonLoading: '!bg-opacity-50 opacity-50 pointer-events-none !cursor-not-allowed !hover:bg-opacity-50 inline-flex items-center',
+      buttonDisabled: '!shadow-none !cursor-not-allowed pointer-events-none opacity-50',
       truncate: 'text-left break-all line-clamp-1',
       size: {
         '2xs': 'text-xs',
@@ -272,7 +274,7 @@ export default {
         size: 'sm',
         intent: 'solid',
         color: 'green',
-        loadingIcon: 'svg-spinners:bars-rotate-fade',
+        loadingIcon: 'heroicons:arrow-path-20-solid',
       },
     },
 
@@ -282,7 +284,7 @@ export default {
         size: 'sm',
         intent: 'solid',
         color: 'green',
-        loadingIcon: 'svg-spinners:bars-rotate-fade',
+        loadingIcon: 'heroicons:arrow-path-20-solid',
       },
       intent: {
         solid: 'shadow-sm text-white dark:text-gray-900 bg-{color}-500 hover:enabled:bg-{color}-600 disabled:bg-{color}-500 dark:bg-{color}-400 dark:hover:enabled:bg-{color}-500 dark:disabled:bg-{color}-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-{color}-500 dark:focus-visible:outline-{color}-400',

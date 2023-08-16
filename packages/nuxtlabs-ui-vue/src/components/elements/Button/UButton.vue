@@ -160,6 +160,8 @@ const buttonClass = computed(() => {
     nuxtLabsTheme.UButton.base.gap[props.size],
     props.padded && nuxtLabsTheme.UButton.base[isSquare.value ? 'square' : 'padding'][props.size],
     variants.replaceAll('{color}', props.color),
+    props.disabled && variant.value.buttonDisabled,
+    (props.loading) && variant.value.buttonLoading,
     props.block ? variant.value.block : variant.value.normal,
   )
 })
