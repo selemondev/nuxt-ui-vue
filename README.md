@@ -146,15 +146,14 @@ app.mount('#app')
 2. Now you can use the component as shown below:
 
 ```js
-<script setup lang="ts">
+<script setup lang='ts'>
 const items = [
   [{
     label: 'Profile',
     avatar: {
       src: 'https://avatars.githubusercontent.com/u/739984?v=4'
     }
-  }], 
-  [{
+  }], [{
     label: 'Edit',
     icon: 'heroicons:pencil-square-20-solid',
     shortcuts: ['E'],
@@ -183,6 +182,7 @@ const items = [
 <template>
   <div class="grid place-items-center w-full min-h-screen">
     <div>
+      {/* @vue-ignore */}
       <TDropdown :items="items" :popper="{ placement: 'bottom-start' }">
         <TButton color="white" label="Options" trailing-icon="heroicons:chevron-down-20-solid" />
       </TDropdown>
@@ -339,7 +339,7 @@ Here is an example of customizing a `UButton` component through the `variants` p
 
 By default, the default `roundedness` of the `UButton` component is `rounded-md`. However, we have customized its appearance by using the variants property to change its `roundedness` and then we used the variant prop to pass our variant which is `my-variant`  ( you can name it whatever you want) to the `variant` array and now the `UButton` component will be rendered with a fully rounded appearance (rounded-full).
 
-You can customize each component this way using the component's preset which can be found [here](./src/theme/nuxtLabsTheme.ts)
+You can customize each component this way using the component's preset which can be found [here](./packages/nuxtlabs-ui-vue/src/theme/nuxtLabsTheme.ts)
 
 For any component that uses the `variant` prop such as the `UButton`, `UBadge`, `UInput`, `UTextarea`, `USelect`, etc, use the `intent` prop instead as shown below:
 
