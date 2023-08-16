@@ -67,7 +67,7 @@ for (const colorName in tailwindColors) {
         colorSafeList.push(`text-${colorName}-${shade}`),
         colorSafeList.push(`accent-${colorName}-${shade}`),
         colorSafeList.push(`bg-${colorName}-${shade}`),
-        colorSafeList.push(`hover:bg-${colorName}-${shade}`),
+        colorSafeList.push(`hover:enabled:bg-${colorName}-${shade}`),
         colorSafeList.push(`focus:bg-${colorName}-${shade}`),
         colorSafeList.push(`ring-${colorName}-${shade}`),
         colorSafeList.push(`focus:ring-${colorName}-${shade}`),
