@@ -5,7 +5,7 @@
 
 ### 🩹 Fixes
 
-- **app:** fix button variants #88
+- **app:** fix button variants ([#88])
 
 ### ❤️  Contributors
 
