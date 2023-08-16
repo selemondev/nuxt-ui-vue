@@ -1,6 +1,6 @@
 {
   "name": "nuxtlabs-ui-vue",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "exports": {
     ".": {
@@ -24,7 +24,7 @@
     "dev": "vite",
     "play": "pnpm --filter playground dev",
     "prepublishOnly": "pnpm run build",
-    "release": "pnpm build && bumpp --commit --push --tag && pnpm publish",
+    "release": "pnpm build && bumpp --commit --push && pnpm publish",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
