@@ -3,6 +3,8 @@ import { computed, defineComponent } from 'vue'
 import type { PropType } from 'vue'
 import { ComboboxOption as HComboboxOption } from '@headlessui/vue'
 import UIcon from '../../elements/Icon/UIcon.vue'
+import UKbd from '@/components/elements/Kbd/UKbd.vue'
+import UAvatar from '@/components/elements/Avatar/UAvatar.vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
@@ -35,7 +37,6 @@ const props = defineProps({
 const variant = computed(() => {
   const customProps = {
     ...props,
-    variant: props.variant,
   }
   return useVariants<UCommandPalette>(
     Components.UCommandPalette,

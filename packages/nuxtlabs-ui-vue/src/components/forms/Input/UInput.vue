@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { computed, defineComponent, onMounted, ref, useSlots } from 'vue'
 import classNames from 'classnames'
+import UIcon from '../../elements/Icon/UIcon.vue'
 import { useFormEvents } from '@/composables/useFormEvents'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import { useVariants } from '@/composables/useVariants'
