@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import { computed, defineComponent, useSlots } from 'vue'
+import { computed, defineComponent, useAttrs, useSlots } from 'vue'
 import type { ComputedRef } from 'vue'
 import classNames from 'classnames'
-import { get } from 'lodash-es'
+import { get, omit } from 'lodash-es'
 import type { USelect } from '@/Types/componentsTypes/components'
 import { Components } from '@/Types/enums/Components'
 import { useFormEvents } from '@/composables/useFormEvents'
@@ -244,6 +244,10 @@ const trailingIconClass = computed(() => {
     props.loading && !isLeading.value && 'animate-spin',
   )
 })
+
+const attrs = useAttrs()
+
+const attrsOmitted = omit(attrs, ['class'])
 </script>
 
 <script lang="ts">
@@ -264,7 +268,7 @@ export default defineComponent({
       :disabled="disabled || loading"
       class="form-select"
       :class="selectClass"
-      v-bind="$attrs"
+      v-bind="attrsOmitted"
       @input="onInput"
       @change="onChange"
     >

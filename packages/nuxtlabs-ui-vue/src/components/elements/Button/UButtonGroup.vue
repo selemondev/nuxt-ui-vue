@@ -29,6 +29,7 @@ const variant = computed(() => {
 <script lang="ts">
 export default defineComponent({
   name: Components.UButtonGroup,
+  inheritAttrs: false,
 })
 </script>
 

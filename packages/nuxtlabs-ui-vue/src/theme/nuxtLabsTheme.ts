@@ -1414,6 +1414,8 @@ export default {
       width: 'w-full',
       selectInput: 'absolute inset-0 w-px opacity-0 cursor-default',
       component: 'inline-flex w-full',
+      selectMenuCursor: 'text-left cursor-default',
+      selectMenuFlex: 'inline-flex items-center',
       truncate: 'truncate',
       blockTruncate: 'block truncate',
       height: 'max-h-60',

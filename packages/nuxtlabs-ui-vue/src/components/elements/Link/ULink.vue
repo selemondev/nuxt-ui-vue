@@ -54,6 +54,7 @@ function resolveLinkClass(route: { query: any; hash: any }, $route: { query: any
 <script lang="ts">
 export default defineComponent({
   name: Components.ULink,
+  inheritAttrs: false,
 })
 </script>
 
