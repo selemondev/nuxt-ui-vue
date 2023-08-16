@@ -8,7 +8,7 @@
 - 🔥 **Icon** - Use any icon from [Iconify](https://icones.netlify.app/) in your project from your favourite icon set.
 -  🛠️ **On Demand Import** - NuxtLabs-UI-Vue comes with an intelligent resolver that automatically imports only used components.
 - ⚡️ **Powerful Tools** - NuxtLabs-UI-Vue is built on top of powerful tools such as TailwindCss, VueUse, Headless UI etc.
-- 🎨 **Themeable** - Customize any part of our beautiful components to match your style.
+- 🎨 **Themeable** - Customize any component to match your brand and style.
 
 ## Getting Started 
 
