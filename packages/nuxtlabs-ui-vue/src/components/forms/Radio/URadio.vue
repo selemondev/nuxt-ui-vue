@@ -88,6 +88,7 @@ const inputClass = computed(() => {
 <script lang="ts">
 export default defineComponent({
   name: Components.URadio,
+  inheritAttrs: false,
 })
 </script>
 

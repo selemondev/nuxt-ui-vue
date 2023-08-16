@@ -1,6 +1,7 @@
 <script setup lang='ts'>
-import { computed, defineComponent, nextTick, onMounted, ref, watch } from 'vue'
+import { computed, defineComponent, nextTick, onMounted, ref, useAttrs, watch } from 'vue'
 import classNames from 'classnames'
+import { omit } from 'lodash-es'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import { Components } from '@/Types/enums/Components'
@@ -156,6 +157,10 @@ const textareaClass = computed(() => {
     !props.resize && 'resize-none',
   )
 })
+
+const attrs = useAttrs()
+
+const attrsOmitted = omit(attrs, ['class'])
 </script>
 
 <script lang="ts">
@@ -179,7 +184,7 @@ export default defineComponent({
       :placeholder="placeholder"
       class="form-textarea"
       :class="textareaClass"
-      v-bind="$attrs"
+      v-bind="attrsOmitted"
       @input="onInput"
       @blur="onBlur"
     />

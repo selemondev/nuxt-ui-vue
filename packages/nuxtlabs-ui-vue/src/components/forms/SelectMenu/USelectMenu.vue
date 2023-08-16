@@ -1,6 +1,7 @@
 <script lang="ts">
 import { computed, defineComponent, ref, watch } from 'vue'
 import type { ComponentPublicInstance, PropType } from 'vue'
+import { omit } from 'lodash-es'
 import {
   Combobox as HCombobox,
   ComboboxButton as HComboboxButton,
@@ -161,7 +162,7 @@ export default defineComponent({
     },
   },
   emits: ['update:modelValue', 'open', 'close', 'change'],
-  setup(props, { emit, slots }) {
+  setup(props, { emit, slots, attrs }) {
     const variant = computed(() => {
       const customProps = {
         ...props,
@@ -207,14 +208,14 @@ export default defineComponent({
       return classNames(
         nuxtLabsTheme.USelect.base.selectBase,
         nuxtLabsTheme.USelect.base.rounded,
-        'text-left cursor-default',
+        variant.value.selectMenuCursor,
         nuxtLabsTheme.USelect.base.size[props.size],
         nuxtLabsTheme.USelect.base.gap[props.size],
         props.padded ? nuxtLabsTheme.USelect.base.padding[props.size] : 'p-0',
         variants?.replaceAll('{color}', props.color),
         (isLeading.value || slots.leading) && nuxtLabsTheme.USelect.base.leading.padding[props.size],
         (isTrailing.value || slots.trailing) && nuxtLabsTheme.USelect.base.trailing.padding[props.size],
-        'inline-flex items-center',
+        variant.value.selectMenuFlex,
       )
     })
 
@@ -294,6 +295,7 @@ export default defineComponent({
     }
 
     return {
+      attrs: omit(attrs, ['class']),
       variant: variant.value,
       trigger,
       container,
@@ -348,7 +350,7 @@ export default defineComponent({
       :class="variant.component"
     >
       <slot :open="open" :disabled="disabled" :loading="loading">
-        <button :class="selectClass" :disabled="disabled || loading" type="button" v-bind="$attrs">
+        <button :class="selectClass" :disabled="disabled || loading" type="button" v-bind="attrs">
           <span v-if="(isLeading && leadingIconName) || $slots.leading" :class="leadingWrapperIconClass">
             <slot name="leading" :disabled="disabled" :loading="loading">
               <UIcon :name="leadingIconName" :class="leadingIconClass" />

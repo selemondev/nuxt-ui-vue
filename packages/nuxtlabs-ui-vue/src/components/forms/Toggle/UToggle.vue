@@ -1,5 +1,6 @@
 <script setup lang='ts'>
-import { computed, defineComponent } from 'vue'
+import { computed, defineComponent, useAttrs } from 'vue'
+import { omit } from 'lodash-es'
 import classNames from 'classnames'
 import { Switch as HSwitch } from '@headlessui/vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
@@ -80,6 +81,10 @@ const onIconClass = computed(() => {
     nuxtLabsTheme.UToggle.base.iconOn.replaceAll('{color}', props.color),
   )
 })
+
+const attrs = useAttrs()
+
+const attrsOmitted = omit(attrs, ['class'])
 </script>
 
 <script lang="ts">
@@ -95,6 +100,7 @@ export default defineComponent({
     :name="name"
     :disabled="disabled"
     :class="switchClass"
+    v-bind="attrsOmitted"
   >
     <span :class="[active ? variant.containerActive : variant.containerInactive, variant.containerBase]">
       <span v-if="onIcon" :class="[active ? variant.iconActive : variant.iconInactive, variant.iconBase]" aria-hidden="true">

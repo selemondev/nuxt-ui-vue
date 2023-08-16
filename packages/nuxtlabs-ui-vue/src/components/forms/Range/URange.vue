@@ -1,6 +1,7 @@
 <script setup lang='ts'>
-import { computed, defineComponent } from 'vue'
+import { computed, defineComponent, useAttrs } from 'vue'
 import classNames from 'classnames'
+import { omit } from 'lodash-es'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { URange } from '@/Types/componentsTypes/components'
@@ -131,6 +132,10 @@ const progressStyle = computed(() => {
     width: `${relativeValue * 100}%`,
   }
 })
+
+const attrs = useAttrs()
+
+const attrsOmitted = omit(attrs, ['class'])
 </script>
 
 <script lang="ts">
@@ -152,7 +157,7 @@ export default defineComponent({
       :step="step"
       type="range"
       :class="[inputClass, thumbClass, trackClass]"
-      v-bind="$attrs"
+      v-bind="attrsOmitted"
       @change="onChange"
     >
 

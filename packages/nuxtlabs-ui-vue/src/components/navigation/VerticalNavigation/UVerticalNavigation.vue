@@ -41,7 +41,6 @@ export default defineComponent({
 </script>
 
 <template>
-  {{ variant }}
   <nav :class="wrapperClass" v-bind="omit(attrs, ['class'])">
     <ULink
       v-for="(link, index) of links"

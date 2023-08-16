@@ -137,6 +137,7 @@ const avatarChipColorStyles = computed(() => ({
 <script lang="ts">
 export default defineComponent({
   name: Components.UAvatar,
+  inheritAttrs: false,
 })
 </script>
 

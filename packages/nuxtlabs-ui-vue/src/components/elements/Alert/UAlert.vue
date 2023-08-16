@@ -98,6 +98,7 @@ function handleClose() {
 <script lang="ts">
 export default defineComponent({
   name: Components.UAlert,
+  inheritAttrs: false,
 })
 </script>
 
