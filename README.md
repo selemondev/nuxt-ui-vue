@@ -145,7 +145,7 @@ app.mount('#app')
 
 2. Now you can use the component as shown below:
 
-```js
+```vue
 <script setup lang='ts'>
 const items = [
   [{
@@ -158,6 +158,7 @@ const items = [
     icon: 'heroicons:pencil-square-20-solid',
     shortcuts: ['E'],
     click: () => {
+      // eslint-disable-next-line no-console
       console.log('Edit')
     }
   }, {
@@ -258,7 +259,7 @@ export default defineConfig({
 
 4. Now you can simply use any component that you want and it will be auto imported on demand ✨
 
-```js
+```vue
 <script setup lang='ts'>
 const items = [
   [{
@@ -271,6 +272,7 @@ const items = [
     icon: 'heroicons:pencil-square-20-solid',
     shortcuts: ['E'],
     click: () => {
+      // eslint-disable-next-line no-console
       console.log('Edit')
     }
   }, {
@@ -324,15 +326,17 @@ In regards to customization, NuxtLabs UI Vue offers two ways of customizing your
 
 Here is an example of customizing a `UButton` component through the `variants` property: 
 
-```js
+```vue
 <template>
-    <div>
-        <UButton :variants="{
-          'my-variant': {
-            rounded: 'rounded-full'
-          }
-        }" :variant="['my-variant']" color="red" label="Button" />
-    </div>
+  <div>
+    <UButton
+      :variants="{
+        'my-variant': {
+          rounded: 'rounded-full',
+        },
+      }" :variant="['my-variant']" color="red" label="Button"
+    />
+  </div>
 </template>
 ```
 
