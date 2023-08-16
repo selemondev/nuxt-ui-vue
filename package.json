@@ -1,6 +1,6 @@
 {
   "name": "@nuxtlabsui/vue-monorepo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "scripts": {
     "build": "rimraf packages/*/{dist,es,lib} && nr -r -F \"./packages/nuxtlabs-ui-vue\" build",
