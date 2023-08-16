@@ -182,7 +182,6 @@ const items = [
 <template>
   <div class="grid place-items-center w-full min-h-screen">
     <div>
-      {/* @vue-ignore */}
       <TDropdown :items="items" :popper="{ placement: 'bottom-start' }">
         <TButton color="white" label="Options" trailing-icon="heroicons:chevron-down-20-solid" />
       </TDropdown>
