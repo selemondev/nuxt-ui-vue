@@ -1,7 +1,7 @@
 {
   "name": "nuxtlabs-ui-vue",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
+  "private": false,
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
