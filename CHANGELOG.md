@@ -5,7 +5,7 @@
 
 ### 🩹 Fixes
 
-- **app:** fix button variants ([#88])
+- **app:** fix button variants ([#88](https://github.com/selemondev/nuxtlabs-ui-vue/pull/88)
 
 ### ❤️  Contributors
 
