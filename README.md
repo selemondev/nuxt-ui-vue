@@ -4,7 +4,7 @@
 
 ## Current Versions
 
-With each release of `nuxtlabs-ui`, a parallel update is applied to `nuxt-ui-vue`, ensuring that the library is up to date and providing you, as the developer, with a seamless experience.
+With each release of `nuxtlabs-ui`, a parallel update will be applied to `nuxt-ui-vue`, ensuring that the library is up to date and providing you, as the developer, with a seamless experience.
 
 Below are the current versions of both libraries:
 
