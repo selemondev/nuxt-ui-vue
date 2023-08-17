@@ -1,18 +1,18 @@
 <p align="center">
-<h1 align="center">NuxtLabs-UI-Vue</h1>
+<h1 align="center">Nuxt UI Vue</h1>
 </p>
 
 ## Features
 
 - 🦾 **TypeScript Support** - Built with TypeScript in mind and from the ground up.
 - 🔥 **Icon** - Use any icon from [Iconify](https://icones.netlify.app/) in your project from your favourite icon set.
--  🛠️ **On Demand Import** - NuxtLabs-UI-Vue comes with an intelligent resolver that automatically imports only used components.
-- ⚡️ **Powerful Tools** - NuxtLabs-UI-Vue is built on top of powerful tools such as TailwindCss, VueUse, Headless UI etc.
+-  🛠️ **On Demand Import** - Nuxt UI Vue comes with an intelligent resolver that automatically imports only used components.
+- ⚡️ **Powerful Tools** - Nuxt UI Vue is built on top of powerful tools such as TailwindCss, VueUse, Headless UI etc.
 - 🎨 **Themeable** - Customize any component to match your brand and style.
 
 ## Getting Started 
 
-Add `NuxtLabs-UI-Vue` to your project by running one of the following commands:
+Add `Nuxt UI Vue` to your project by running one of the following commands:
 
 ```bash
 
@@ -44,7 +44,7 @@ npm install -D @tailwindcss/forms
 
 ## Usage
 
-1. Register the `@tailwindcss/forms` plugin and add the NuxtLabs-UI-Vue theme file, the darkMode class and the tailwindCss colors configuration in your tailwind.config.cjs file as shown below:
+1. Register the `@tailwindcss/forms` plugin and add the `nuxtlabsTheme` theme file, the darkMode class and the tailwindCss colors configuration in your tailwind.config.cjs file as shown below:
 
 ```ts
 import tailwindColors from './node_modules/tailwindcss/colors'
@@ -95,11 +95,11 @@ Since TailwindCss doesn't support dynamic class names, you need to configure the
 
 ### Component registration
 
-With NuxtLabs-UI-Vue, you have the flexibility to register components precisely as you wish:
+With Nuxt-UI-Vue, you have the flexibility to register components precisely as you wish:
 
 ### Import All Components
 
-To import all the components provided by `NuxtLabs-UI-Vue`, add `NuxtLabsUI` in your main entry file as shown below:
+To import all the components provided by `Nuxt-UI-Vue`, add `NuxtLabsUI` in your main entry file as shown below:
 
 ```ts
 import { createApp } from 'vue'
@@ -309,7 +309,7 @@ const items = [
 
 If you're encountering the TypeScript error: **Cannot find module 'nuxtlabs-ui-vue/dist/theme/nuxtlabsTheme' or its corresponding type declarations**, you can follow these steps to resolve it:
 
-1. Create a `nuxtlabs-ui-vue.d.ts` declaration file in your `src` directory and inside it paste the following code:
+1. Create a `nuxt-ui-vue.d.ts` declaration file in your `src` directory and inside it paste the following code:
 
 ```ts
 declare module 'nuxtlabs-ui-vue/dist/theme/nuxtlabsTheme'
@@ -322,7 +322,7 @@ This issue is set to be fixed in the next release.
 
 ## Component Customizations
 
-In regards to customization, NuxtLabs UI Vue offers two ways of customizing your components. The first way is through the `variants` property and the second way is by creating your own `theme file`.
+In regards to customization, Nuxt UI Vue offers two ways of customizing your components. The first way is through the `variants` property and the second way is by creating your own `theme file`.
 
 Here is an example of customizing a `UButton` component through the `variants` property: 
 
