@@ -2,6 +2,12 @@
 <h1 align="center">Nuxt UI Vue</h1>
 </p>
 
+## Current Versions
+
+| nuxtlabs-ui      | nuxt-ui-vue      |
+|------------------|------------------|
+| v2.7.0           | v0.0.3           |
+
 ## Features
 
 - 🦾 **TypeScript Support** - Built with TypeScript in mind and from the ground up.
