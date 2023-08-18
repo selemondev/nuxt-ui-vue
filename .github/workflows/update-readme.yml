@@ -1,0 +1,19 @@
+name: Update Table in README on nuxt-ui-vue Version Change
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme-table:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update README Table
+        run: node .github/scripts/update-readme-table.ts
+        env:
+          README_PATH: README.md
