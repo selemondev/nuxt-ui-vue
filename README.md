@@ -2,6 +2,16 @@
 <h1 align="center">Nuxt-UI-Vue</h1>
 </p>
 
+## Current Versions
+
+With each release of `nuxt-ui-vue`, a parallel update will be applied to `nuxt-ui-vue`, ensuring that the library is up to date and providing you, as the developer, with a seamless experience.
+
+Below are the current versions of both libraries:
+
+| nuxt-ui          | nuxt-ui-vue      |
+|------------------|------------------|
+| v2.7.0           | v0.0.7           |
+
 ## Features
 
 - 🦾 **TypeScript Support** - Built with TypeScript in mind and from the ground up.
