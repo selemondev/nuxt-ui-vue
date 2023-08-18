@@ -11,7 +11,7 @@ Below are the current versions of both libraries:
 
 | nuxt-ui          | nuxt-ui-vue      |
 |------------------|------------------|
-| v2.7.0           | v0.0.3           |
+| v2.7.0           | v0.0.7           |
 
 ## Features
 
@@ -320,21 +320,6 @@ const items = [
   </div>
 </template>
 ```
-
-## Troubleshooting TypeScript Error
-
-If you're encountering the TypeScript error: **Cannot find module 'nuxt-ui-vue/dist/theme/nuxtlabsTheme' or its corresponding type declarations**, you can follow these steps to resolve it:
-
-1. Create a `nuxt-ui-vue.d.ts` declaration file in your `src` directory and inside it paste the following code:
-
-```ts
-declare module 'nuxt-ui-vue/dist/theme/nuxtlabsTheme'
-```
-
-The error should now be resolved.
-
-This issue is set to be fixed in the next release.
-
 
 ## Component Customizations
 
