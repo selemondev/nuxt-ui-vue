@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/selemondev/nuxtlabs-ui-vue/compare/v0.1.7...v0.0.4)
+
+### 🩹 Fixes
+
+- **app:** Button theme ([a0dc385](https://github.com/selemondev/nuxtlabs-ui-vue/commit/a0dc385))
+- Github action ([65edef5](https://github.com/selemondev/nuxtlabs-ui-vue/commit/65edef5))
+- Path ([c56d2de](https://github.com/selemondev/nuxtlabs-ui-vue/commit/c56d2de))
+- **app:** Eslint errors ([c8ff899](https://github.com/selemondev/nuxtlabs-ui-vue/commit/c8ff899))
+
+### 🏡 Chore
+
+- **app:** Update readme table ([a725af4](https://github.com/selemondev/nuxtlabs-ui-vue/commit/a725af4))
+- Test github action ([289f481](https://github.com/selemondev/nuxtlabs-ui-vue/commit/289f481))
+
+### ❤️  Contributors
+
+- Selemondev <selemondev@Selemondevs-MacBook-Pro.local>
+- System Administrator <root@Selemondevs-MacBook-Pro.local>
+
 ## v0.0.3
 
 
