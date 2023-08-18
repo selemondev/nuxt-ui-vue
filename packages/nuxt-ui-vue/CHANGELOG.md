@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/selemondev/nuxtlabs-ui-vue/compare/v0.0.4...v0.0.8)
+
 ## v0.1.7
 
 [compare changes](https://github.com/selemondev/nuxtlabs-ui-vue/compare/v0.1.6...v0.1.7)
