@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable n/prefer-global/process */
 const fs = require('node:fs')
 const path = require('node:path')
@@ -21,24 +22,17 @@ fs.readFile(packageJsonPath, 'utf8', (err, packageJsonData) => {
       console.error(readmeErr)
       process.exit(1)
     }
+    const existingTableRegex = /\| nuxt-ui\s+\| nuxt-ui-vue\s+\|\s+\|[^]*?\|/m
+    const updatedTableRow = `| nuxt-ui          | nuxt-ui-vue      |\n|------------------|------------------|\n| v2.7.0           | v${newNuxtUIVueVersion.padEnd(16)} |`.trim() // <-- Remove trailing whitespace
 
-    // Regular expression to match the table row with nuxt-ui-vue version
-    const regex = /\| nuxt-ui\s+\| nuxt-ui-vue\s+\|\s+\| [^|]*\s+\| [^|]*\s+\|/
+    const updatedData = data.replace(existingTableRegex, updatedTableRow)
 
-    // Create the replacement table row with updated nuxt-ui-vue version
-    const newTableRow = `| nuxt-ui          | nuxt-ui-vue      |\n|------------------|------------------|\n| v2.7.0           | v${newNuxtUIVueVersion}           |`
-
-    // Replace the old table row with the new one
-    const updatedData = data.replace(regex, newTableRow)
-
-    // Write the updated content back to the README file
     fs.writeFile(readmePath, updatedData, 'utf8', (writeErr) => {
       if (writeErr) {
-        console.error(writeErr)
+        console.error('Error writing README:', writeErr)
         process.exit(1)
       }
 
-      // eslint-disable-next-line no-console
       console.log('README table updated successfully.')
     })
   })
