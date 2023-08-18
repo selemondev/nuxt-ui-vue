@@ -8,7 +8,10 @@
       "require": "./dist/nuxt-ui-vue.cjs",
       "import": "./dist/nuxt-ui-vue.mjs"
     },
-    "./dist/theme/nuxtlabsTheme": "./dist/theme/nuxtlabsTheme"
+    "./dist/theme/nuxtlabsTheme": {
+      "require": "./dist/theme/nuxtlabsTheme.ts",
+      "import": "./dist/theme/nuxtlabsTheme.ts"
+    }
   },
   "main": "./dist/nuxt-ui-vue.cjs",
   "module": "./dist/nuxt-ui-vue.mjs",
