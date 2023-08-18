@@ -3,7 +3,7 @@
 const fs = require('node:fs')
 const path = require('node:path')
 
-const packageJsonPath = path.join(__dirname, '../../package.json') // Adjust the path based on your project structure
+const packageJsonPath = path.join(__dirname, '../../packages/nuxt-ui-vue/package.json') // Adjust the path based on your project structure
 const readmePath = path.join(__dirname, '../../README.md')
 
 // Read the package.json file
