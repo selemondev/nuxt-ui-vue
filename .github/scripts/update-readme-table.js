@@ -1,6 +1,6 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import process from 'node:process'
+/* eslint-disable n/prefer-global/process */
+const fs = require('node:fs')
+const path = require('node:path')
 
 const packageJsonPath = path.join(__dirname, '../../packages/nuxt-ui-vue/package.json') // Adjust the path based on your project structure
 const readmePath = path.join(__dirname, '../../README.md')

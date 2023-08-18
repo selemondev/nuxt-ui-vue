@@ -6,6 +6,7 @@
       "react/display-name": "off",
       "react-hooks/rules-of-hooks": "off",
       "no-sequences": "off",
+      "@typescript-eslint/no-require-imports": "off",
       "no-alert": "off",
       "no-console": [
         "error",
