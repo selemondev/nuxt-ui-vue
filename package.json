@@ -1,16 +1,16 @@
 {
-  "name": "@nuxtlabsui/vue-monorepo",
+  "name": "@nuxt-ui/vue-monorepo",
   "version": "0.0.3",
   "private": false,
   "scripts": {
-    "build": "rimraf packages/*/{dist,es,lib} && nr -r -F \"./packages/nuxtlabs-ui-vue\" build",
+    "build": "rimraf packages/*/{dist,es,lib} && nr -r -F \"./packages/nuxt-ui-vue\" build",
     "lint": "eslint .",
     "lint:fix": "nr lint --fix",
     "clean": "rimraf packages/*/{dist,es,lib}",
     "test": "vitest",
     "test:update": "vitest -u",
     "test:coverage": "vitest --coverage",
-    "nuxtlabs-ui-vue": "pnpm --filter nuxtlabs-ui-vue",
+    "nuxt-ui-vue": "pnpm --filter nuxt-ui-vue",
     "postinstall": "npx simple-git-hooks",
     "major": "taze minor -wIr"
   },

@@ -26,8 +26,8 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, './src/index.ts'),
       formats: ['es', 'cjs'],
-      name: 'nuxtlabs-ui-vue',
-      fileName: format => format === 'cjs' ? 'nuxtlabs-ui-vue.cjs' : 'nuxtlabs-ui-vue.mjs',
+      name: 'nuxt-ui-vue',
+      fileName: format => format === 'cjs' ? 'nuxt-ui-vue.cjs' : 'nuxt-ui-vue.mjs',
     },
     rollupOptions: {
       external: externals,

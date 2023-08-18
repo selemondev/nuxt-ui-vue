@@ -1,29 +1,29 @@
 <p align="center">
-<h1 align="center">NuxtLabs-UI-Vue</h1>
+<h1 align="center">Nuxt-UI-Vue</h1>
 </p>
 
 ## Features
 
 - 🦾 **TypeScript Support** - Built with TypeScript in mind and from the ground up.
 - 🔥 **Icon** - Use any icon from [Iconify](https://icones.netlify.app/) in your project from your favourite icon set.
--  🛠️ **On Demand Import** - NuxtLabs-UI-Vue comes with an intelligent resolver that automatically imports only used components.
-- ⚡️ **Powerful Tools** - NuxtLabs-UI-Vue is built on top of powerful tools such as TailwindCss, VueUse, Headless UI etc.
+-  🛠️ **On Demand Import** - Nuxt-UI-Vue comes with an intelligent resolver that automatically imports only used components.
+- ⚡️ **Powerful Tools** - Nuxt-UI-Vue is built on top of powerful tools such as TailwindCss, VueUse, Headless UI etc.
 - 🎨 **Themeable** - Customize any part of our beautiful components to match your style.
 
 ## Getting Started 
 
-Add `NuxtLabs-UI-Vue` to your project by running one of the following commands:
+Add `Nuxt-UI-Vue` to your project by running one of the following commands:
 
 ```bash
 
 # pnpm
-pnpm add nuxtlabs-ui-vue
+pnpm add nuxt-ui-vue
 
 # yarn
-yarn add nuxtlabs-ui-vue
+yarn add nuxt-ui-vue
 
 # npm
-npm install nuxtlabs-ui-vue
+npm install nuxt-ui-vue
 
 ```
 
@@ -44,7 +44,7 @@ npm install -D @tailwindcss/forms
 
 ## Usage
 
-1. Register the `@tailwindcss/forms` plugin and add the NuxtLabs-UI-Vue theme file, the darkMode class and the tailwindCss colors configuration in your tailwind.config.cjs file as shown below:
+1. Register the `@tailwindcss/forms` plugin and add the Nuxt-UI-Vue theme file, the darkMode class and the tailwindCss colors configuration in your tailwind.config.cjs file as shown below:
 
 ```ts
 import tailwindColors from './node_modules/tailwindcss/colors'
@@ -78,7 +78,7 @@ for (const colorName in tailwindColors) {
 }
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}', 'node_modules/nuxtlabs-ui-vue/dist/theme/*.{js,jsx,ts,tsx,vue}'],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}', 'node_modules/nuxt-ui-vue/dist/theme/*.{js,jsx,ts,tsx,vue}'],
   darkMode: 'class',
   safelist: colorSafeList,
   theme: {
@@ -95,18 +95,18 @@ Since TailwindCss doesn't support dynamic class names, you need to configure the
 
 ### Component registration
 
-With NuxtLabs-UI-Vue, you have the flexibility to register components precisely as you wish:
+With Nuxt-UI-Vue, you have the flexibility to register components precisely as you wish:
 
 ### Import All Components
 
-To import all the components provided by `NuxtLabs-UI-Vue`, add `NuxtLabsUI` in your main entry file as shown below:
+To import all the components provided by `Nuxt-UI-Vue`, add `NuxtLabsUI` in your main entry file as shown below:
 
 ```ts
 import { createApp } from 'vue'
 import './style.css'
-import nuxtLabsTheme from 'nuxtlabs-ui-vue/dist/theme/nuxtlabsTheme'
+import nuxtLabsTheme from 'nuxt-ui-vue/dist/theme/nuxtlabsTheme'
 
-import install from 'nuxtlabs-ui-vue'
+import install from 'nuxt-ui-vue'
 import App from './App.vue'
 
 const app = createApp(App)
@@ -114,26 +114,26 @@ app.use(install, nuxtLabsTheme)
 app.mount('#app')
 ```
 
-**By doing this, you are importing all the components that are provided by NuxtLabs-UI-Vue and in your final bundle all the components including the ones you didn't use will be bundled. Use this method of component registration if you are confident that you will use all the components.**
+**By doing this, you are importing all the components that are provided by Nuxt-UI-Vue and in your final bundle all the components including the ones you didn't use will be bundled. Use this method of component registration if you are confident that you will use all the components.**
 
 ### Individual Components with Tree Shaking
 
 Probably you might not want to globally register all the components but instead only import the components that you need. You can achieve this by doing the following: 
 
-1. Import the `createNuxtLabsUI` option as well as the components you need as shown below:
+1. Import the `createUI` option as well as the components you need as shown below:
 
 ```ts
 import { createApp } from 'vue'
 import './style.css'
-import nuxtLabsTheme from 'nuxtlabs-ui-vue/dist/theme/nuxtlabsTheme'
+import nuxtLabsTheme from 'nuxt-ui-vue/dist/theme/nuxtlabsTheme'
 
-import { UButton, UDropdown, createNuxtLabsUI } from 'nuxtlabs-ui-vue'
+import { UButton, UDropdown, createUI } from 'nuxt-ui-vue'
 
 import App from './App.vue'
 
 const app = createApp(App)
 
-const UI = createNuxtLabsUI({
+const UI = createUI({
   prefix: 'T',
   components: [UDropdown, UButton],
 })
@@ -196,7 +196,7 @@ The `prefix` option is only available for individual component imports.
 
 ### Auto Imports with Tree Shaking
 
-**NuxtLabs-UI-Vue** comes with an intelligent resolver that automatically imports only used components.
+**Nuxt-UI-Vue** comes with an intelligent resolver that automatically imports only used components.
 
 This is made possible by leveraging a tool known as [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) which lets you auto import components on demand thus omitting import statements and still get the benefits of tree shaking.
 
@@ -222,15 +222,15 @@ npm i -D unplugin-vue-components
 ```ts
 import { createApp } from 'vue'
 import './style.css'
-import nuxtLabsTheme from 'nuxtlabs-ui-vue/dist/theme/nuxtlabsTheme'
+import nuxtLabsTheme from 'nuxt-ui-vue/dist/theme/nuxtlabsTheme'
 
-import { createNuxtLabsUI } from 'nuxtlabs-ui-vue'
+import { createUI } from 'nuxt-ui-vue'
 
 import App from './App.vue'
 
 const app = createApp(App)
 
-const UI = createNuxtLabsUI({
+const UI = createUI({
   registerComponents: false,
 })
 
@@ -243,7 +243,7 @@ app.mount('#app')
 
 ```ts
 // other imports
-import { NuxtLabsUIComponentResolver } from 'nuxtlabs-ui-vue'
+import { NuxtUIVueComponentResolver } from 'nuxt-ui-vue'
 import Components from 'unplugin-vue-components/vite'
 
 export default defineConfig({
@@ -251,7 +251,7 @@ export default defineConfig({
     // other plugins
     Components({
       resolvers: [
-        NuxtLabsUIComponentResolver()
+        NuxtUIVueComponentResolver()
       ]
     })
   ],
@@ -308,12 +308,12 @@ const items = [
 
 ## Troubleshooting TypeScript Error
 
-If you're encountering the TypeScript error: **Cannot find module 'nuxtlabs-ui-vue/dist/theme/nuxtlabsTheme' or its corresponding type declarations**, you can follow these steps to resolve it:
+If you're encountering the TypeScript error: **Cannot find module 'nuxt-ui-vue/dist/theme/nuxtlabsTheme' or its corresponding type declarations**, you can follow these steps to resolve it:
 
-1. Create a `nuxtlabs-ui-vue.d.ts` declaration file in your `src` directory and inside it paste the following code:
+1. Create a `nuxt-ui-vue.d.ts` declaration file in your `src` directory and inside it paste the following code:
 
 ```ts
-declare module 'nuxtlabs-ui-vue/dist/theme/nuxtlabsTheme'
+declare module 'nuxt-ui-vue/dist/theme/nuxtlabsTheme'
 ```
 
 The error should now be resolved.
