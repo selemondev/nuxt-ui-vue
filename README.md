@@ -113,7 +113,7 @@ With `Nuxt UI Vue`, you have the flexibility to register components precisely as
 
 ### Import All Components
 
-To import all the components provided by `Nuxt UI Vue`, add `NuxtLabsUI` in your main entry file as shown below:
+To import all the components provided by `Nuxt UI Vue`, add `Nuxt UI Vue` in your main entry file as shown below:
 
 With Nuxt-UI-Vue, you have the flexibility to register components precisely as you wish:
 
