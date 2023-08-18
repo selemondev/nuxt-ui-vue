@@ -1,6 +1,17 @@
 <p align="center">
+
 <h1 align="center">Nuxt-UI-Vue</h1>
 </p>
+
+## Current Versions
+
+With each release of `nuxtlabs-ui`, a parallel update will be applied to `nuxt-ui-vue`, ensuring that the library is up to date and providing you, as the developer, with a seamless experience.
+
+Below are the current versions of both libraries:
+
+| nuxt-ui          | nuxt-ui-vue      |
+|------------------|------------------|
+| v2.7.0           | v0.0.3           |
 
 ## Features
 
@@ -44,7 +55,9 @@ npm install -D @tailwindcss/forms
 
 ## Usage
 
+
 1. Register the `@tailwindcss/forms` plugin and add the `Nuxt-UI-Vue` theme file, the darkMode class and the tailwindCss colors configuration in your tailwind.config.cjs file as shown below:
+
 
 ```ts
 import tailwindColors from './node_modules/tailwindcss/colors'
@@ -95,11 +108,14 @@ Since TailwindCss doesn't support dynamic class names, you need to configure the
 
 ### Component registration
 
+
 With `Nuxt UI Vue`, you have the flexibility to register components precisely as you wish:
 
 ### Import All Components
 
 To import all the components provided by `Nuxt UI Vue`, add `NuxtLabsUI` in your main entry file as shown below:
+
+With Nuxt-UI-Vue, you have the flexibility to register components precisely as you wish:
 
 ```ts
 import { createApp } from 'vue'
@@ -322,7 +338,7 @@ This issue is set to be fixed in the next release.
 
 ## Component Customizations
 
-In regards to customization, NuxtLabs UI Vue offers two ways of customizing your components. The first way is through the `variants` property and the second way is by creating your own `theme file`.
+In regards to customization, Nuxt UI Vue offers two ways of customizing your components. The first way is through the `variants` property and the second way is by creating your own `theme file`.
 
 Here is an example of customizing a `UButton` component through the `variants` property: 
 
