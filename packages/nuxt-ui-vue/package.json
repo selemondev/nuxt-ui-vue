@@ -1,17 +1,17 @@
 {
-  "name": "nuxtlabs-ui-vue",
+  "name": "nuxt-ui-vue",
   "version": "0.1.6",
   "private": false,
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
-      "require": "./dist/nuxtlabs-ui-vue.cjs",
-      "import": "./dist/nuxtlabs-ui-vue.mjs"
+      "require": "./dist/nuxt-ui-vue.cjs",
+      "import": "./dist/nuxt-ui-vue.mjs"
     },
     "./dist/theme/nuxtlabsTheme": "./dist/theme/nuxtlabsTheme"
   },
-  "main": "./dist/nuxtlabs-ui-vue.cjs",
-  "module": "./dist/nuxtlabs-ui-vue.mjs",
+  "main": "./dist/nuxt-ui-vue.cjs",
+  "module": "./dist/nuxt-ui-vue.mjs",
   "types": "./dist/src/index.d.ts",
   "files": [
     "dist",

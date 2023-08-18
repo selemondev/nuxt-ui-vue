@@ -17,7 +17,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      'nuxtlabs-ui-vue': r('./packages/nuxtlabs-ui-vue'),
+      'nuxt-ui-vue': r('./packages/nuxt-ui-vue'),
     },
   },
 })

@@ -18,7 +18,7 @@ Every significant change is documented in the changelog file.
 
 ## Reporting Issues
 
-Welcome to Windi UI! We value your feedback and contributions to make this project better. If you encounter any bugs or have feature requests, please use [Github issues](https://github.com/nuxtlabs-ui-vue/nuxtlabs-ui-vue/issues) issues to submit them.
+Welcome to Windi UI! We value your feedback and contributions to make this project better. If you encounter any bugs or have feature requests, please use [Github issues](https://github.com/nuxt-ui-vue/nuxt-ui-vue/issues) issues to submit them.
 
 Before reporting an issue, we ask you to:
 
@@ -32,7 +32,7 @@ Your participation and attention to these guidelines will help us maintain a mor
 
 ## Sending a pull request
 
-1. Fork [the repository](https://github.com/nuxtlabs-ui-vue/nuxtlabs-ui-vue)，and create your branch from `main`. For new feature, please submit your changes directly to the `feature` branch. Other changes should go against `main` branch.
+1. Fork [the repository](https://github.com/nuxt-ui-vue/nuxt-ui-vue)，and create your branch from `main`. For new feature, please submit your changes directly to the `feature` branch. Other changes should go against `main` branch.
 2. Use `pnpm install` install the dependencies
 3. Use `pnpm run dev` start project, RUN `pnpm run play` start the `playground`, RUN `pnpm run docs` to write docs, usually a dev server and document server can be debugged.
 4. Make changes to the codebase. Please add `tests` if applicable.
@@ -98,7 +98,7 @@ The following is a list of commit types:
 
 This repository is managed by `pnpm` and includes the following packages：
 
-1. `nuxtlabs-ui-vue`: Main UI component library for Vue
+1. `nuxt-ui-vue`: Main UI component library for Vue
 
 ## License
 

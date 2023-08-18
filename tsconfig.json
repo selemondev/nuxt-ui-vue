@@ -14,7 +14,7 @@
     "jsx": "preserve",
     "types": ["node", "vite/client"],
     "paths": {
-      "nuxtlabs-ui-vue": ["./packages/nuxtlabs-ui-vue/src/index.ts"]
+      "nuxt-ui-vue": ["./packages/nuxt-ui-vue/src/index.ts"]
     }
   },
   "exclude": [
@@ -22,6 +22,6 @@
     "**/node_modules/**",
     "**/test/dts/**",
     "**/example/**",
-    "**/packages/nuxtlabs-ui-vue/**"
+    "**/packages/nuxt-ui-vue/**"
   ]
 }
