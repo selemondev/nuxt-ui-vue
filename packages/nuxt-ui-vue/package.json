@@ -1,6 +1,6 @@
 {
   "name": "nuxt-ui-vue",
-  "version": "0.0.7",
+  "version": "0.10.7",
   "private": false,
   "exports": {
     ".": {
