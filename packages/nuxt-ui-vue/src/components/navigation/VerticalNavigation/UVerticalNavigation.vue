@@ -50,7 +50,7 @@ export default defineComponent({
       v-slot="{ isActive }"
       :key="index"
       v-bind="omit(link, ['label', 'icon', 'iconClass', 'avatar', 'badge', 'click'])"
-      :to="link.to"
+      :to="link.to ? link.to : ''"
       :class="[variant.verticalNavigationBase, variant.padding, variant.width, variant.ring, variant.rounded, variant.font, variant.size]"
       :active-class="variant.active"
       :inactive-class="variant.inactive"
