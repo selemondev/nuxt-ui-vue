@@ -1542,7 +1542,7 @@ export default {
   UVerticalNavigation: {
     base: {
       root: 'relative',
-      verticalNavigationBase: 'group relative flex items-center gap-2 focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-1 focus-visible:before:ring-green-500 dark:focus-visible:before:ring-green-400 before:absolute before:inset-px before:rounded-md disabled:cursor-not-allowed disabled:opacity-75',
+      verticalNavigationBase: 'group relative flex items-center gap-2 focus:outline-none focus-visible:outline-none hover:bg-gray-100 dark:hover:bg-gray-800 before:inset-px before:rounded-md disabled:cursor-not-allowed disabled:opacity-75',
       ring: 'focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-green-500 dark:focus-visible:ring-green-400',
       padding: 'px-3 py-1.5',
       width: 'w-full',
@@ -1553,12 +1553,12 @@ export default {
       inactive: 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:before:bg-gray-50 dark:hover:before:bg-gray-800/50',
       label: 'truncate relative',
       iconBase: 'flex-shrink-0 w-4 h-4',
-      iconActive: 'text-red-700 dark:text-red-200',
-      iconInactive: 'text-red-400 dark:text-red-500 group-hover:text-red-700 dark:group-hover:text-red-200',
+      iconActive: 'text-gray-700 dark:text-gray-200',
+      iconInactive: 'text-gray-400 dark:text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-200',
       avatarBase: 'flex-shrink-0',
       avatarSize: '3xs',
       badgeBase: 'relative ms-auto inline-block py-0.5 px-2 text-xs rounded-md -me-1 -my-0.5',
-      badgeActive: 'bg-red-500 dark:bg-red-900',
+      badgeActive: 'bg-white dark:bg-gray-900',
       badgeInActive: 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white group-hover:bg-white dark:group-hover:bg-gray-900',
     },
 
