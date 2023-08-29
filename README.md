@@ -314,7 +314,7 @@ const items = [
   <div class="grid place-items-center w-full min-h-screen">
     <div>
       <UDropdown :items="items" :popper="{ placement: 'bottom-start' }">
-        <UButton color="white" label="Options" trailing-icon="heroicons:chevron-down-20-solid" />
+        <UButton color="green" label="Options" trailing-icon="heroicons:chevron-down-20-solid" />
       </UDropdown>
     </div>
   </div>
