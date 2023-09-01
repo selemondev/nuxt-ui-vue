@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/selemondev/nuxt-ui-vue/compare/v0.0.5...v0.0.5)
+
+### 🚀 Enhancements
+
+- **app:** #110 remove image validation ([#110](https://github.com/selemondev/nuxt-ui-vue/issues/110))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev@Selemondevs-MacBook-Pro.local>
+
 ## v0.0.4
 
 [compare changes](https://github.com/selemondev/nuxtlabs-ui-vue/compare/v0.1.7...v0.0.4)
