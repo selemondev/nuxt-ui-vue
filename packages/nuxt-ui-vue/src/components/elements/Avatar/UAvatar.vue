@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { PropType } from 'vue'
-import { computed, defineComponent, ref, watchEffect } from 'vue'
+import { computed, defineComponent } from 'vue'
 import classNames from 'classnames'
 import { Icon } from '@iconify/vue'
 import type { VariantJSWithClassesListProps } from '../../../utils/getVariantProps'
@@ -58,17 +58,6 @@ const props = defineProps({
     default: '',
   },
 
-})
-
-const avatarUrl = ref('')
-
-watchEffect(() => {
-  const img = new Image()
-  img.src = props.src
-  img.decode().then(() => (avatarUrl.value = props.src)).catch((err: string) => {
-    avatarUrl.value = ''
-    throw err
-  })
 })
 
 const placeholder = computed(() => {
@@ -143,9 +132,9 @@ export default defineComponent({
 
 <template>
   <span :class="[avatarWrapperClasses, avatarClasses]" :title="props.name">
-    <img v-if="avatarUrl" :class="avatarClasses" :src="avatarUrl" :alt="props.name">
-    <span v-else-if="!avatarUrl" :class="variant.avatarPlaceholderClass">{{ placeholder }}</span>
-    <Icon v-if="!avatarUrl && !placeholder" :icon="props.icon" :class="[avatarIconSize, variant.avatarIconColor]" />
+    <img v-if="props.src" :class="avatarClasses" :src="props.src" :alt="props.name">
+    <span v-else-if="!props.src" :class="variant.avatarPlaceholderClass">{{ placeholder }}</span>
+    <Icon v-if="!props.src && !placeholder" :icon="props.icon" :class="[avatarIconSize, variant.avatarIconColor]" />
     <span v-if="props.chipColor" :style="avatarChipColorStyles" :class="[avatarChipClass, avatarChipSize]">
       {{ chipText }}
     </span>
