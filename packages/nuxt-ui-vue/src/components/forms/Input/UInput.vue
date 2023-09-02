@@ -242,3 +242,9 @@ export default defineComponent({
     </span>
   </div>
 </template>
+
+<style>
+.form-input {
+  appearance: none;
+}
+</style>
