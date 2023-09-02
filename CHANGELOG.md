@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.7
+
+[compare changes](https://github.com/selemondev/nuxt-ui-vue/compare/v0.0.9-beta.0...v0.0.7)
+
+### 🩹 Fixes
+
+- **app:** Button theme ([7bd2c72](https://github.com/selemondev/nuxt-ui-vue/commit/7bd2c72))
+- **app:** Input theme ([397b13f](https://github.com/selemondev/nuxt-ui-vue/commit/397b13f))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev@Selemondevs-MacBook-Pro.local>
+
 ## v0.0.6
 
 [compare changes](https://github.com/selemondev/nuxt-ui-vue/compare/v0.0.5...v0.0.6)
