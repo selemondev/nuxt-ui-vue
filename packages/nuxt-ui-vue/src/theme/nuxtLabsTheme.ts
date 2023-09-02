@@ -665,7 +665,7 @@ export default {
         },
         trailing: {
           wrapper: 'absolute inset-y-0 end-0 flex items-center',
-          pointer: 'pointer-events-none',
+          pointer: 'cursor-pointer',
           padding: {
             '2xs': 'pe-2',
             'xs': 'pe-2.5',
