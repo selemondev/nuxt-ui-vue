@@ -384,7 +384,7 @@ export default defineComponent({
             :placeholder="searchablePlaceholder"
             autofocus
             autocomplete="off"
-            :class="nuxtLabsTheme.USelectMenu.base.input"
+            :class="variant.input"
             @change="query = $event.target.value"
           />
           <component
