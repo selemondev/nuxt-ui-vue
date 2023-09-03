@@ -11,7 +11,7 @@ Below are the current versions of both libraries:
 
 | nuxt-ui          | nuxt-ui-vue      |
 |------------------|------------------|
-| v2.7.0           | v0.0.9-beta.2    |
+| v2.7.0           | v0.0.9-beta.3    |
 
 ## Features
 
