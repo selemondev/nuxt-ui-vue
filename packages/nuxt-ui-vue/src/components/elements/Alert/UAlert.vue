@@ -37,8 +37,7 @@ const props = defineProps({
     default: () => nuxtLabsTheme.UAlert.base.default.closeButton,
   },
   actions: {
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    type: Array as PropType<(Button & { click: Function })[]>,
+    type: Array as PropType<(Button & { click: () => void })[]>,
     default: () => [],
   },
   color: {
@@ -104,7 +103,10 @@ export default defineComponent({
 
 <template>
   <div :class="alertClass">
-    <div class="flex gap-3" :class="{ 'items-start': (description || $slots.description), 'items-center': !description && !$slots.description }">
+    <div
+      class="flex gap-3"
+      :class="{ 'items-start': (description || $slots.description), 'items-center': !description && !$slots.description }"
+    >
       <UIcon v-if="icon" :name="icon" :class="variant.iconBase" />
 
       <UAvatar v-if="avatar" v-bind="{ size: variant.avatarSize, ...avatar }" :class="variant.avatarBase" />
@@ -122,12 +124,18 @@ export default defineComponent({
         </p>
 
         <div v-if="(description || $slots.description) && actions.length" class="mt-3 flex items-center gap-2">
-          <UButton v-for="(action, index) of actions" :key="index" v-bind="{ ...nuxtLabsTheme.UAlert.base.default.actionButton, ...action }" @click.stop="action.click" />
+          <UButton
+            v-for="(action, index) of actions" :key="index"
+            v-bind="{ ...nuxtLabsTheme.UAlert.base.default.actionButton, ...action }" @click.stop="action.click"
+          />
         </div>
       </div>
       <div class="flex-shrink-0 flex items-center gap-3">
         <div v-if="!description && !$slots.description && actions.length" class="flex items-center gap-2">
-          <UButton v-for="(action, index) of actions" :key="index" v-bind="{ ...nuxtLabsTheme.UAlert.base.default.actionButton, ...action }" @click.stop="action.click" />
+          <UButton
+            v-for="(action, index) of actions" :key="index"
+            v-bind="{ ...nuxtLabsTheme.UAlert.base.default.actionButton, ...action }" @click.stop="action.click"
+          />
         </div>
         <UButton v-if="closeButton" v-bind="{ closeButtonClass, ...closeButton }" @click.stop="handleClose" />
       </div>
