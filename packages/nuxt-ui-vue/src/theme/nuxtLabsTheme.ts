@@ -1265,7 +1265,7 @@ export default {
       shadow: 'shadow',
       rounded: 'rounded',
       ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
-      toolTipBase: 'invisible lg:visible h-6 px-2 py-1 text-xs font-normal truncate',
+      toolTipBase: '[@media(pointer:coarse)]:hidden h-6 px-2 py-1 text-xs font-normal truncate',
       shortcuts: 'hidden md:inline-flex flex-shrink-0 gap-0.5',
       transitionEnterActiveClass: 'transition ease-out duration-200',
       transitionEnterFromClass: 'opacity-0 translate-y-1',
