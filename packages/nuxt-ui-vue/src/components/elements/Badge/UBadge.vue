@@ -32,7 +32,7 @@ const props = defineProps({
     },
   },
   label: {
-    type: String,
+    type: [String, Number],
     default: null,
   },
 })
