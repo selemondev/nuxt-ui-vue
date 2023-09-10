@@ -7,16 +7,16 @@ import { useVariants } from '../../../composables/useVariants'
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UButtonGroup>(),
-  vertical: {
-    type: Boolean,
-    default: false,
+  orientation: {
+    type: String,
+    default: 'horizontal',
   },
 })
 
 const variant = computed(() => {
   const customProps = {
     ...props,
-    variant: props.vertical ? 'vertical' : 'horizontal',
+    variant: props.orientation === 'vertical' ? 'vertical' : 'horizontal',
   }
   return useVariants<UButtonGroup>(
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
