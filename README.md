@@ -374,7 +374,7 @@ Developers interested in contributing should read the [Code of Conduct](./CODE_O
 
 ## Credits
 
-- [@nuxtlabs-ui](https://github.com/nuxtlabs/ui)
+- [@nuxt/ui](https://github.com/nuxt/ui)
 - [@headlessui/vue](https://headlessui.com)
 - [@vueuse/core](https://vueuse.org)
 - [TailwindCss](https://tailwindcss.com)
