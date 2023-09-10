@@ -93,6 +93,8 @@ export interface UAlert extends UComponentRoot {
 export interface UAvatar extends UComponentRoot {
   avatarWrapper?: string
   avatarChipClass?: string
+  avatarBackground?: string
+  avatarText?: string
   avatarSize?: string
   avatarIconSize?: string
   avatarRounded?: string

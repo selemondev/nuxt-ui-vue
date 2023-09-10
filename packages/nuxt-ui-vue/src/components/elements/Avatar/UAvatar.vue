@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import type { PropType } from 'vue'
-import { computed, defineComponent } from 'vue'
+import { omit } from 'lodash-es'
+import { computed, defineComponent, ref, useAttrs, watch } from 'vue'
 import classNames from 'classnames'
 import { Icon } from '@iconify/vue'
 import type { VariantJSWithClassesListProps } from '../../../utils/getVariantProps'
@@ -21,7 +22,11 @@ const props = defineProps({
   },
   src: {
     type: String,
-    default: '',
+    default: null,
+  },
+  text: {
+    type: String,
+    default: null,
   },
   size: {
     type: String as PropType<AvatarSize>,
@@ -40,7 +45,7 @@ const props = defineProps({
 
   chipColor: {
     type: String,
-    default: '',
+    default: null,
   },
 
   chipSize: {
@@ -55,10 +60,28 @@ const props = defineProps({
 
   chipText: {
     type: String,
-    default: '',
+    default: null,
   },
 
 })
+
+const url = computed(() => {
+  if (typeof props.src === 'boolean')
+    return null
+
+  return props.src
+})
+
+const error = ref(false)
+
+watch(() => props.src, () => {
+  if (error.value)
+    error.value = false
+})
+
+function onError() {
+  error.value = true
+}
 
 const placeholder = computed(() => {
   return (props.alt || '').split(' ').map(word => word.charAt(0)).join('').substring(0, 2)
@@ -78,6 +101,7 @@ const variant = computed(() => {
 const avatarWrapperClasses = computed<string>(() => {
   return classNames(
     variant.value.root,
+    (error.value || !url.value) && variant.value.avatarBackground,
     variant.value.avatarSize && variant.value[props.size],
   )
 })
@@ -121,6 +145,8 @@ const avatarIconSize = computed(() => {
 const avatarChipColorStyles = computed(() => ({
   'background-color': props.chipColor || '',
 }))
+const attrs = useAttrs()
+const attrsOmitted = omit(attrs, ['class'])
 </script>
 
 <script lang="ts">
@@ -132,9 +158,10 @@ export default defineComponent({
 
 <template>
   <span :class="[avatarWrapperClasses, avatarClasses]" :title="props.name">
-    <img v-if="props.src" :class="avatarClasses" :src="props.src" :alt="props.name">
-    <span v-else-if="!props.src" :class="variant.avatarPlaceholderClass">{{ placeholder }}</span>
-    <Icon v-if="!props.src && !placeholder" :icon="props.icon" :class="[avatarIconSize, variant.avatarIconColor]" />
+    <img v-if="url && !error" v-bind="attrsOmitted" :class="avatarClasses" :src="url" :alt="props.name" @error="onError">
+    <span v-else-if="text" :class="variant.avatarText">{{ props.text }}</span>
+    <span v-else-if="placeholder" :class="variant.avatarPlaceholderClass">{{ placeholder }}</span>
+    <Icon v-else-if="props.icon" :icon="props.icon" :class="[avatarIconSize, variant.avatarIconColor]" />
     <span v-if="props.chipColor" :style="avatarChipColorStyles" :class="[avatarChipClass, avatarChipSize]">
       {{ chipText }}
     </span>

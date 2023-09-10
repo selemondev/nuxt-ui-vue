@@ -71,6 +71,8 @@ export default {
     base: {
       'root': 'relative cursor-pointer inline-flex items-center justify-center bg-gray-100 rounded-full',
       'avatarRounded': 'rounded-full',
+      'avatarBackground': 'bg-gray-100 dark:bg-gray-800',
+      'avatarText': 'font-medium leading-none text-gray-900 dark:text-white truncate',
       'avatarPlaceholderClass': 'font-medium cursor-pointer text-gray-600 upperCase',
       'avatarIconColor': 'text-black',
       '3xs': 'h-4 w-4 text-[8px]',
