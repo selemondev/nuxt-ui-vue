@@ -30,7 +30,6 @@
     "simple-git-hooks": "^2.9.0",
     "taze": "^0.11.2",
     "typescript": "^5.1.6",
-    "unbuild": "^1.2.1",
     "unplugin-vue-components": "^0.25.1",
     "vite": "^4.4.9",
     "vite-plugin-dts": "^3.5.1",
