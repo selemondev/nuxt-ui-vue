@@ -152,7 +152,6 @@ const attrsOmitted = omit(attrs, ['class'])
 <script lang="ts">
 export default defineComponent({
   name: Components.UAvatar,
-  inheritAttrs: false,
 })
 </script>
 

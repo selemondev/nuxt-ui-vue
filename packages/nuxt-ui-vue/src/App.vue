@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const isOpen = ref(false)
 </script>
 
 <template>
   <div class="grid place-items-center min-h-screen w-full">
-    <UButton label="Open" @click="isOpen = true" />
-    <UModal v-model="isOpen" fullscreen>
-      <!-- Content -->
-    </UModal>
+    <UAvatarGroup size="sm" :max="2">
+      <UAvatar src="https://avatars.githubusercontent.com/u/739984?v=4" alt="benjamincanac" />
+      <UAvatar src="https://avatars.githubusercontent.com/u/904724?v=4" alt="Atinux" />
+      <UAvatar src="https://avatars.githubusercontent.com/u/7547335?v=4" alt="smarroufin" />
+    </UAvatarGroup>
   </div>
 </template>
