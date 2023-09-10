@@ -124,13 +124,13 @@ export default {
   },
   UAvatarGroup: {
     base: {
-      root: 'flex flex-row-reverse',
+      root: 'flex flex-row-reverse justify-end',
       avatarGroupMargin: '-mx-2.5',
     },
 
     variants: {
-      root: 'flex flex-row-reverse',
-      avatarGroupMargin: 'mx-6',
+      root: 'flex flex-row-reverse justify-end',
+      avatarGroupMargin: '-mx-2.5',
     },
   },
 
