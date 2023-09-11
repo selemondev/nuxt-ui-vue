@@ -1,6 +1,35 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/selemondev/nuxt-ui-vue/compare/v0.0.7...v0.0.8)
+
+### 🩹 Fixes
+
+- **app:** Input outline ([fa9eb56](https://github.com/selemondev/nuxt-ui-vue/commit/fa9eb56))
+- **app:** Select-menu theme ([09a7e6f](https://github.com/selemondev/nuxt-ui-vue/commit/09a7e6f))
+- **app:** Modal TransitionChild component binding error ([a22d1b6](https://github.com/selemondev/nuxt-ui-vue/commit/a22d1b6))
+- **app:** Alert click prop type ([06f9e53](https://github.com/selemondev/nuxt-ui-vue/commit/06f9e53))
+- **app:** AvatarGroup margin ([a025144](https://github.com/selemondev/nuxt-ui-vue/commit/a025144))
+- Allow the label prop as number ([937af83](https://github.com/selemondev/nuxt-ui-vue/commit/937af83))
+- Empty state is displayed if null ([ef831a3](https://github.com/selemondev/nuxt-ui-vue/commit/ef831a3))
+- **Tooltip:** Hide on touch devices ([b837094](https://github.com/selemondev/nuxt-ui-vue/commit/b837094))
+
+### 🏡 Chore
+
+- **release:** V0.0.7 ([fb70040](https://github.com/selemondev/nuxt-ui-vue/commit/fb70040))
+- Release v0.0.9-beta.1 ([356063b](https://github.com/selemondev/nuxt-ui-vue/commit/356063b))
+- **app:** Clean up ([cb31031](https://github.com/selemondev/nuxt-ui-vue/commit/cb31031))
+- Release v0.0.9-beta.2 ([e961c02](https://github.com/selemondev/nuxt-ui-vue/commit/e961c02))
+- Clean up ([90adfe1](https://github.com/selemondev/nuxt-ui-vue/commit/90adfe1))
+- Cleanup ([c31ce4e](https://github.com/selemondev/nuxt-ui-vue/commit/c31ce4e))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev@Selemondevs-MacBook-Pro.local>
+- System Administrator <root@Selemondevs-MacBook-Pro.local>
+
 ## v0.0.7
 
 [compare changes](https://github.com/selemondev/nuxt-ui-vue/compare/v0.0.9-beta.0...v0.0.7)

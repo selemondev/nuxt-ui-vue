@@ -89,6 +89,7 @@ const inputClass = computed(() => {
     variant.value.rounded,
     variant.value.background,
     variant.value.border,
+    variant.value.color,
     nuxtLabsTheme.UCheckbox.base.ring.replaceAll('{color}', props.color),
     nuxtLabsTheme.UCheckbox.base.color.replaceAll('{color}', props.color),
   )
