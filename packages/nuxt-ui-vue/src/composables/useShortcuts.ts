@@ -1,10 +1,9 @@
-import process from 'node:process'
 import { createSharedComposable, useActiveElement } from '@vueuse/core'
 import { computed, onMounted, ref } from 'vue'
 import type {} from '@vueuse/shared'
 
 export function _useShortcuts() {
-  const macOS = computed(() => process?.client && navigator && navigator.userAgent && navigator.userAgent.match(/Macintosh;/))
+  const macOS = computed(() => navigator && navigator.userAgent && navigator.userAgent.match(/Macintosh;/))
 
   const metaSymbol = ref(' ')
 
