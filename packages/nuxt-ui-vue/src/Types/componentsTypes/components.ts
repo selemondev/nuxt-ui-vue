@@ -349,6 +349,12 @@ export interface UNotification extends UComponentRoot {
   default?: objectProp
 }
 
+export interface UNotifications extends UComponentRoot {
+  position?: string
+  width?: string
+  container?: string
+}
+
 export interface UPagination extends UComponentRoot {
   paginationBase?: string
   rounded?: string
@@ -637,6 +643,7 @@ export type UTabsVariants = WithVariantProps<UTabs>
 export type UTextareaVariants = WithVariantProps<UTextarea>
 export type UModalVariants = WithVariantProps<UModal>
 export type UNotificationVariants = WithVariantProps<UNotification>
+export type UNotificationsVariants = WithVariantProps<UNotifications>
 export type UKbdVariants = WithVariantProps<UKbd>
 export type UPaginationVariants = WithVariantProps<UPagination>
 export type UPopoverVariants = WithVariantProps<UPopover>

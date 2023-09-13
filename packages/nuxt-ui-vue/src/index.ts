@@ -8,7 +8,7 @@ export { useCopyToClipboard } from '@/composables/useCopyToClipboard'
 
 export { useShortcuts } from '@/composables/useShortcuts'
 
-export { default as useToast } from '@/composables/useToast'
+export { useToast, injectToast } from '@/composables/useToast'
 
 export { NuxtUIVueComponentResolver } from '@/componentResolver'
 

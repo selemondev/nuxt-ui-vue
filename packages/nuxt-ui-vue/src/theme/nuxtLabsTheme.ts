@@ -842,7 +842,7 @@ export default {
         closeButton: {
           icon: 'heroicons:x-mark-20-solid',
           color: 'gray',
-          variant: 'link',
+          intent: 'link',
           padded: false,
         },
         actionButton: {
@@ -859,6 +859,31 @@ export default {
         description: 'mt-1 text-sm leading-4 text-gray-500 dark:text-gray-400',
         background: 'bg-white dark:bg-gray-900',
         progressBackground: 'bg-{color}-500 dark:bg-{color}-400',
+      },
+    },
+  },
+
+  UNotifications: {
+    base: {
+      root: 'fixed flex flex-col justify-end z-[55]',
+      position: {
+        'top-right': 'top-0 right-0',
+        'bottom-right': 'bottom-0 right-0',
+        'top-left': 'top-0 left-0',
+        'bottom-left': 'bottom-0 left-0',
+      },
+      width: 'w-full sm:w-96',
+      container: 'px-4 sm:px-6 py-6 space-y-3 overflow-y-auto',
+    },
+
+    variants: {
+      default: {
+        position: {
+          'top-right': 'top-0 right-0',
+          'bottom-right': 'bottom-0 right-0',
+          'top-left': 'top-0 left-0',
+          'bottom-left': 'bottom-0 left-0',
+        },
       },
     },
   },
