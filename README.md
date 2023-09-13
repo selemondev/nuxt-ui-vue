@@ -364,6 +364,47 @@ For any component that uses the `variant` prop such as the `UButton`, `UBadge`, 
 ```
 
 
+-  The `Notifications` component comes with a position prop to enable you to specify the position of the  `Notifications` component. To get started with it, you need to import the `injectToast()` function and the `UNotifications` component in your `App.vue` file as shown below:
+
+```vue
+<!-- app.vue file -->
+<script setup lang="ts">
+import { injectToast } from 'nuxt-ui-vue'
+
+injectToast()
+</script>
+
+<template>
+  <div>
+    <Hello />
+    <UNotifications position="top-left" />
+  </div>
+</template>
+```
+
+- By default, the position of the component is set to `bottom-right`.
+
+- Then in your other component, for example, Hello.vue component, you can do the following:
+
+```vue
+<!-- Hello.vue component -->
+
+<script setup lang="ts">
+import { useToast } from 'nuxt-ui-vue'
+
+const toast = useToast()
+</script>
+
+<template>
+    <UButton label="Show toast" @click="toast.add({
+        title: 'Update downloaded.',
+        description: 'It will be installed on restart. Restart now?',
+        icon: 'octicon:desktop-download-24',
+    })" />
+</template>
+```
+
+
 🥳 Well done, you can now go ahead and build your web application with ease.
 
 ## Contributions
