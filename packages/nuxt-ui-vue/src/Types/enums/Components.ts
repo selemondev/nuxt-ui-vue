@@ -20,6 +20,7 @@ export enum Components {
   UKbd = 'UKbd',
   UModal = 'UModal',
   UNotification = 'UNotification',
+  UNotifications = 'UNotifications',
   UPagination = 'UPagination',
   UPopover = 'UPopover',
   URadio = 'URadio',

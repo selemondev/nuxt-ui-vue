@@ -1,5 +1,5 @@
 import type { Components } from './enums/Components'
-import type { UAccordionVariants, UAlertVariants, UAvatarVariants, UBadgeVariants, UButtonGroupVariants, UButtonVariants, UCardVariants, UCheckboxVariants, UCommandPaletteVariants, UContainerVariants, UContextMenuVariants, UDropdownVariants, UFormGroupVariants, UIconVariants, UInputVariants, UKbdVariants, UModalVariants, UNotificationVariants, UPaginationVariants, URadioVariants, URangeVariants, USelectMenuVariants, USelectVariants, USkeletonVariants, USlideoverVariants, UTabsVariants, UTextareaVariants, UToggleVariants, UTooltipVariants, UVerticalNavigationVariants } from './componentsTypes/components'
+import type { UAccordionVariants, UAlertVariants, UAvatarVariants, UBadgeVariants, UButtonGroupVariants, UButtonVariants, UCardVariants, UCheckboxVariants, UCommandPaletteVariants, UContainerVariants, UContextMenuVariants, UDropdownVariants, UFormGroupVariants, UIconVariants, UInputVariants, UKbdVariants, UModalVariants, UNotificationVariants, UNotificationsVariants, UPaginationVariants, URadioVariants, URangeVariants, USelectMenuVariants, USelectVariants, USkeletonVariants, USlideoverVariants, UTabsVariants, UTextareaVariants, UToggleVariants, UTooltipVariants, UVerticalNavigationVariants } from './componentsTypes/components'
 
 export declare interface CSSClassKeyValuePair {
   [key: string]: any
@@ -48,6 +48,7 @@ export interface NuxtLabsUIConfiguration {
   [Components.UKbd]?: UKbdVariants
   [Components.UModal]?: UModalVariants
   [Components.UNotification]?: UNotificationVariants
+  [Components.UNotifications]?: UNotificationsVariants
   [Components.UTextarea]?: UTextareaVariants
   [Components.UPagination]?: UPaginationVariants
   [Components.URadio]?: URadioVariants
