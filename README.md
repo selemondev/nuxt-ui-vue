@@ -364,7 +364,7 @@ For any component that uses the `variant` prop such as the `UButton`, `UBadge`, 
 ```
 
 
--  The `Notifications` component comes with a position prop to enable you to specify the position of the  `Notifications` component. To get started with it, you need to import the `injectToast()` function and the `UNotifications` component in your `App.vue` file as shown below:
+The `Notifications` component comes with a position prop to enable you to specify the position of the  `Notifications` component. To get started with it, you need to import the `injectToast()` function and the `UNotifications` component in your `App.vue` file as shown below:
 
 ```vue
 <!-- app.vue file -->
@@ -377,14 +377,14 @@ injectToast()
 <template>
   <div>
     <Hello />
-    <UNotifications position="top-left" />
+    <UNotifications position="top-right" />
   </div>
 </template>
 ```
 
-- By default, the position of the component is set to `bottom-right`.
+By default, the position of the component is set to `bottom-right`.
 
-- Then in your other component, for example, Hello.vue component, you can do the following:
+Then in your other component, for example, Hello.vue component, you can do the following:
 
 ```vue
 <!-- Hello.vue component -->
