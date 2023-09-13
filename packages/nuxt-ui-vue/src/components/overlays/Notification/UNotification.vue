@@ -159,12 +159,12 @@ onUnmounted(() => {
 const attrsOmitted = omit(attrs, ['class'])
 
 const notificationTransitions = {
-  enter: variant.value.transitionEnterActiveClass,
-  enterFrom: variant.value.transitionEnterFromClass,
-  enterTo: variant.value.transitionEnterToClass,
-  leave: variant.value.transitionLeaveActiveClass,
-  leaveFrom: variant.value.transitionLeaveFromClass,
-  leaveTo: variant.value.transitionLeaveToClass,
+  enterActiveClass: variant.value.transitionEnterActiveClass,
+  enterFromClass: variant.value.transitionEnterFromClass,
+  enterToClass: variant.value.transitionEnterToClass,
+  leaveActiveClass: variant.value.transitionLeaveActiveClass,
+  leaveFromClass: variant.value.transitionLeaveFromClass,
+  leaveToClass: variant.value.transitionLeaveToClass,
 }
 </script>
 
@@ -176,6 +176,7 @@ export default defineComponent({
 </script>
 
 <template>
+  <!-- @vue-ignore -->
   <Transition appear v-bind="notificationTransitions">
     <div :class="wrapperClass" v-bind="attrsOmitted" @mouseover="onMouseover" @mouseleave="onMouseleave">
       <div :class="[variant.container, variant.rounded, variant.ring]">
