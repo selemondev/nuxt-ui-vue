@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { loadIcon } from '@iconify/vue'
-import { Icon } from '@iconify/vue/dist/offline'
+import { Icon, loadIcon } from '@iconify/vue'
 import { computed, defineComponent, ref, watch } from 'vue'
 import { Components } from '../../../Types/enums/Components'
 import type { UIcon } from '../../../Types/componentsTypes/components'
