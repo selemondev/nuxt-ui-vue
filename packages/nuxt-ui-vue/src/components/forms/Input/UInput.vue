@@ -91,7 +91,7 @@ const props = defineProps({
 
 const emit = defineEmits<{
   (event: 'update:modelValue', value: string | number): void
-  (event: 'blur'): void
+  (event: 'blur', value: FocusEvent): void
 }>()
 const slots = useSlots()
 const variant = computed(() => {
@@ -114,14 +114,12 @@ function autoFocus() {
     input.value?.focus()
 }
 
-function onInput(event: InputEvent) {
+function onInput(event: Event) {
   emit('update:modelValue', (event.target as HTMLInputElement).value)
 }
 
 function onBlur(event: FocusEvent) {
   emitFormBlur()
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
   emit('blur', event)
 }
 
@@ -211,7 +209,6 @@ export default defineComponent({
 
 <template>
   <div :class="variant.root">
-    <!-- @vue-ignore -->
     <input
       :id="name"
       ref="input"
