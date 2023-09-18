@@ -36,6 +36,7 @@ async function fetchIcon() {
   isFetching.value = false
 }
 watch(() => props.name, fetchIcon)
+
 const iconClass = computed(() => {
   let sizeClass = ''
   if (typeof props.size === 'number')
