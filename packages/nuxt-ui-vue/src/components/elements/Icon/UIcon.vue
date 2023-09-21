@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import { Icon, loadIcon } from '@iconify/vue'
-import { computed, defineComponent, ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { Components } from '../../../Types/enums/Components'
 import type { UIcon } from '../../../Types/componentsTypes/components'
 import { getVariantPropsWithClassesList } from '../../../utils/getVariantProps'
 import { useVariants } from '../../../composables/useVariants'
 
-export type IconSizes = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '6xl' | '8xl'
-export type IconNumberSize = number
-export interface Props {
-  name: string
-  size?: IconNumberSize | IconSizes
-}
+defineOptions({
+  name: Components.UIcon,
+})
 const props = defineProps({
   ...getVariantPropsWithClassesList<UIcon>(),
   size: {
@@ -54,12 +51,6 @@ const ariaProps = {
   'aria-hidden': true,
 }
 fetchIcon()
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UIcon,
-})
 </script>
 
 <template>

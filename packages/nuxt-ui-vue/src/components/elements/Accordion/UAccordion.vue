@@ -1,9 +1,9 @@
 <script setup lang='ts'>
-import { computed, defineComponent, ref } from 'vue'
+import { computed, ref } from 'vue'
 import type { PropType } from 'vue'
-import { omit } from 'lodash-es'
 import { Disclosure as HDisclosure, DisclosureButton as HDisclosureButton, DisclosurePanel as HDisclosurePanel } from '@headlessui/vue'
 import classNames from 'classnames'
+import { omit } from '../../../utils/lodash'
 import UButton from '../Button/UButton.vue'
 import UIcon from '../Icon/UIcon.vue'
 import type { AccordionItem } from '@/Types/components/accordionItem'
@@ -14,6 +14,10 @@ import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 import stateEmitter from '@/utils/stateEmitter'
 import { useVariants } from '@/composables/useVariants'
+
+defineOptions({
+  name: Components.UAccordion,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UAccordion>(),
@@ -95,12 +99,6 @@ const transitions = computed(() => {
     variant.value.transitionEnterActiveClass,
     variant.value.transitionLeaveActiveClass,
   )
-})
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UAccordion,
 })
 </script>
 

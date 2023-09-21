@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { computed, defineComponent } from 'vue'
+import { computed } from 'vue'
 import { getVariantPropsWithClassesList } from '../../../utils/getVariantProps'
 import type { UButtonGroup } from '../../../Types/componentsTypes/components'
 import { Components } from '../../../Types/enums/Components'
 import { useVariants } from '../../../composables/useVariants'
+
+defineOptions({
+  name: Components.UButtonGroup,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UButtonGroup>(),
@@ -23,13 +28,6 @@ const variant = computed(() => {
     // @ts-expect-error
     Components.UButtonGroup, customProps,
   )
-})
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UButtonGroup,
-  inheritAttrs: false,
 })
 </script>
 

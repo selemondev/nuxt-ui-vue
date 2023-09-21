@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import { computed, defineComponent, useAttrs } from 'vue'
+import { computed, useAttrs } from 'vue'
 import type { PropType } from 'vue'
 import { twMerge } from 'tailwind-merge'
-import { omit } from 'lodash-es'
+import { omit } from '../../../utils/lodash'
 import UButton from '../../elements/Button/UButton.vue'
 import UButtonGroup from '@/components/elements/Button/UButtonGroup.vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
@@ -12,6 +12,11 @@ import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 import type { Button } from '@/Types/components/button'
+
+defineOptions({
+  name: Components.UPagination,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UPagination>(),
@@ -166,13 +171,6 @@ function onClickNext() {
 }
 
 const attrsOmitted = omit(attrs, ['class'])
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UPagination,
-  inheritAttrs: false,
-})
 </script>
 
 <template>

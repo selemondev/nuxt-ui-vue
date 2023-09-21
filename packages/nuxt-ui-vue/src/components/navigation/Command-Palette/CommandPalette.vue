@@ -1,3 +1,4 @@
+<!-- eslint-disable @typescript-eslint/ban-ts-comment -->
 <script lang='ts'>
 import { computed, defineComponent, onMounted, ref, watch } from 'vue'
 import type { ComponentPublicInstance, ComputedRef, PropType } from 'vue'
@@ -6,8 +7,8 @@ import { Combobox as HCombobox, ComboboxInput as HComboboxInput, ComboboxOptions
 import type { UseFuseOptions } from '@vueuse/integrations/useFuse'
 import { useFuse } from '@vueuse/integrations/useFuse'
 import { twJoin } from 'tailwind-merge'
-import { groupBy, map, omit } from 'lodash-es'
 import defu from 'defu'
+import { omit } from '../../../utils/lodash'
 import UIcon from '../../elements/Icon/UIcon.vue'
 import UButton from '../../elements/Button/UButton.vue'
 import CommandPaletteGroup from './CommandPaletteGroup.vue'
@@ -153,32 +154,46 @@ export default defineComponent({
       matchAllWhenSearchEmpty: true,
     }))
 
-    const commands = computed(() => props.groups.filter(group => !group.search).reduce((acc, group) => {
-      return acc.concat(group.commands.map(command => ({ ...command, group: group.key })))
-    }, [] as Command[]))
+    const commands = computed(() => {
+      const commands: Command[] = []
+      for (const group of props.groups) {
+        if (!group.search)
+          commands.push(...group.commands.map(command => ({ ...command, group: group.key })))
+      }
+      return commands
+    })
 
     const searchResults = ref<{ [key: string]: any }>({})
 
     const { results } = useFuse(query, commands, options)
 
-    const groups = computed(() => ([
-      ...map(groupBy(results.value, command => command.item.group), (results, key) => {
-        const commands = results.map((result) => {
+    const groups = computed(() => {
+      const groups: Group[] = []
+      const groupedCommands: Record<string, typeof results['value']> = {}
+      for (const command of results.value) {
+        // @ts-expect-error
+        groupedCommands[command.item.group] ||= []
+        // @ts-expect-error
+        groupedCommands[command.item.group].push(command)
+      }
+      for (const key in groupedCommands) {
+        const group = props.groups.find(group => group.key === key)
+        const commands = groupedCommands[key].slice(0, options.value.resultLimit).map((result) => {
           const { item, ...data } = result
-
           return {
             ...item,
             ...data,
-          }
+          } as Command
         })
-
-        return {
-          ...props.groups.find(group => group.key === key),
-          commands: commands.slice(0, options.value.resultLimit),
-        } as Group
-      }),
-      ...props.groups.filter(group => !!group.search).map(group => ({ ...group, commands: (searchResults.value[group.key] || []).slice(0, options.value.resultLimit) })).filter(group => group.commands.length),
-    ]))
+        // @ts-expect-error
+        groups.push({ ...group, commands })
+      }
+      for (const group of props.groups) {
+        if (group.search && searchResults.value[group.key]?.length)
+          groups.push({ ...group, commands: (searchResults.value[group.key] || []).slice(0, options.value.resultLimit) })
+      }
+      return groups
+    })
 
     const debouncedSearch = useDebounceFn(async () => {
       const searchableGroups = props.groups.filter(group => !!group.search)

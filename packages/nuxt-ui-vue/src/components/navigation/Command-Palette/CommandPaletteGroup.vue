@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { computed, defineComponent } from 'vue'
+import { computed } from 'vue'
 import type { PropType } from 'vue'
 import { ComboboxOption as HComboboxOption } from '@headlessui/vue'
 import UIcon from '../../elements/Icon/UIcon.vue'
@@ -10,6 +10,10 @@ import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
 import type { Group } from '@/Types/components/command-palette'
 import type { UCommandPalette } from '@/Types/componentsTypes/components'
+
+defineOptions({
+  name: Components.UCommandPaletteGroup,
+})
 
 const props = defineProps({
   group: {
@@ -79,12 +83,6 @@ function highlight(text: string, { indices, value }: { indices: number[][]; valu
 
   return content
 }
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UCommandPaletteGroup,
-})
 </script>
 
 <template>

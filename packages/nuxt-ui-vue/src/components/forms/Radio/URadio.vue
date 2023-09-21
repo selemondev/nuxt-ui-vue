@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { computed, defineComponent } from 'vue'
+import { computed } from 'vue'
 import classNames from 'classnames'
 import type { URadio } from '@/Types/componentsTypes/components'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
@@ -8,6 +8,11 @@ import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 import { useFormEvents } from '@/composables/useFormEvents'
+
+defineOptions({
+  name: Components.URadio,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<URadio>(),
@@ -82,13 +87,6 @@ const inputClass = computed(() => {
     nuxtLabsTheme.URadio.base.ring.replaceAll('{color}', props.color),
     nuxtLabsTheme.URadio.base.color.replaceAll('{color}', props.color),
   )
-})
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.URadio,
-  inheritAttrs: false,
 })
 </script>
 

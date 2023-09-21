@@ -3,7 +3,6 @@ import type { Ref } from 'vue'
 import type { VirtualElement } from '@popperjs/core/lib/popper-lite'
 import { defaultModifiers, popperGenerator } from '@popperjs/core/lib/popper-lite'
 import type { Instance } from '@popperjs/core'
-import { isUndefined, omitBy } from 'lodash-es'
 import flip from '@popperjs/core/lib/modifiers/flip'
 import offset from '@popperjs/core/lib/modifiers/offset'
 import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow'
@@ -49,36 +48,48 @@ export function usePopper({
       if (!referenceEl)
         return
 
-      instance.value = createPopper(referenceEl, popperEl, omitBy({
-        placement,
-        strategy,
-        modifiers: [{
-          name: 'flip',
-          enabled: !locked,
-        }, {
-          name: 'preventOverflow',
-          options: {
-            padding: overflowPadding,
+      const config: Record<string, any> = {
+        modifiers: [
+          {
+            name: 'flip',
+            enabled: !locked,
           },
-        }, {
-          name: 'offset',
-          options: {
-            offset: [offsetSkid, offsetDistance],
+          {
+            name: 'preventOverflow',
+            options: {
+              padding: overflowPadding,
+            },
           },
-        }, {
-          name: 'computeStyles',
-          options: {
-            adaptive,
-            gpuAcceleration,
+          {
+            name: 'offset',
+            options: {
+              offset: [offsetSkid, offsetDistance],
+            },
           },
-        }, {
-          name: 'eventListeners',
-          options: {
-            scroll,
-            resize,
+          {
+            name: 'computeStyles',
+            options: {
+              adaptive,
+              gpuAcceleration,
+            },
           },
-        }],
-      }, isUndefined))
+          {
+            name: 'eventListeners',
+            options: {
+              scroll,
+              resize,
+            },
+          },
+        ],
+      }
+
+      if (placement)
+        config.placement = placement
+
+      if (strategy)
+        config.strategy = strategy
+
+      instance.value = createPopper(referenceEl, popperEl, config)
 
       onInvalidate(instance.value.destroy)
     })

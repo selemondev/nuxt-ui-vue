@@ -1,7 +1,7 @@
 <script setup lang='ts'>
-import { computed, defineComponent, nextTick, onMounted, ref, useAttrs, watch } from 'vue'
+import { computed, nextTick, onMounted, ref, useAttrs, watch } from 'vue'
 import classNames from 'classnames'
-import { omit } from 'lodash-es'
+import { omit } from '../../../utils/lodash'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import { Components } from '@/Types/enums/Components'
@@ -9,6 +9,11 @@ import type { UTextarea } from '@/Types/componentsTypes/components'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 import { useVariants } from '@/composables/useVariants'
 import { useFormEvents } from '@/composables/useFormEvents'
+
+defineOptions({
+  name: Components.UTextarea,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UTextarea>(),
@@ -161,13 +166,6 @@ const textareaClass = computed(() => {
 const attrs = useAttrs()
 
 const attrsOmitted = omit(attrs, ['class'])
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UTextarea,
-  inheritAttrs: false,
-})
 </script>
 
 <template>

@@ -1,15 +1,20 @@
 <script setup lang='ts'>
-import { computed, defineComponent, useAttrs } from 'vue'
-import { omit } from 'lodash-es'
+import { computed, useAttrs } from 'vue'
 import { twJoin, twMerge } from 'tailwind-merge'
+import { omit } from '../../../utils/lodash'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UContainer } from '@/Types/componentsTypes/components'
 import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
 
+defineOptions({
+  name: Components.UContainer,
+  inheritAttrs: false,
+})
+
 const props = defineProps({
-  ...getVariantPropsWithClassesList<UCard>(),
+  ...getVariantPropsWithClassesList<UContainer>(),
   as: {
     type: String,
     default: 'div',
@@ -37,13 +42,6 @@ const containerClass = computed(() => {
     variant.value.padding,
     variant.value.constrained,
   ), attrs.class as string)
-})
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UContainer,
-  inheritAttrs: false,
 })
 </script>
 
