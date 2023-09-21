@@ -1,12 +1,17 @@
 <script setup lang='ts'>
-import { computed, defineComponent, useAttrs } from 'vue'
+import { computed, useAttrs } from 'vue'
 import { twJoin, twMerge } from 'tailwind-merge'
-import { omit } from 'lodash-es'
+import { omit } from '../../../utils/lodash'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UCard } from '@/Types/componentsTypes/components'
 import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
+
+defineOptions({
+  name: Components.UCard,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UCard>(),
@@ -41,13 +46,6 @@ const cardClass = computed(() => {
 })
 
 const attrsOmitted = omit(attrs, ['class'])
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UCard,
-  inheritAttrs: false,
-})
 </script>
 
 <template>

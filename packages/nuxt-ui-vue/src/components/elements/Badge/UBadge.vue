@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { computed, defineComponent } from 'vue'
+import { computed } from 'vue'
 import classNames from 'classnames'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
@@ -7,6 +7,11 @@ import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import type { UBadge } from '@/Types/componentsTypes/components'
 import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
+
+defineOptions({
+  name: Components.UBadge,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UBadge>(),
@@ -58,13 +63,6 @@ const badgeClass = computed(() => {
     nuxtLabsTheme.UBadge.base.size[props.size],
     variants?.replaceAll('{color}', props.color),
   )
-})
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UBadge,
-  inheritAttrs: false,
 })
 </script>
 

@@ -1,9 +1,9 @@
 <!-- eslint-disable @typescript-eslint/ban-types -->
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import { computed, defineComponent, useAttrs } from 'vue'
-import { omit } from 'lodash-es'
+import { computed, useAttrs } from 'vue'
 import classNames from 'classnames'
+import { omit } from '../../../utils/lodash'
 import UNotification from './UNotification.vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
@@ -15,6 +15,11 @@ import { useVariants } from '@/composables/useVariants'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 
 export type Position = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'
+
+defineOptions({
+  name: Components.UNotifications,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UNotifications>(),
@@ -48,13 +53,6 @@ const wrapperClass = computed(() => {
 const attrs = useAttrs()
 
 const attrsOmitted = omit(attrs, ['class'])
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UNotifications,
-  inheritAttrs: false,
-})
 </script>
 
 <template>

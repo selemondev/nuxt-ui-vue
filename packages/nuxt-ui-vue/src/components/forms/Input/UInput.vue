@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { computed, defineComponent, onMounted, ref, useSlots } from 'vue'
+import { computed, onMounted, ref, useSlots } from 'vue'
 import classNames from 'classnames'
 import UIcon from '../../elements/Icon/UIcon.vue'
 import { useFormEvents } from '@/composables/useFormEvents'
@@ -9,6 +9,11 @@ import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { Components } from '@/Types/enums/Components'
 import type { UInput } from '@/Types/componentsTypes/components'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
+
+defineOptions({
+  name: Components.UInput,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UInput>(),
@@ -197,13 +202,6 @@ const trailingIconClass = computed(() => {
     nuxtLabsTheme.UInput.base.icon.size[props.size],
     props.loading && !isLeading.value && 'animate-spin',
   )
-})
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UInput,
-  inheritAttrs: false,
 })
 </script>
 

@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { computed, defineComponent } from 'vue'
+import { computed, useAttrs } from 'vue'
 import type { PropType } from 'vue'
 import classNames from 'classnames'
 import UIcon from '../Icon/UIcon.vue'
+import { omit } from '../../../utils/lodash'
 import UAvatar from '../Avatar/UAvatar.vue'
 import UButton from '../Button/UButton.vue'
 import type { UAlert } from '@/Types/componentsTypes/components'
@@ -13,6 +14,11 @@ import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { useVariants } from '@/composables/useVariants'
+
+defineOptions({
+  name: Components.UAlert,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UAlert>(),
@@ -60,6 +66,10 @@ const emit = defineEmits<{
   (event: 'close'): void
 }>()
 
+const attrs = useAttrs()
+
+const attrsOmitted = omit(attrs, ['class'])
+
 const variant = computed(() => {
   const customProps = {
     ...props,
@@ -94,15 +104,8 @@ function handleClose() {
 }
 </script>
 
-<script lang="ts">
-export default defineComponent({
-  name: Components.UAlert,
-  inheritAttrs: false,
-})
-</script>
-
 <template>
-  <div :class="alertClass">
+  <div :class="alertClass" v-bind="attrsOmitted">
     <div
       class="flex gap-3"
       :class="{ 'items-start': (description || $slots.description), 'items-center': !description && !$slots.description }"

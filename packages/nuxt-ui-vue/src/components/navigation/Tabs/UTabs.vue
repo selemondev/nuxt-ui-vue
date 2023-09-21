@@ -1,11 +1,11 @@
 <script setup lang='ts'>
-import { computed, defineComponent, onMounted, ref, useAttrs, watch } from 'vue'
+import { computed, onMounted, ref, useAttrs, watch } from 'vue'
 import type { PropType } from 'vue'
 import { Tab as HTab, TabGroup as HTabGroup, TabList as HTabList, TabPanel as HTabPanel, TabPanels as HTabPanels } from '@headlessui/vue'
 import { useResizeObserver } from '@vueuse/core'
-import { omit } from 'lodash-es'
 import { twMerge } from 'tailwind-merge'
 import classNames from 'classnames'
+import { omit } from '../../../utils/lodash'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UTabs } from '@/Types/componentsTypes/components'
@@ -13,6 +13,11 @@ import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
 import type { TabItem } from '@/Types/components/tabs'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
+
+defineOptions({
+  name: Components.UTabs,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UTabs>(),
@@ -111,13 +116,6 @@ const tabGridClass = computed(() => {
     // @ts-expect-error
     nuxtLabsTheme.UTabs.base.tabGrid.replaceAll('{items}', props.items?.length),
   )
-})
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UTabs,
-  inheritAttrs: false,
 })
 </script>
 

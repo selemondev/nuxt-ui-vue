@@ -1,10 +1,10 @@
 <script setup lang='ts'>
-import { computed, defineComponent, onMounted, ref, useAttrs } from 'vue'
+import { computed, onMounted, ref, useAttrs } from 'vue'
 import type { PropType } from 'vue'
 import { twMerge } from 'tailwind-merge'
 import { Popover as HPopover, PopoverButton as HPopoverButton, PopoverPanel as HPopoverPanel } from '@headlessui/vue'
-import { omit } from 'lodash-es'
 import defu from 'defu'
+import { omit } from '../../../utils/lodash'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import type { UPopover } from '@/Types/componentsTypes/components'
@@ -13,6 +13,11 @@ import type { PopperOptions } from '@/Types/components/popper'
 import { useVariants } from '@/composables/useVariants'
 import { usePopper } from '@/composables/usePopper'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
+
+defineOptions({
+  name: Components.UPopover,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UPopover>(),
@@ -129,13 +134,6 @@ const popoverTransitions = {
   leaveFrom: variant.value.transitionLeaveFromClass,
   leaveTo: variant.value.transitionLeaveToClass,
 }
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UPopover,
-  inheritAttrs: false,
-})
 </script>
 
 <template>

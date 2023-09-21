@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { computed, defineComponent, useAttrs, useSlots } from 'vue'
+import { computed, useAttrs, useSlots } from 'vue'
 import type { PropType } from 'vue'
 import classNames from 'classnames'
 import type { RouteLocationRaw } from 'vue-router'
@@ -10,6 +10,11 @@ import { Components } from '../../../Types/enums/Components'
 import UIcon from '../../elements/Icon/UIcon.vue'
 import { useVariants } from '../../../composables/useVariants'
 import nuxtLabsTheme from '../../../theme/nuxtLabsTheme'
+
+defineOptions({
+  name: Components.UButton,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UButton>(),
@@ -164,13 +169,6 @@ const buttonClass = computed(() => {
     (props.loading) && variant.value.buttonLoading,
     props.block ? variant.value.block : variant.value.normal,
   )
-})
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UButton,
-  inheritAttrs: false,
 })
 </script>
 

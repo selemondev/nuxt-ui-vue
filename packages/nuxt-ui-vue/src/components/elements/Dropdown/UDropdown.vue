@@ -1,9 +1,9 @@
 <script setup lang='ts'>
-import { computed, defineComponent, onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { Menu as HMenu, MenuButton as HMenuButton, MenuItem as HMenuItem, MenuItems as HMenuItems } from '@headlessui/vue'
 import type { PropType } from 'vue'
 import { defu } from 'defu'
-import { omit } from 'lodash-es'
+import { omit } from '../../../utils/lodash'
 import ULink from '../Link/ULink.vue'
 import UIcon from '../Icon/UIcon.vue'
 import UAvatar from '../Avatar/UAvatar.vue'
@@ -17,6 +17,11 @@ import { useVariants } from '@/composables/useVariants'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
+
+defineOptions({
+  name: Components.UDropdown,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UDropdown>(),
@@ -126,13 +131,6 @@ function onMouseLeave() {
     closeTimeout = null
   }, props.closeDelay)
 }
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UDropdown,
-  inheritAttrs: false,
-})
 </script>
 
 <template>

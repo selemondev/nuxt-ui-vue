@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import { computed, defineComponent, useAttrs, useSlots } from 'vue'
+import { computed, useAttrs, useSlots } from 'vue'
 import type { ComputedRef } from 'vue'
 import classNames from 'classnames'
-import { get, omit } from 'lodash-es'
+import { get, omit } from '../../../utils/lodash'
 import type { USelect } from '@/Types/componentsTypes/components'
 import { Components } from '@/Types/enums/Components'
 import { useFormEvents } from '@/composables/useFormEvents'
@@ -10,6 +10,11 @@ import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import { useVariants } from '@/composables/useVariants'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
+
+defineOptions({
+  name: Components.USelect,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<USelect>(),
@@ -248,13 +253,6 @@ const trailingIconClass = computed(() => {
 const attrs = useAttrs()
 
 const attrsOmitted = omit(attrs, ['class'])
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.USelect,
-  inheritAttrs: false,
-})
 </script>
 
 <template>

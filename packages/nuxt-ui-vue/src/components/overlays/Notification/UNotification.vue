@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import { computed, defineComponent, onMounted, onUnmounted, ref, useAttrs, watchEffect } from 'vue'
+import { computed, onMounted, onUnmounted, ref, useAttrs, watchEffect } from 'vue'
 import type { PropType } from 'vue'
-import { omit } from 'lodash-es'
 import { twJoin, twMerge } from 'tailwind-merge'
+import { omit } from '../../../utils/lodash'
 import UButton from '../../elements/Button/UButton.vue'
 import UAvatar from '../../elements/Avatar/UAvatar.vue'
 import UIcon from '../../elements/Icon/UIcon.vue'
@@ -16,6 +16,11 @@ import { Components } from '@/Types/enums/Components'
 import type { UNotification } from '@/Types/componentsTypes/components'
 import { useVariants } from '@/composables/useVariants'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
+
+defineOptions({
+  name: Components.UNotification,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UNotification>(),
@@ -166,13 +171,6 @@ const notificationTransitions = {
   leaveFromClass: variant.value.transitionLeaveFromClass,
   leaveToClass: variant.value.transitionLeaveToClass,
 }
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UNotification,
-  inheritAttrs: false,
-})
 </script>
 
 <template>

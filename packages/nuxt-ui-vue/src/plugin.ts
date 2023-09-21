@@ -24,8 +24,7 @@ function create(createOptions: NuxtLabsUIOptions = {}) {
     if (options.registerComponents) {
       if (options.components) {
         options.components.forEach((component: any) => {
-          const name = component.name?.startsWith('U') ? component.name.slice(1) : component.name
-
+          const name = component._name?.startsWith('U') ? component.name.slice(1) : component.name
           app.component(`${options.prefix}${name}`, component)
         })
       }

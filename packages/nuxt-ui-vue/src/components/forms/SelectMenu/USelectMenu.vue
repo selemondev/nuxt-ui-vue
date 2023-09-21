@@ -1,7 +1,5 @@
 <script lang="ts">
 import { computed, defineComponent, ref, watch } from 'vue'
-import type { ComponentPublicInstance, PropType } from 'vue'
-import { omit } from 'lodash-es'
 import {
   Combobox as HCombobox,
   ComboboxButton as HComboboxButton,
@@ -17,6 +15,7 @@ import {
 import { computedAsync, useDebounceFn } from '@vueuse/core'
 import classNames from 'classnames'
 import defu from 'defu'
+import { omit } from '../../../utils/lodash'
 import UIcon from '@/components/elements/Icon/UIcon.vue'
 import UAvatar from '@/components/elements/Avatar/UAvatar.vue'
 import type { PopperOptions } from '@/Types/components/popper'

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, defineComponent } from 'vue'
+import { computed } from 'vue'
 import classNames from 'classnames'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
@@ -8,6 +8,11 @@ import { Components } from '@/Types/enums/Components'
 import { useFormEvents } from '@/composables/useFormEvents'
 import { useVariants } from '@/composables/useVariants'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
+
+defineOptions({
+  name: Components.UCheckbox,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UCheckbox>(),
@@ -93,13 +98,6 @@ const inputClass = computed(() => {
     nuxtLabsTheme.UCheckbox.base.ring.replaceAll('{color}', props.color),
     nuxtLabsTheme.UCheckbox.base.color.replaceAll('{color}', props.color),
   )
-})
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UCheckbox,
-  inheritAttrs: false,
 })
 </script>
 

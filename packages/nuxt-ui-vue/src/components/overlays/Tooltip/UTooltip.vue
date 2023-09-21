@@ -1,9 +1,9 @@
 <script setup lang='ts'>
-import { computed, defineComponent, ref, useAttrs } from 'vue'
+import { computed, ref, useAttrs } from 'vue'
 import type { PropType } from 'vue'
 import { twMerge } from 'tailwind-merge'
 import defu from 'defu'
-import { omit } from 'lodash-es'
+import { omit } from '../../../utils/lodash'
 import UKbd from '../../elements/Kbd/UKbd.vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
@@ -12,6 +12,11 @@ import { Components } from '@/Types/enums/Components'
 import { useVariants } from '@/composables/useVariants'
 import { usePopper } from '@/composables/usePopper'
 import type { PopperOptions } from '@/Types/components/popper'
+
+defineOptions({
+  name: Components.UTooltip,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UTooltip>(),
@@ -109,13 +114,6 @@ const toolTipTransitions = {
   leaveFrom: variant.value.transitionLeaveFromClass,
   leaveTo: variant.value.transitionLeaveToClass,
 }
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UTooltip,
-  inheritAttrs: false,
-})
 </script>
 
 <template>

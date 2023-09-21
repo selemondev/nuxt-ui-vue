@@ -1,11 +1,16 @@
 <script setup lang='ts'>
-import { computed, defineComponent } from 'vue'
+import { computed } from 'vue'
 import { useVariants } from '@/composables/useVariants'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { Components } from '@/Types/enums/Components'
 import type { UKbd } from '@/Types/componentsTypes/components'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
+
+defineOptions({
+  name: Components.UKbd,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UKbd>(),
@@ -32,13 +37,6 @@ const variant = computed(() => {
     Components.UKbd,
     customProps as VariantJSWithClassesListProps<UKbd>,
   )
-})
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UKbd,
-  inheritAttrs: false,
 })
 </script>
 

@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import { computed, defineComponent, useAttrs } from 'vue'
-import { omit } from 'lodash-es'
+import { computed, useAttrs } from 'vue'
 import classNames from 'classnames'
 import { Switch as HSwitch } from '@headlessui/vue'
+import { omit } from '../../../utils/lodash'
 import UIcon from '../../elements/Icon/UIcon.vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
@@ -11,6 +11,11 @@ import { Components } from '@/Types/enums/Components'
 import { useFormEvents } from '@/composables/useFormEvents'
 import { useVariants } from '@/composables/useVariants'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
+
+defineOptions({
+  name: Components.UToggle,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UToggle>(),
@@ -86,13 +91,6 @@ const onIconClass = computed(() => {
 const attrs = useAttrs()
 
 const attrsOmitted = omit(attrs, ['class'])
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UToggle,
-  inheritAttrs: false,
-})
 </script>
 
 <template>

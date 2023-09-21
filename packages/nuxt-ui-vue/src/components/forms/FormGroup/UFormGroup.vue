@@ -1,8 +1,8 @@
 <script lang='ts'>
 import { computed, defineComponent, inject, provide } from 'vue'
 import type { Ref } from 'vue'
-import { omit } from 'lodash-es'
 import { twMerge } from 'tailwind-merge'
+import { omit } from '../../../utils/lodash'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UFormGroup } from '@/Types/componentsTypes/components'

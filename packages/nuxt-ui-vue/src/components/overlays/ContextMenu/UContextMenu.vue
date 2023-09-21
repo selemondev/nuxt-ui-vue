@@ -1,11 +1,11 @@
 <script setup lang='ts'>
-import { computed, defineComponent, toRef, useAttrs } from 'vue'
+import { computed, toRef, useAttrs } from 'vue'
 import type { PropType, Ref } from 'vue'
 import { twJoin, twMerge } from 'tailwind-merge'
 import defu from 'defu'
 import { onClickOutside } from '@vueuse/core'
 import type { VirtualElement } from '@popperjs/core'
-import { omit } from 'lodash-es'
+import { omit } from '../../../utils/lodash'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UContextMenu } from '@/Types/componentsTypes/components'
@@ -14,6 +14,11 @@ import { useVariants } from '@/composables/useVariants'
 import { usePopper } from '@/composables/usePopper'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 import type { PopperOptions } from '@/Types/components/popper'
+
+defineOptions({
+  name: Components.UContextMenu,
+  inheritAttrs: false,
+})
 
 const props = defineProps({
   ...getVariantPropsWithClassesList<UContextMenu>(),
@@ -82,13 +87,6 @@ const contextMenuTransitions = {
   leaveFrom: variant.value.leaveFromClass,
   leaveTo: variant.value.leaveToClass,
 }
-</script>
-
-<script lang="ts">
-export default defineComponent({
-  name: Components.UContextMenu,
-  inheritAttrs: false,
-})
 </script>
 
 <template>
