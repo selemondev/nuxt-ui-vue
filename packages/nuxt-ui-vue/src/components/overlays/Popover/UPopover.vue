@@ -154,6 +154,7 @@ const popoverTransitions = {
     </HPopoverButton>
 
     <div v-if="open" ref="container" :class="[variant.container, variant.width]" :style="containerStyle" @mouseover="onMouseOver">
+      <!-- @vue-ignore -->
       <Transition appear v-bind="popoverTransitions">
         <HPopoverPanel :class="[variant.base, variant.background, variant.ring, variant.rounded, variant.shadow]" static>
           <slot name="panel" :open="open" :close="close" />
