@@ -127,12 +127,12 @@ function onMouseLeave() {
 const attrsOmitted = omit(attrs, ['class'])
 
 const popoverTransitions = {
-  enter: variant.value.transitionEnterActiveClass,
-  enterFrom: variant.value.transitionEnterFromClass,
-  enterTo: variant.value.transitionEnterToClass,
-  leave: variant.value.transitionLeaveActiveClass,
-  leaveFrom: variant.value.transitionLeaveFromClass,
-  leaveTo: variant.value.transitionLeaveToClass,
+  enterActiveClass: variant.value.transitionEnterActiveClass,
+  enterFromClass: variant.value.transitionEnterFromClass,
+  enterToClass: variant.value.transitionEnterToClass,
+  leaveClass: variant.value.transitionLeaveActiveClass,
+  leaveFromClass: variant.value.transitionLeaveFromClass,
+  leaveToClass: variant.value.transitionLeaveToClass,
 }
 </script>
 

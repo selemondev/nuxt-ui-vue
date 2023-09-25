@@ -107,7 +107,7 @@ const transitionClass = computed(() => {
 <template>
   <TransitionRoot :appear="appear" :show="isOpen" as="template">
     <HDialog :class="wrapperClass" v-bind="attrsOmitted" @close="(e) => !preventClose && close(e)">
-      <TransitionChild v-if="overlay" as="template" :appear="appear" :bind="overlayTransitions">
+      <TransitionChild v-if="overlay" as="template" :appear="appear" v-bind="overlayTransitions">
         <div :class="[variant.overlayBase, variant.overlayBackground]" />
       </TransitionChild>
 

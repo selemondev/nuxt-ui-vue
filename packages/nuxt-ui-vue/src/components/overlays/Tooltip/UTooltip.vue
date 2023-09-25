@@ -107,12 +107,12 @@ function onMouseLeave() {
 const attrsOmitted = omit(attrs, ['class'])
 
 const toolTipTransitions = {
-  enter: variant.value.transitionEnterActiveClass,
-  enterFrom: variant.value.transitionEnterFromClass,
-  enterTo: variant.value.transitionEnterToClass,
-  leave: variant.value.transitionLeaveActiveClass,
-  leaveFrom: variant.value.transitionLeaveFromClass,
-  leaveTo: variant.value.transitionLeaveToClass,
+  enterActiveClass: variant.value.transitionEnterActiveClass,
+  enterFromClass: variant.value.transitionEnterFromClass,
+  enterToClass: variant.value.transitionEnterToClass,
+  leaveActiveClass: variant.value.transitionLeaveActiveClass,
+  leaveFromClass: variant.value.transitionLeaveFromClass,
+  leaveToClass: variant.value.transitionLeaveToClass,
 }
 </script>
 
@@ -123,6 +123,7 @@ const toolTipTransitions = {
     </slot>
 
     <div v-if="open && !prevent" ref="container" :class="[variant.container, variant.width]">
+      <!-- @vue-ignore -->
       <Transition appear v-bind="toolTipTransitions">
         <div :class="[variant.toolTipBase, variant.background, variant.color, variant.rounded, variant.shadow, variant.ring]">
           <slot name="text">
