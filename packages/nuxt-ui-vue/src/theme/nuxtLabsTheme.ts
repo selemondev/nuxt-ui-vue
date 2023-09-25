@@ -125,12 +125,12 @@ export default {
   UAvatarGroup: {
     base: {
       root: 'flex flex-row-reverse justify-end',
-      avatarGroupMargin: '-mx-2.5',
+      avatarGroupMargin: '-mx-2',
     },
 
     variants: {
       root: 'flex flex-row-reverse justify-end',
-      avatarGroupMargin: '-mx-2.5',
+      avatarGroupMargin: '-mx-2',
     },
   },
 
