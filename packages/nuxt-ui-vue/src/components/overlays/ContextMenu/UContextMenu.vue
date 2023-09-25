@@ -80,17 +80,18 @@ onClickOutside(container, () => {
 const attrsOmitted = omit(attrs, ['class'])
 
 const contextMenuTransitions = {
-  enter: variant.value.enterActiveClass,
-  enterFrom: variant.value.enterFromClass,
-  enterTo: variant.value.enterToClass,
-  leave: variant.value.leaveActiveClass,
-  leaveFrom: variant.value.leaveFromClass,
-  leaveTo: variant.value.leaveToClass,
+  enterActiveClass: variant.value.enterActiveClass,
+  enterFromClass: variant.value.enterFromClass,
+  enterToClass: variant.value.enterToClass,
+  leaveActiveClass: variant.value.leaveActiveClass,
+  leaveFromClass: variant.value.leaveFromClass,
+  leaveToClass: variant.value.leaveToClass,
 }
 </script>
 
 <template>
   <div v-if="isOpen" ref="container" :class="wrapperClass" v-bind="attrsOmitted">
+    <!-- @vue-ignore -->
     <Transition appear v-bind="contextMenuTransitions">
       <div :class="[variant.contextMenuBase, variant.ring, variant.rounded, variant.shadow, variant.background]">
         <slot />
