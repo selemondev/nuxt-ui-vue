@@ -396,11 +396,13 @@ const toast = useToast()
 </script>
 
 <template>
-    <UButton label="Show toast" @click="toast.add({
-        title: 'Update downloaded.',
-        description: 'It will be installed on restart. Restart now?',
-        icon: 'octicon:desktop-download-24',
-    })" />
+  <UButton
+    label="Show toast" @click="toast.add({
+      title: 'Update downloaded.',
+      description: 'It will be installed on restart. Restart now?',
+      icon: 'octicon:desktop-download-24',
+    })"
+  />
 </template>
 ```
 
