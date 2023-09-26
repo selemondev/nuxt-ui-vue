@@ -198,7 +198,7 @@ export default {
 
   UButton: {
     base: {
-      root: 'focus:outline-none block font-medium focus-visible:outline-0 rounded-md disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 transition-all duration-200 ease-in',
+      root: 'focus:outline-none block font-medium focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 transition-all duration-200 ease-in',
       font: 'font-medium',
       rounded: 'rounded-md',
       block: 'w-full flex justify-center items-center',
