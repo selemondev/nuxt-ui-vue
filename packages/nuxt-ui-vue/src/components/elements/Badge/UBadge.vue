@@ -1,12 +1,6 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
-import classNames from 'classnames'
-import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import type { UBadge } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
-import { useVariants } from '@/composables/useVariants'
 
 defineOptions({
   name: Components.UBadge,

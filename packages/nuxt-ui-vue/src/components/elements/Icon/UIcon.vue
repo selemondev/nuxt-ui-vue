@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { Icon, loadIcon } from '@iconify/vue'
-import { computed, ref, watch } from 'vue'
-import { Components } from '../../../Types/enums/Components'
 import type { UIcon } from '../../../Types/componentsTypes/components'
-import { getVariantPropsWithClassesList } from '../../../utils/getVariantProps'
-import { useVariants } from '../../../composables/useVariants'
 
 defineOptions({
   name: Components.UIcon,

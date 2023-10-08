@@ -1,17 +1,7 @@
 <!-- eslint-disable @typescript-eslint/ban-types -->
 <script setup lang="ts">
-import type { PropType } from 'vue'
-import { computed, useAttrs } from 'vue'
-import classNames from 'classnames'
-import { omit } from '../../../utils/lodash'
-import UNotification from './UNotification.vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
-import { useToast } from '@/composables/useToast'
-import { Components } from '@/Types/enums/Components'
 import type { UNotifications } from '@/Types/componentsTypes/components'
-import { Positions } from '@/Types/enums/Positions'
-import { useVariants } from '@/composables/useVariants'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 
 export type Position = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'

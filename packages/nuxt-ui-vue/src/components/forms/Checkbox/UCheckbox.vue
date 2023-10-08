@@ -1,13 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import classNames from 'classnames'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UCheckbox } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
-import { useFormEvents } from '@/composables/useFormEvents'
-import { useVariants } from '@/composables/useVariants'
-import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 
 defineOptions({
   name: Components.UCheckbox,

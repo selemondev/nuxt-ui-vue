@@ -1,13 +1,6 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
-import classNames from 'classnames'
 import type { URadio } from '@/Types/componentsTypes/components'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
-import { Components } from '@/Types/enums/Components'
-import { useVariants } from '@/composables/useVariants'
-import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
-import { useFormEvents } from '@/composables/useFormEvents'
 
 defineOptions({
   name: Components.URadio,
@@ -107,7 +100,7 @@ const inputClass = computed(() => {
         @change="onChange"
       >
     </div>
-    <div v-if="label || $slots.label" class="ms-3 text-sm">
+    <div v-if="label || $slots.label" class="text-sm ms-3">
       <label :for="`${name}-${value}`" :class="variant.label">
         <slot name="label">{{ label }}</slot>
         <span v-if="required" :class="variant.required">*</span>

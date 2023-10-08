@@ -1,13 +1,8 @@
 <script setup lang='ts'>
-import { computed, useAttrs } from 'vue'
 import { twMerge } from 'tailwind-merge'
 import { Dialog as HDialog, DialogPanel as HDialogPanel, TransitionChild, TransitionRoot } from '@headlessui/vue'
-import { omit } from '../../../utils/lodash'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UModal } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
-import { useVariants } from '@/composables/useVariants'
 
 defineOptions({
   name: Components.UModal,

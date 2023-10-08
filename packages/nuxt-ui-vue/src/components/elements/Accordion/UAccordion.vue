@@ -1,19 +1,11 @@
 <script setup lang='ts'>
-import { computed, ref } from 'vue'
-import type { PropType } from 'vue'
 import { Disclosure as HDisclosure, DisclosureButton as HDisclosureButton, DisclosurePanel as HDisclosurePanel } from '@headlessui/vue'
-import classNames from 'classnames'
-import { omit } from '../../../utils/lodash'
-import UButton from '../Button/UButton.vue'
-import UIcon from '../Icon/UIcon.vue'
+import { omit } from '@/utils/lodash'
 import type { AccordionItem } from '@/Types/components/accordionItem'
 import type { UAccordion } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
-import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
+import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import stateEmitter from '@/utils/stateEmitter'
-import { useVariants } from '@/composables/useVariants'
 
 defineOptions({
   name: Components.UAccordion,

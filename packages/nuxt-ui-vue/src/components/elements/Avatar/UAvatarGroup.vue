@@ -1,13 +1,8 @@
 <script lang="ts">
-import { cloneVNode, computed, defineComponent, h } from 'vue'
-import type { PropType, VNode } from 'vue'
-import classNames from 'classnames'
-import nuxtLabsTheme from '../../../theme/nuxtLabsTheme'
+import { cloneVNode } from 'vue'
 import { getSlotsFromChildren } from './Types'
 import UAvatar from './UAvatar.vue'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UAvatarGroup } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
 
 export type AvatarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
 

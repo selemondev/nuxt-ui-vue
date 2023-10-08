@@ -1,16 +1,6 @@
 <script setup lang='ts'>
-import type { PropType } from 'vue'
-import { computed, ref, useAttrs, watch } from 'vue'
-import classNames from 'classnames'
-import { Icon } from '@iconify/vue'
-import { omit } from '../../../utils/lodash'
-import type { VariantJSWithClassesListProps } from '../../../utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '../../../utils/getVariantProps'
-import type { UAvatar } from '../../../Types/componentsTypes/components'
-import { Components } from '../../../Types/enums/Components'
-import { useVariants } from '../../../composables/useVariants'
-import nuxtLabsTheme from '../../../theme/nuxtLabsTheme'
-import { Positions } from '@/Types/enums/Positions'
+import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
+import type { UAvatar } from '@/Types/componentsTypes/components'
 
 export type AvatarSize = '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
 export type AvatarChipPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'

@@ -1,14 +1,8 @@
 <script setup lang='ts'>
-import { computed, useAttrs } from 'vue'
-import type { PropType, WritableComputedRef } from 'vue'
 import { Dialog as HDialog, DialogPanel as HDialogPanel, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { twMerge } from 'tailwind-merge'
-import classNames from 'classnames'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { USlideover } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
-import { useVariants } from '@/composables/useVariants'
 
 defineOptions({
   name: Components.USlideover,

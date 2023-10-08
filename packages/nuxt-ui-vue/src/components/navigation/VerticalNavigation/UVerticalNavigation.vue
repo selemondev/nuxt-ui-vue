@@ -1,16 +1,8 @@
 <script setup lang='ts'>
-import { computed, useAttrs } from 'vue'
-import type { PropType } from 'vue'
 import { twMerge } from 'tailwind-merge'
 import { omit } from '../../../utils/lodash'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UVerticalNavigation } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
-import { useVariants } from '@/composables/useVariants'
-import UAvatar from '@/components/elements/Avatar/UAvatar.vue'
-import ULink from '@/components/elements/Link/ULink.vue'
-import UIcon from '@/components/elements/Icon/UIcon.vue'
 import type { VerticalNavigationLink } from '@/Types/components/vertical-navigation'
 
 defineOptions({

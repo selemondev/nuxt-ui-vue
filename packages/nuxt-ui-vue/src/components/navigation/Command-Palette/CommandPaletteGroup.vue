@@ -1,13 +1,6 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
-import type { PropType } from 'vue'
 import { ComboboxOption as HComboboxOption } from '@headlessui/vue'
-import UIcon from '../../elements/Icon/UIcon.vue'
-import UKbd from '@/components/elements/Kbd/UKbd.vue'
-import UAvatar from '@/components/elements/Avatar/UAvatar.vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { Components } from '@/Types/enums/Components'
-import { useVariants } from '@/composables/useVariants'
 import type { Group } from '@/Types/components/command-palette'
 import type { UCommandPalette } from '@/Types/componentsTypes/components'
 
