@@ -1,18 +1,11 @@
 <script lang='ts'>
-import { computed, defineComponent, ref, toRaw } from 'vue'
-import type { PropType } from 'vue'
 import { upperFirst } from 'scule'
-import { defu } from 'defu'
 import { twMerge } from 'tailwind-merge'
-import { get, omit } from '../../../utils/lodash'
 import UButton from '../../elements/Button/UButton.vue'
 import UIcon from '../../elements/Icon/UIcon.vue'
 import UCheckbox from '../../forms/Checkbox/UCheckbox.vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UTable } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
-import { useVariants } from '@/composables/useVariants'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 import type { Button } from '@/Types/components/button'
 

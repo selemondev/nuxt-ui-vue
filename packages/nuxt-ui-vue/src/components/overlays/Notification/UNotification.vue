@@ -1,20 +1,10 @@
 <script setup lang='ts'>
-import { computed, onMounted, onUnmounted, ref, useAttrs, watchEffect } from 'vue'
-import type { PropType } from 'vue'
 import { twJoin, twMerge } from 'tailwind-merge'
-import { omit } from '../../../utils/lodash'
-import UButton from '../../elements/Button/UButton.vue'
-import UAvatar from '../../elements/Avatar/UAvatar.vue'
-import UIcon from '../../elements/Icon/UIcon.vue'
-import { useTimer } from '@/composables/useTimer'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { NotificationAction } from '@/Types/components/notification'
 import type { Avatar } from '@/Types/components/avatar'
 import type { Button } from '@/Types/components/button'
-import { Components } from '@/Types/enums/Components'
 import type { UNotification } from '@/Types/componentsTypes/components'
-import { useVariants } from '@/composables/useVariants'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 
 defineOptions({

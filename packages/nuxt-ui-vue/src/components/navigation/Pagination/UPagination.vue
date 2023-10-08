@@ -1,15 +1,8 @@
 <script setup lang='ts'>
-import { computed, useAttrs } from 'vue'
-import type { PropType } from 'vue'
 import { twMerge } from 'tailwind-merge'
 import { omit } from '../../../utils/lodash'
-import UButton from '../../elements/Button/UButton.vue'
-import UButtonGroup from '@/components/elements/Button/UButtonGroup.vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UPagination } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
-import { useVariants } from '@/composables/useVariants'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 import type { Button } from '@/Types/components/button'
 

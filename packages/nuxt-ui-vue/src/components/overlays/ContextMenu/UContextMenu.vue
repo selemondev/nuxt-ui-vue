@@ -1,18 +1,8 @@
 <script setup lang='ts'>
-import { computed, toRef, useAttrs } from 'vue'
-import type { PropType, Ref } from 'vue'
 import { twJoin, twMerge } from 'tailwind-merge'
-import defu from 'defu'
-import { onClickOutside } from '@vueuse/core'
 import type { VirtualElement } from '@popperjs/core'
-import { omit } from '../../../utils/lodash'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UContextMenu } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
-import { useVariants } from '@/composables/useVariants'
-import { usePopper } from '@/composables/usePopper'
-import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 import type { PopperOptions } from '@/Types/components/popper'
 
 defineOptions({

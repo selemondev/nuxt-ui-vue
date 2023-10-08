@@ -1,16 +1,7 @@
 <script setup lang='ts'>
-import { computed, ref, useAttrs } from 'vue'
-import type { PropType } from 'vue'
 import { twMerge } from 'tailwind-merge'
-import defu from 'defu'
-import { omit } from '../../../utils/lodash'
-import UKbd from '../../elements/Kbd/UKbd.vue'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UTooltip } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
-import { useVariants } from '@/composables/useVariants'
-import { usePopper } from '@/composables/usePopper'
 import type { PopperOptions } from '@/Types/components/popper'
 
 defineOptions({

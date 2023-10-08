@@ -1,14 +1,6 @@
 <script setup lang='ts'>
-import { computed, onMounted, ref, useSlots } from 'vue'
-import classNames from 'classnames'
-import UIcon from '../../elements/Icon/UIcon.vue'
-import { useFormEvents } from '@/composables/useFormEvents'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
-import { useVariants } from '@/composables/useVariants'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { Components } from '@/Types/enums/Components'
 import type { UInput } from '@/Types/componentsTypes/components'
-import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 
 defineOptions({
   name: Components.UInput,

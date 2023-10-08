@@ -1,19 +1,9 @@
 <script setup lang='ts'>
-import { computed, useAttrs } from 'vue'
-import type { PropType } from 'vue'
-import classNames from 'classnames'
-import UIcon from '../Icon/UIcon.vue'
-import { omit } from '../../../utils/lodash'
-import UAvatar from '../Avatar/UAvatar.vue'
-import UButton from '../Button/UButton.vue'
 import type { UAlert } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
 import type { Avatar } from '@/Types/components/avatar'
 import type { Button } from '@/Types/components/button'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { useVariants } from '@/composables/useVariants'
 
 defineOptions({
   name: Components.UAlert,
@@ -114,7 +104,7 @@ function handleClose() {
 
       <UAvatar v-if="avatar" v-bind="{ size: variant.avatarSize, ...avatar }" :class="variant.avatarBase" />
 
-      <div class="w-0 flex-1">
+      <div class="flex-1 w-0">
         <p :class="nuxtLabsTheme.UAlert.base.title">
           <slot name="title" :title="title">
             {{ title }}
@@ -126,14 +116,14 @@ function handleClose() {
           </slot>
         </p>
 
-        <div v-if="(description || $slots.description) && actions.length" class="mt-3 flex items-center gap-2">
+        <div v-if="(description || $slots.description) && actions.length" class="flex items-center gap-2 mt-3">
           <UButton
             v-for="(action, index) of actions" :key="index"
             v-bind="{ ...nuxtLabsTheme.UAlert.base.default.actionButton, ...action }" @click.stop="action.click"
           />
         </div>
       </div>
-      <div class="flex-shrink-0 flex items-center gap-3">
+      <div class="flex items-center flex-shrink-0 gap-3">
         <div v-if="!description && !$slots.description && actions.length" class="flex items-center gap-2">
           <UButton
             v-for="(action, index) of actions" :key="index"

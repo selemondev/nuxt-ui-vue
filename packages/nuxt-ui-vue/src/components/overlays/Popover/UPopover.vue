@@ -1,18 +1,9 @@
 <script setup lang='ts'>
-import { computed, onMounted, ref, useAttrs } from 'vue'
-import type { PropType } from 'vue'
 import { twMerge } from 'tailwind-merge'
 import { Popover as HPopover, PopoverButton as HPopoverButton, PopoverPanel as HPopoverPanel } from '@headlessui/vue'
-import defu from 'defu'
-import { omit } from '../../../utils/lodash'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 import type { UPopover } from '@/Types/componentsTypes/components'
-import { Components } from '@/Types/enums/Components'
 import type { PopperOptions } from '@/Types/components/popper'
-import { useVariants } from '@/composables/useVariants'
-import { usePopper } from '@/composables/usePopper'
-import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 
 defineOptions({
   name: Components.UPopover,

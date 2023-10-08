@@ -1,5 +1,4 @@
 <script lang="ts">
-import { computed, defineComponent, ref, watch } from 'vue'
 import {
   Combobox as HCombobox,
   ComboboxButton as HComboboxButton,
@@ -11,22 +10,12 @@ import {
   ListboxOption as HListboxOption,
   ListboxOptions as HListboxOptions,
 } from '@headlessui/vue'
-
-import { computedAsync, useDebounceFn } from '@vueuse/core'
-import classNames from 'classnames'
-import defu from 'defu'
 import { omit } from '../../../utils/lodash'
 import UIcon from '@/components/elements/Icon/UIcon.vue'
 import UAvatar from '@/components/elements/Avatar/UAvatar.vue'
 import type { PopperOptions } from '@/Types/components/popper'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
-import { Components } from '@/Types/enums/Components'
 import type { USelectMenu } from '@/Types/componentsTypes/components'
-import { usePopper } from '@/composables/usePopper'
-import { useFormEvents } from '@/composables/useFormEvents'
-
-import { useVariants } from '@/composables/useVariants'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 
 export default defineComponent({

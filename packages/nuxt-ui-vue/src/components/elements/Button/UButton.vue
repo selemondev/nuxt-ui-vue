@@ -1,15 +1,6 @@
 <script setup lang='ts'>
-import { computed, useAttrs, useSlots } from 'vue'
-import type { PropType } from 'vue'
-import classNames from 'classnames'
-import type { RouteLocationRaw } from 'vue-router'
 import type { VariantJSWithClassesListProps } from '../../../utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '../../../utils/getVariantProps'
 import type { UButton } from '../../../Types/componentsTypes/components'
-import { Components } from '../../../Types/enums/Components'
-import UIcon from '../../elements/Icon/UIcon.vue'
-import { useVariants } from '../../../composables/useVariants'
-import nuxtLabsTheme from '../../../theme/nuxtLabsTheme'
 
 defineOptions({
   name: Components.UButton,

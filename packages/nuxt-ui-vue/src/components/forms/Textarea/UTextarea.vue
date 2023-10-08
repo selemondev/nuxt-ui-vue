@@ -1,14 +1,6 @@
 <script setup lang='ts'>
-import { computed, nextTick, onMounted, ref, useAttrs, watch } from 'vue'
-import classNames from 'classnames'
-import { omit } from '../../../utils/lodash'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
-import { Components } from '@/Types/enums/Components'
 import type { UTextarea } from '@/Types/componentsTypes/components'
-import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
-import { useVariants } from '@/composables/useVariants'
-import { useFormEvents } from '@/composables/useFormEvents'
 
 defineOptions({
   name: Components.UTextarea,
@@ -76,7 +68,7 @@ const props = defineProps({
 
 const emit = defineEmits<{
   (event: 'update:modelValue', value: string | number): void
-  (event: 'blur'): void
+  (event: 'blur', value: FocusEvent): void
 }>()
 
 const variant = computed(() => {
@@ -119,7 +111,7 @@ function autoResize() {
   }
 }
 
-function onInput(event: InputEvent) {
+function onInput(event: Event) {
   autoResize()
 
   emit('update:modelValue', (event.target as HTMLInputElement).value)
@@ -127,8 +119,6 @@ function onInput(event: InputEvent) {
 
 function onBlur(event: FocusEvent) {
   emitFormBlur()
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
   emit('blur', event)
 }
 
@@ -170,7 +160,6 @@ const attrsOmitted = omit(attrs, ['class'])
 
 <template>
   <div :class="variant.root">
-    <!-- @vue-ignore -->
     <textarea
       :id="name"
       ref="textarea"

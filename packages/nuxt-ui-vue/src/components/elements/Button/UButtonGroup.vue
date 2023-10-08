@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { getVariantPropsWithClassesList } from '../../../utils/getVariantProps'
 import type { UButtonGroup } from '../../../Types/componentsTypes/components'
-import { Components } from '../../../Types/enums/Components'
-import { useVariants } from '../../../composables/useVariants'
 
 defineOptions({
   name: Components.UButtonGroup,

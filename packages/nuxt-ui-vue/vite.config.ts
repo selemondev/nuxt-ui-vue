@@ -1,10 +1,10 @@
 import { resolve } from 'node:path'
+import { URL, fileURLToPath } from 'node:url'
 import Vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
-
-// https://github.com/qmhc/vite-plugin-dts
+import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 import dtsPlugin from 'vite-plugin-dts'
-
 import * as pkg from './package.json'
 
 const externals = [
@@ -16,10 +16,59 @@ export default defineConfig({
     dtsPlugin({
       insertTypesEntry: true,
     }),
+    Components({
+      dts: true,
+      resolvers: [
+        (componentName: string) => {
+          if (componentName.startsWith('Icon')) {
+            return {
+              name: componentName,
+              from: '@iconify/vue',
+            }
+          }
+        },
+      ],
+
+      types: [
+        {
+          from: 'vue-router',
+          names: ['RouterLink', 'RouterView', 'RouteLocationRaw'],
+        },
+      ],
+    }),
+
+    AutoImport({
+      imports: [
+        'vue',
+        'vue-router',
+        '@vueuse/core',
+        {
+          'classnames': [
+            ['default', 'classNames'],
+          ],
+          'defu': [
+            'defu',
+          ],
+          '@iconify/vue': [
+            'loadIcon',
+          ],
+          'ohash': [
+            'isEqual',
+          ],
+        },
+        {
+          from: 'vue-router',
+          imports: ['RouteLocationRaw'],
+          type: true,
+        },
+      ],
+
+      dirs: ['./src/utils', './src/Types/**', './src/theme', './src/composables', './src/components/Types'],
+    }),
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
   build: {

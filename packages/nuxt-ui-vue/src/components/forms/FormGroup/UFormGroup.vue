@@ -1,15 +1,8 @@
 <script lang='ts'>
-import { computed, defineComponent, inject, provide } from 'vue'
-import type { Ref } from 'vue'
 import { twMerge } from 'tailwind-merge'
-import { omit } from '../../../utils/lodash'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
-import { getVariantPropsWithClassesList } from '@/utils/getVariantProps'
 import type { UFormGroup } from '@/Types/componentsTypes/components'
 import type { FormError } from '@/Types/components/form'
-import { Components } from '@/Types/enums/Components'
-import { useVariants } from '@/composables/useVariants'
-import nuxtLabsTheme from '@/theme/nuxtLabsTheme'
 
 export default defineComponent({
   name: Components.UFormGroup,
