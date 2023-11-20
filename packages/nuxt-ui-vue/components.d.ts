@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     CommandPalette: typeof import('./src/components/navigation/Command-Palette/CommandPalette.vue')['default']
     CommandPaletteGroup: typeof import('./src/components/navigation/Command-Palette/CommandPaletteGroup.vue')['default']
+    Icon: typeof import('@iconify/vue')['Icon']
     RouteLocationRaw: typeof import('vue-router')['RouteLocationRaw']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

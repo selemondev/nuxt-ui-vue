@@ -1,4 +1,6 @@
 <script setup lang='ts'>
+import RouterLink from 'vue-router'
+
 defineOptions({
   name: Components.ULink,
   inheritAttrs: false,
