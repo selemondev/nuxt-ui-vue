@@ -1,4 +1,5 @@
 <script setup lang='ts'>
+import UIcon from '@/components/elements/Icon/UIcon.vue'
 import type { USelect } from '@/Types/componentsTypes/components'
 import type { VariantJSWithClassesListProps } from '@/utils/getVariantProps'
 
@@ -110,7 +111,7 @@ const variant = computed(() => {
 
 const { emitFormBlur } = useFormEvents()
 
-function onInput(event: InputEvent) {
+function onInput(event: Event) {
   emit('update:modelValue', (event.target as HTMLInputElement).value)
 }
 
