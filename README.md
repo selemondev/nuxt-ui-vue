@@ -1,6 +1,6 @@
 <p align="center">
 
-<h1 align="center">Nuxt-UI-Vue</h1>
+<h1 align="center">Nuxt-UI-Vue 🚧</h1>
 </p>
 
 ## Current Versions
