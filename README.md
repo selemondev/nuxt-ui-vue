@@ -23,7 +23,7 @@ Below are the current versions of both libraries:
 
 ## Getting Started 
 
-Add `Nuxt UI Vue` to your project by running one of the following commands:
+Add `Nuxt UI Vue` to your project by running one of the following commands below:
 
 ```bash
 
